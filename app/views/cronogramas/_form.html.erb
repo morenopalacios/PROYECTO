@@ -1,0 +1,16 @@
+<%= simple_form_for @cronograma, :html => { :class => 'form-horizontal', :remote => true } do |f| %>
+  <%= f.input :fecha %>
+  <%= f.input :lugar_salida %>
+  <%= f.input :ficha_grupo %>
+  <%= f.input :tipo_salida_id %>
+  <%= f.input :programa %>
+  <%= f.input :descripcion %>
+
+<div class="form­-group"> 
+   <div class="col­-sm­-offset­-2 col-­sm­-10"> 
+   <%= f.submit "Guardar", class: "btn btn­-sm btn­-success" %> 
+    <%= link_to t('.cancel', :default => t("helpers.links.cancelar")),
+                cronogramas_path, :class => 'btn' %>
+   </div> 
+
+<% end %>

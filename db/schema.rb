@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20140811162332) do
     t.datetime "updated_at"
   end
 
+  create_table "cronogramas", force: true do |t|
+    t.date     "fecha"
+    t.string   "lugar_salida"
+    t.string   "ficha_grupo"
+    t.integer  "tipo_salida_id"
+    t.string   "programa"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cronogramas", ["tipo_salida_id"], name: "index_cronogramas_on_tipo_salida_id"
+
   create_table "enfermedads", force: true do |t|
     t.integer  "centro_id"
     t.integer  "tipodoc_id"
@@ -107,13 +120,6 @@ ActiveRecord::Schema.define(version: 20140811162332) do
   add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
   add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
 
-  create_table "logueos", force: true do |t|
-    t.string   "usuario"
-    t.string   "clave"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "personalinvolucrados", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -142,6 +148,12 @@ ActiveRecord::Schema.define(version: 20140811162332) do
   end
 
   add_index "riesgos", ["funcionario_id"], name: "index_riesgos_on_funcionario_id"
+
+  create_table "tipo_salidas", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tipodocs", force: true do |t|
     t.string   "nombre"

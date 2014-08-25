@@ -47,8 +47,12 @@ Rails.application.routes.draw do
 
   resources :user_sessions
 
-  resources :users 
+  resources :users
 
+  resources :cronogramas
+
+  resources :tipo_salidas
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
