@@ -1,0 +1,42 @@
+<br><br><br><br><br><br><br>
+<h1>Listado riesgo</h1>
+	<%= form_tag riesgos_path, :method => 'get' do %>
+	<% content_tag :label do %>
+	Empresa:
+	<%= text_field_tag :search, params[:search] %>
+	<%= submit_tag "Buscar", :name => nil %>
+	<% end %>
+	<% end %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Empresa</th>
+      <th>Funcionario</th>
+      <th>Fecha</th>
+      <th>Clase de riesgo</th>
+      <th>Factor de riesgo</th>
+      <th>Efecto conocido</th>
+      <th>Numero de expuestos</th>
+      <th>Tiempo</th>
+      <th>Consecuencia</th>
+      <th>Exposicion</th>
+      
+      <th colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+     <%= render @riesgos %>
+  </tbody>
+</table>
+
+<br>
+ 
+<%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
+
+<%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+<br>
+Riesgos: <%= @riesgos.count %>
+ 
+

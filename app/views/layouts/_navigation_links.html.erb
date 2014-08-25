@@ -1,0 +1,36 @@
+<% if current_user %>
+    <ul class="nav navbar-nav navbar-right">
+
+        <li><%= link_to "Funcionarios", funcionarios_path %></li> 
+
+         <li class="dropdown" id="accountmenu"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Novedad<b class="caret"></b></a>
+
+                    <ul class="dropdown-menu">
+                        <li><%= link_to "Accidente", "accidentes_path" %></li> 
+                        <li><%= link_to "Incidente", incidentes_path %></li> 
+                        <li><%= link_to "Riesgo", riesgos_path %></li> 
+                        <li><%= link_to "Enfermedad", enfermedads_path %></li> 
+                        <li><%= link_to "Incapacidad", incapacidads_path %></li> 
+
+                    </ul>
+         </li>
+
+        <li><%= link_to "Cronograma" %> </li> 
+        <li><%= link_to "Estadisticas" %></li> 
+        <li><%= link_to "Noticias", static_pages_about_path%></li> 
+        <li><%= link_to "Seguridad" %></li> 
+        <li><%= link_to "Ayuda" %></li> 
+
+       
+
+        
+           
+            <li><%= link_to "Editar Perfil", edit_user_path(current_user.id) %></li> 
+            <li><%= link_to "Salir", :logout, method: :get %></li> 
+           <% else %>
+             <li><%= link_to "Registrarse", new_user_path %></li>
+             <li><%= link_to "Ingresar", :login %></li>     
+    </ul>
+<% end %>
+
+

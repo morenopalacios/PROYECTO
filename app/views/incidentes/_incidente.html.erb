@@ -1,0 +1,27 @@
+<tr id=<%= "incidente_#{incidente.id}" %>> 
+   <td>
+      <i class='icon-eye-view'></i>
+      <%= truncate(incidente.fecha_del_reporte) %>
+   </td>
+        <td><%= incidente.funcionario.nombres rescue nil %></td>
+        <td><%= incidente.area_o_proceso %></td>
+        <td><%= mostrar_lugar_de_ocurrencia(incidente.lugar_de_ocurrencia)%></td>
+        <td><%= incidente.fecha_del_reporte %></td>
+        <td><%= incidente.hora_del_reporte %></td>
+        <td><%= incidente.personalinvolucrado.nombre rescue nil %></td>
+        <td><%= incidente.otro %></td>
+        <td><%= incidente.especifique %></td>
+        <td><%= incidente.nombre_completo1 %></td>
+        <td><%= incidente.email1 %></td>
+        <td><%= incidente.telefono1 %></td>
+        <td><%= incidente.nombre_completo2 %></td>
+        <td><%= incidente.email2 %></td>
+        <td><%= incidente.telefono2 %></td>
+        <td><%= incidente.descripcion_del_evento %></td>
+        <td><%= incidente.nombre_del_dilenciador %></td>
+        <td><%= incidente.nombre_de_lider_de_informe %></td>
+   
+   <td><%= link_to 'Mostrar', incidente, remote: true, class: "btn btn-primary btn-xs" %></td>
+   <td><%= link_to 'Editar', edit_incidente_path(incidente), remote: true, class: "btn btn-danger btn-xs" %></td>
+   <td><%= link_to 'Eliminar', incidente, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-warning btn-xs", remote: true %></td>
+</tr>

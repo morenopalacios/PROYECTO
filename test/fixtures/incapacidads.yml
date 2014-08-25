@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  funcionario_id: 
+  fechainicio: 2014-06-12
+  fechaterminacion: 2014-06-12
+  totaldias: MyString
+  diasacobrar: MyString
+  prorroga: MyString
+  numeroinpacacidad: MyString
+  esp: MyString
+  origendelaincapacidad: MyString
+
+two:
+  funcionario_id: 
+  fechainicio: 2014-06-12
+  fechaterminacion: 2014-06-12
+  totaldias: MyString
+  diasacobrar: MyString
+  prorroga: MyString
+  numeroinpacacidad: MyString
+  esp: MyString
+  origendelaincapacidad: MyString

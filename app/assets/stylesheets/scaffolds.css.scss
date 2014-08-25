@@ -1,0 +1,150 @@
+body {
+  background-color: #fff;
+  color: #333;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  padding-top: 60px;
+}
+
+p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a {
+  color: #000;
+  &:visited {
+    color: #666;
+  }
+  &:hover {
+    color: #fff;
+    background-color: #000;
+  }
+}
+
+div {
+  &.field, &.actions {
+    margin-bottom: 10px;
+  }
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+  h2 {
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: -7px;
+    margin-bottom: 0px;
+    background-color: #c00;
+    color: #fff;
+  }
+  ul li {
+    font-size: 12px;
+    list-style: square;
+  }
+}
+
+
+/* lazybox */ 
+ 
+#lazy_close.img { 
+  background: image­url('close.png') no­repeat; 
+  width: 48px; 
+  height: 48px; 
+  top: ­25px; 
+  right: ­25px; 
+} 
+ 
+#lazybox.player { 
+  border: none; 
+  background: #222; 
+  border­radius: 0; 
+  box­shadow: 0 0 50px 10px cyan; 
+} 
+ 
+#lazybox.confirm { 
+  border­radius: 0; 
+  border: 3px solid #222; 
+  background: linear­gradient(#e2e2e2, white); 
+  a#lazybox_close { display: none; } 
+} 
+ 
+#lazybox.sticker {   border­radius­bottomleft: 20px 500px; 
+  border­radius­bottomright: 500px 30px; 
+  border­radius­topright: 5px 100px; 
+  background: #FCF59B; 
+  border­bottom­left­radius: 20px 500px; 
+  border­bottom­right­radius: 500px 30px; 
+  border­top­right­radius: 5px 100px; 
+} 
+ 
+#lazybox.lazybox { 
+  padding: 0; 
+  border: 0; 
+  background: transparent; 
+  width: 45%; 
+  box­shadow: none; 
+  ul li { list­style: none; } 
+  img { width: 100%; } 
+} 
+ 
+a { text­decoration: none; } 
+form { min­width: 300px; } 
+ 
+.slide { width: 50%; } 
+
+/* footer */
+
+footer {
+  margin-top: 45px;
+  padding-top: 5px;
+  border-top: 1px solid #eaeaea;
+  color: #999;
+}
+
+footer a {
+  color: #555;
+}
+
+footer a:hover {
+  color: #222;
+}
+
+footer small {
+  float: left;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 10px;
+}

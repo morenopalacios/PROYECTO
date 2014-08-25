@@ -1,0 +1,144 @@
+<%= simple_form_for(@incidente, :html => {:class => 'form­horizontal' } ) do  |f| %>
+
+  <% if @incidente.errors.any? %> 
+      <div id="error_explanation"> 
+       <h2><%= pluralize(@incidente.errors.count, "error")   %> prohibited this incidente from  
+      being saved:</h2> 
+       
+  <ul> 
+  <% @incidente.errors.full_messages.each do |message| %> 
+  <li><%= message %></li> 
+  <% end %> 
+  </ul> 
+  </div> 
+<% end %> 
+
+<h5>SISTEMA INTEGRADO DE GESTIÓN REPORTE INCIDENTE LABORALES</h5>
+  
+  <div class="field">
+    funcionarios <br>
+    <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
+    "Seleccione Funcionario" %>
+  </div>
+
+<div class="form-group">
+   <label for="area_o_proceso" class="col-sm-2 control-label">Área_o_proceso</label>
+   <div class="col-sm-4">
+      <%= f.input :area_o_proceso, class: "form-control", label: false %>
+   </div>
+ </div>
+
+<div class="field">
+    lugar de ocurrencia<br>
+    dentro de la entidad: <%= f.radio_button(:lugar_de_ocurrencia, true) %>
+    fuera de la entidad: <%= f.radio_button(:lugar_de_ocurrencia, false) %>
+</div>
+
+<div class="form-group">
+   <label for="fecha_del_reporte" class="col-sm-2 control-label">Fecha_del_reporte</label>
+   <div class="col-sm-4">
+      <%= f.input :fecha_del_reporte, class: "form-control", label: false %>
+   </div>
+ </div>
+
+
+<div class="form-group">
+   <label for="hora_del_reporte" class="col-sm-2 control-label">Hora_del_reporte</label>
+   <div class="col-sm-4">
+      <%= f.input :hora_del_reporte, class: "form-control", label: false %>
+   </div>
+</div>
+
+
+<h5>PERSONAL INVOLUCRADO</h5>
+<div class="field">
+  personal  <br>
+  <%= f.collection_select :personalinvolucrado_id, Personalinvolucrado.all, :id, :nombre, class: "form-control", prompt:
+  "Seleccione personal" %>
+</div> 
+
+
+<div class="form-group">
+   <label for="otro" class="col-sm-2 control-label">Otro</label>
+   <div class="col-sm-4">
+      <%= f.input :otro, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="especifique" class="col-sm-2 control-label">Especifique</label>
+   <div class="col-sm-4">
+      <%= f.input :especifique, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="nombre_completo1" class="col-sm-2 control-label">Nombre_completo1</label>
+   <div class="col-sm-4">
+      <%= f.input :nombre_completo1, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="email1" class="col-sm-2 control-label">Email1</label>
+   <div class="col-sm-4">
+      <%= f.input :email1, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="telefono1" class="col-sm-2 control-label">Telefono1</label>
+   <div class="col-sm-4">
+      <%= f.input :telefono1, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="nombre_completo2" class="col-sm-2 control-label">Nombre_completo2</label>
+   <div class="col-sm-4">
+      <%= f.input :nombre_completo2, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="email2" class="col-sm-2 control-label">Email2</label>
+   <div class="col-sm-4">
+      <%= f.input :email2, class: "form-control", label: false %>
+   </div>
+</div>
+ 
+<div class="form-group">
+   <label for="telefono2" class="col-sm-2 control-label">Telefono2</label>
+   <div class="col-sm-4">
+      <%= f.input :telefono2, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="descripcion_del_evento" class="col-sm-2 control-label">Descripción_del_evento</label>
+   <div class="col-sm-4">
+      <%= f.input :descripcion_del_evento, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="nombre_del_dilenciador" class="col-sm-2 control-label">Nombre_del_dilenciador</label>
+   <div class="col-sm-4">
+      <%= f.input :nombre_del_dilenciador, class: "form-control", label: false %>
+   </div>
+</div>
+
+<div class="form-group">
+   <label for="nombre_de_lider_de_informe" class="col-sm-2 control-label">Nombre_de_lider_de_informe</label>
+   <div class="col-sm-4">
+      <%= f.input :nombre_de_lider_de_informe, class: "form-control", label: false %>
+   </div>
+</div> 
+ 
+<div class="form­-group"> 
+   <div class="col­-sm­-offset­-2 col-­sm­-10"> 
+   <%= f.submit "Guardar", class: "btn btn­-sm btn­-success" %> 
+   </div> 
+</div> 
+ 
+<% end %> 

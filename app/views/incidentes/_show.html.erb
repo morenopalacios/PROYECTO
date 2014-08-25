@@ -1,0 +1,99 @@
+<div class='incidente'> 
+
+<br><br><br><br><br><br><br>
+<br><br><br><br><br><br>
+<div class="incidente">
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Area o proceso:</strong>
+  <%= @incidente.area_o_proceso %>
+</p>
+
+<p>
+  <strong>Lugar de ocurrencia:</strong>
+ <%= mostrar_lugar_de_ocurrencia(@incidente.lugar_de_ocurrencia) %>
+</p>
+
+<p>
+  <strong>Fecha del reporte:</strong>
+  <%= @incidente.fecha_del_reporte %>
+</p>
+
+<p>
+  <strong>Hora del reporte:</strong>
+  <%= @incidente.hora_del_reporte %>
+</p>
+
+<p>
+  <strong>Funcionario:</strong>
+  <%= @incidente.funcionario.nombres rescue nil %>
+</p>
+
+<p>
+  <strong>Personal_involucrado:</strong>
+  <%= @incidente.personalinvolucrado.nombre rescue nil %>
+</p>
+
+<p>
+  <strong>Otro:</strong>
+  <%= @incidente.otro %>
+</p>
+
+<p>
+  <strong>Especifique:</strong>
+  <%= @incidente.especifique %>
+</p>
+
+<p>
+  <strong>Nombre completo1:</strong>
+  <%= @incidente.nombre_completo1 %>
+</p>
+
+<p>
+  <strong>Email1:</strong>
+  <%= @incidente.email1 %>
+</p>
+
+<p>
+  <strong>Telefono1:</strong>
+  <%= @incidente.telefono1 %>
+</p>
+
+<p>
+  <strong>Nombre completo2:</strong>
+  <%= @incidente.nombre_completo2 %>
+</p>
+
+<p>
+  <strong>Email2:</strong>
+  <%= @incidente.email2 %>
+</p>
+
+<p>
+  <strong>Telefono2:</strong>
+  <%= @incidente.telefono2 %>
+</p>
+
+<p>
+  <strong>Descripcion del evento:</strong>
+  <%= @incidente.descripcion_del_evento %>
+</p>
+
+<p>
+  <strong>Nombre del dilenciador:</strong>
+  <%= @incidente.nombre_del_dilenciador %>
+</p>
+
+<p>
+  <strong>Nombre de lider de informe:</strong>
+  <%= @incidente.nombre_de_lider_de_informe %>
+</p>
+
+</div>
+
+<%= button_to 'Editar', edit_incidente_path(@incidente),:method=>"get", class: "btn btn-primary btn-xs", remote: true  %>
+<%= link_to 'Atras', incidentes_path %>
+<hr>
+</div>
