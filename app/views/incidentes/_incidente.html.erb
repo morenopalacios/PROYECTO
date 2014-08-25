@@ -21,7 +21,7 @@
         <td><%= incidente.nombre_del_dilenciador %></td>
         <td><%= incidente.nombre_de_lider_de_informe %></td>
    
-   <td><%= link_to 'Mostrar', incidente, remote: true, class: "btn btn-primary btn-xs" %></td>
+   <td><%= link_to 'Ver', incidente, remote: true, class: "btn btn-primary btn-xs" %></td>
    <td><%= link_to 'Editar', edit_incidente_path(incidente), remote: true, class: "btn btn-danger btn-xs" %></td>
    <td><%= link_to 'Eliminar', incidente, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-warning btn-xs", remote: true %></td>
 </tr>
