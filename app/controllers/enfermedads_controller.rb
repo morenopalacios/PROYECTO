@@ -1,37 +1,47 @@
 class EnfermedadsController < ApplicationController
   before_action :set_enfermedad, only: [:show, :edit, :update, :destroy]
+
+ def estadistica
+   @ano = Hash.new
+   @t1 = Enfermedad.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+   @t2 = Enfermedad.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+   @t3 = Enfermedad.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+   @t4 = Enfermedad.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+   @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+ end
+
  
   def index 
-        @enfermedads = Enfermedad.search(params[:search], params[:page]) 
+    @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
   end 
  
   def show 
   end 
  
   def new 
-        @enfermedad = Enfermedad.new 
+    @enfermedad = Enfermedad.new 
   end 
  
   def edit 
   end 
  
   def create 
-       @enfermedad = Enfermedad.new(enfermedad_params) 
-       render action: :new unless @enfermedad.save 
+   @enfermedad = Enfermedad.new(enfermedad_params) 
+   render action: :new unless @enfermedad.save 
   end 
  
   def update 
-        render action: :edit unless @enfermedad.update_attributes(enfermedad_params) 
+    render action: :edit unless @enfermedad.update_attributes(enfermedad_params) 
   end 
  
   def destroy 
-       @enfermedad.destroy 
+   @enfermedad.destroy 
   end 
  
   private 
   # Use callbacks to share common setup or constraints between actions. 
   def set_enfermedad
-       @enfermedad = Enfermedad.find(params[:id]) 
+    @enfermedad = Enfermedad.find(params[:id]) 
   end 
  
   # Never trust parameters from the scary internet, only allow the white list through. 

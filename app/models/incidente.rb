@@ -24,5 +24,9 @@ end
    validates :nombre_del_dilenciador , :presence => true 
    validates :nombre_de_lider_de_informe, :presence => true
 
+ def self.estadistica_x_trimestre(fechIni, fechFin)
+      @t1 = Incidente.select('count(*) as numero_incidentes').where('fecha_del_reporte  between  ? and  ?',fechIni,fechFin)
+      @t1.pluck('count(*)').first
+  end
 
 end

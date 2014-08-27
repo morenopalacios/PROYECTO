@@ -12,7 +12,7 @@ Ingrese fecha:
 <% end %> 
 <% end %> 
 <br>
-<table class="table table-striped">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th><%= model_class.human_attribute_name(:fecha) %></th>
@@ -31,7 +31,7 @@ Ingrese fecha:
 
 <%= link_to t('.new', :default => t("helpers.links.Nuevo cronograma")),
             new_cronograma_path,
-            :class => 'btn btn-primary',
+            :class => 'btn btn-primary btn-xs',
             :remote => true %>
 
 <%= will_paginate @cronogramas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>

@@ -2,10 +2,18 @@ class RiesgosController  < ApplicationController
   
   before_action :set_riesgo, only: [:show, :edit, :update, :destroy] 
  
+ def estadistica
+   @ano = Hash.new
+   @t1 = Riesgo.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+   @t2 = Riesgo.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+   @t3 = Riesgo.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+   @t4 = Riesgo.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+   @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+ end
 
  
   def index 
-        @riesgos = Riesgo.search(params[:search], params[:page]) 
+    @riesgos = Riesgo.search(params[:search], params[:page]).order('fecha ASC') 
   end 
  
   def show 
