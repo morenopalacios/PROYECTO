@@ -1,3 +1,7 @@
+<div class="login">
+<%= image_tag("inicio.png") %> 
+
+</div>
 <%= form_tag user_sessions_path, :method => :post do %> 
 
    <div class="field"> 
@@ -11,6 +15,6 @@
   </div>
    
   <div class="actions"> 
-    <%= submit_tag "Guardar" %> 
+    <%= submit_tag "Guardar", class: "btn btn-info btn-xs" %> 
   </div> 
 <% end %>
