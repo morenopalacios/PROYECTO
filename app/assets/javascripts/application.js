@@ -16,4 +16,6 @@
 //= require bootstrap
 //= require lazybox 
 //= require_tree .
+//=require bootstrap-datepicker
+
 

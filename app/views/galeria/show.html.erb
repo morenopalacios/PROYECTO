@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Recomendacion:</strong>
+  <%= @galerium.recomendacion %>
+</p>
+<p>
+<strong>Img:</strong>
+<%= image_tag @galerium.image.url(:medium) %>
+</p>
+
+<%= link_to 'Edit', edit_galerium_path(@galerium) %> |
+<%= link_to 'Back', galeria_path %>

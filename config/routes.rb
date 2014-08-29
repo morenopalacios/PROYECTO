@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :galeria
+
   get 'user_sessions/new'
 
   get 'user_sessions/create'

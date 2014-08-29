@@ -17,18 +17,46 @@ class IncidentesController < ApplicationController
  
   def edit 
   end 
+
+  def create
+     
+     @incidente = Incidente.new(incidente_params) 
+     
+    respond_to do |format|
+      if @incidente.save
+        format.html { redirect_to @incidente, notice: 'incidente was successfully created.' }
+        format.json { render :show, status: :created, location: @incidente }
+      else
+        format.html { render :new }
+        format.json { render json: @incidente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
  
-  def create 
-       @incidente = Incidente.new(incidente_params) 
-       render action: :new unless @incidente.save 
-  end 
+
+  def update
+    respond_to do |format|
+      if @incidente.update(incidente_params)
+        format.html { redirect_to @incidente, notice: 'incidente was successfully updated.' }
+        format.json { render :show, status: :ok, location: @incidente }
+      else
+        format.html { render :edit }
+        format.json { render json: @incidente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
  
-  def update 
-        render action: :edit unless @incidente.update_attributes(incidente_params) 
-  end 
+ 
  
   def destroy 
        @incidente.destroy 
+       respond_to do |format|
+          format.html { redirect_to incidentes_path, notice: 'incidente was successfully destroy.' }
+          format.json { render :show, status: :ok, location: @incidente }
+          
+       end 
+    
   end 
  
   private 
