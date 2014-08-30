@@ -1,11 +1,14 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   resources :accidentes
 
   resources :municipios
 
   resources :departamentos
 
+=======
+>>>>>>> 4acdcb04e30381d93ce024f21c53ffda6503b376
   get 'user_sessions/new'
 
   get 'user_sessions/create'
