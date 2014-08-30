@@ -1,0 +1,91 @@
+<div class='formulario'> 
+<br><br><br><br><br><br><br>
+<div class="riesgo">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Empresa:</strong>
+  <%= @riesgo.empresa %>
+</p>
+
+<p>
+  <strong>Funcionario:</strong>
+  <%= @riesgo.funcionario.nombres rescue nil%>
+</p>
+
+<p>
+  <strong>Fecha:</strong>
+  <%= @riesgo.fecha %>
+</p>
+
+<p>
+  <strong>Area de seccion o puesto de trabajo:</strong>
+  <%= @riesgo.areadeseccionopuestodetrabajo %>
+</p>
+
+<p>
+  <strong>Clase de riesgo:</strong>
+  <%= @riesgo.clasederiesgo %>
+</p>
+
+<p>
+  <strong>Factor de riesgo:</strong>
+  <%= @riesgo.factorderiesgo %>
+</p>
+
+<p>
+  <strong>Fuente generadora:</strong>
+  <%= @riesgo.fuentegeneradora %>
+</p>
+
+<p>
+  <strong>Efecto conocido:</strong>
+  <%= @riesgo.efectoconocido %>
+</p>
+
+<p>
+  <strong>Numero de expuestos:</strong>
+  <%= @riesgo.numerodeexpuestos %>
+</p>
+
+<p>
+  <strong>Tiempo:</strong>
+  <%= @riesgo.tiempo %>
+</p>
+
+<p>
+  <strong>Controles exitentes:</strong>
+  <%= @riesgo.controlesexitentes %>
+</p>
+
+<p>
+  <strong>Controles recomendados:</strong>
+  <%= @riesgo.controlesrecomendados %>
+</p>
+
+<p>
+  <strong>Consecuencia:</strong>
+  <%= @riesgo.consecuencia %>
+</p>
+
+<p>
+  <strong>Exposicion:</strong>
+  <%= @riesgo.exposicion %>
+</p>
+
+<p>
+  <strong>Factor de ponderacion:</strong>
+  <%= @riesgo.factordeponderacion %>
+</p>
+
+<p>
+  <strong>Repercucion del riesgo:</strong>
+  <%= @riesgo.repercuciondelriesgo %>
+</p>
+
+</div>
+
+<%= button_to 'Editar', edit_funcionario_path(@funcionario),:method=>"get", class: "btn btn-primary btn-xs", remote: true  %>
+<%= link_to 'Atras', funcionarios_path %>
+<hr>
+</div>

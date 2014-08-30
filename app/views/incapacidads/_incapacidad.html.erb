@@ -1,0 +1,19 @@
+<tr id=<%= "incapacidad_#{incapacidad.id}" %>> 
+   <td>
+      <i class='icon-eye-view'></i>
+      <%= truncate(incapacidad.fechainicio) %>
+      
+   </td>
+        <td><%= incapacidad.funcionario.nombres rescue nil %></td>
+        <td><%= incapacidad.fechainicio %></td>
+        <td><%= incapacidad.fechaterminacion %></td>
+        <td><%= incapacidad.totaldias %></td>
+        <td><%= incapacidad.diasacobrar %></td>
+        <td><%= incapacidad.prorroga %></td>
+        <td><%= incapacidad.numeroinpacacidad %></td>
+        <td><%= incapacidad.origendelaincapacidad %></td>
+   
+   <td><%= link_to 'Mostrar', incapacidad, remote: true, class: "btn btn-primary btn-xs" %></td>
+   <td><%= link_to 'Editar', edit_incapacidad_path(incapacidad), remote: true, class: "btn btn-danger btn-xs" %></td>
+   <td><%= link_to 'Eliminar', incapacidad, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-warning btn-xs", remote: true %></td>
+</tr>

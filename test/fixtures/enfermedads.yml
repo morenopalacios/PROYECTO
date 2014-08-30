@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  centro_id: 
+  tipodoc_id: 
+  documento: MyString
+  funcionario_id: 
+  codigodediagnostico: MyString
+
+two:
+  centro_id: 
+  tipodoc_id: 
+  documento: MyString
+  funcionario_id: 
+  codigodediagnostico: MyString

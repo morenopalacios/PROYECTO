@@ -1,0 +1,152 @@
+<h1>Listing accidentes</h1>
+<%= form_tag accidentes_path, :method => 'get' do %>
+      <% content_tag :label do %>
+        Buscar por fecha de accidente:
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Buscar", :fecha_del_accidente => nil %>
+      <% end %>
+    <% end %>
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Diligenciador</th>
+      <th>Eps</th>
+      <th>Afp</th>
+      <th>Arl</th>
+      <th>Documento</th>
+      <th>Tipodoc</th>
+      <th>Tipo de vinculacion</th>
+      <th>Razon social</th>
+      <th>Direccion sede principal</th>
+      <th>Direccion reportada</th>
+      <th>Telefono reportado</th>
+      <th>Actividad economica sede principal</th>
+      <th>Codigo</th>
+      <th>Telefono sede principal</th>
+      <th>Fax sede principal</th>
+      <th>Email sede principal</th>
+      <th>Departamento</th>
+      <th>Municipio</th>
+      <th>Zona</th>
+      <th>Actividad economica centro trabajo</th>
+      <th>Direccion centro trabajo</th>
+      <th>Telefono ct</th>
+      <th>Fax ct</th>
+      <th>Email ct</th>
+      <th>Departamento</th>
+      <th>Municipio</th>
+      <th>Zona</th>
+      <th>Funcionario</th>
+      <th>Fecha del accidente</th>
+      <th>Hora del accidente</th>
+      <th>Dia de la semana</th>
+      <th>Jornada en que sucede</th>
+      <th>Realiza su labor</th>
+      <th>Ocupacion no habitual</th>
+      <th>Tiempo laborado</th>
+      <th>Lugar donde ocurrio el at</th>
+      <th>Mecanismo o formato del at</th>
+      <th>Tipo de lesion</th>
+      <th>Sitio</th>
+      <th>Tipo de accidente</th>
+      <th>Parte del cuerpo afectado</th>
+      <th>Agente del accidente</th>
+      <th>Departamento</th>
+      <th>Municipio</th>
+      <th>Zona</th>
+      <th>Mortal</th>
+      <th>Fecha mortal</th>
+      <th>Descripcion del at</th>
+      <th>Hubo personas que presenciaron el accidente</th>
+      <th>Testigo1</th>
+      <th>Tipodoc</th>
+      <th>Documento</th>
+      <th>Testigo2</th>
+      <th>Tipodoc</th>
+      <th>Documento</th>
+      <th>Responsable informe</th>
+      <th>Tipodoc</th>
+      <th>Documento</th>
+      <th colspan="3">Acciones</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accidentes.each do |accidente| %>
+      <tr>
+        <td><%= accidente.diligenciador %></td>
+        <td><%= accidente.eps %></td>
+        <td><%= accidente.afp %></td>
+        <td><%= accidente.arl %></td>
+        <td><%= accidente.documento %></td>
+        <td><%= accidente.tipodoc.nombre rescue nil %></td>
+        <td><%= accidente.tipo_de_vinculacion %></td>
+        <td><%= accidente.razon_social %></td>
+        <td><%= accidente.direccion_sede_principal %></td>
+        <td><%= accidente.direccion_reportada %></td>
+        <td><%= accidente.telefono_reportado %></td>
+        <td><%= accidente.actividad_economica_sede_principal %></td>
+        <td><%= accidente.codigo %></td>
+        <td><%= accidente.telefono_sede_principal %></td>
+        <td><%= accidente.fax_sede_principal %></td>
+        <td><%= accidente.email_sede_principal %></td>
+        <td><%= accidente.departamento.nombre rescue nil %></td>
+        <td><%= accidente.municipio.nombre rescue nil %></td>
+        <td><%= accidente.zona %></td>
+        <td><%= accidente.actividad_economica_centro_trabajo %></td>
+        <td><%= accidente.direccion_centro_trabajo %></td>
+        <td><%= accidente.telefono_ct %></td>
+        <td><%= accidente.fax_ct %></td>
+        <td><%= accidente.email_ct %></td>
+        <td><%= mostrardep(accidente.departamento1) %></td>
+        <td><%= mostrarmun(accidente.municipio1) %></td>
+        <td><%= accidente.zona1 %></td>
+        <td><%= accidente.funcionario.nombre rescue nil %></td>
+        <td><%= accidente.fecha_del_accidente %></td>
+        <td><%= accidente.hora_del_accidente %></td>
+        <td><%= accidente.dia_de_la_semana %></td>
+        <td><%= accidente.jornada_en_que_sucede %></td>
+        <td><%= mostrarrealiza_su_labor(accidente.realiza_su_labor) %></td>
+        <td><%= accidente.ocupacion_no_habitual %></td>
+        <td><%= accidente.tiempo_laborado %></td>
+        <td><%= accidente.lugar_donde_ocurrio_el_at %></td>
+        <td><%= accidente.mecanismo_o_formato_del_at %></td>
+        <td><%= accidente.tipo_de_lesion %></td>
+        <td><%= accidente.sitio %></td>
+        <td><%= accidente.tipo_de_accidente %></td>
+        <td><%= accidente.parte_del_cuerpo_afectado %></td>
+        <td><%= accidente.agente_del_accidente %></td>
+        <td><%= mostrardep(accidente.departamento2) %></td>
+        <td><%= mostrarmun(accidente.municipio2) %></td>
+        <td><%= accidente.zona2 %></td>
+        <td><%= mostrarmortal(accidente.mortal) %></td>
+        <td><%= accidente.fecha_mortal %></td>
+        <td><%= accidente.descripcion_del_at %></td>
+        <td><%= mostrarhubo_personas_que_presenciaron_el_accidente(accidente.hubo_personas_que_presenciaron_el_accidente) %></td>
+        <td><%= accidente.testigo1 %></td>
+        <td><%= mostrardoc(accidente.tipodoc1) %></td>
+        <td><%= accidente.documento1 %></td>
+        <td><%= accidente.testigo2 %></td>
+        <td><%= mostrardoc(accidente.tipodoc2) %></td>
+        <td><%= accidente.documento2 %></td>
+        <td><%= accidente.responsable_informe %></td>
+        <td><%= mostrardoc(accidente.tipodoc3) %></td>
+        <td><%= accidente.documento3 %></td>
+        <td><%= link_to 'Ver', accidente, class: "btn btn-success btn-xs" %></td>
+        <td><%= link_to 'Editar', edit_accidente_path(accidente), class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', accidente, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Seguro que quiere eliminar el registro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<br>
+
+<%= link_to 'Nuevo Accidente', new_accidente_path, class: "btn btn-primary btn-xs" %>
+
+<%= will_paginate @accidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %>
+<br>
+Accidentes: <%= @accidentes.count %>

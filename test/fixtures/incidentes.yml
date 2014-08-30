@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  centro_id: 
+  area_o_proceso: MyString
+  lugar_de_ocurrencia: false
+  fecha_del_reporte: 2014-06-16
+  hora_del_reporte: MyString
+  funcionario_id: 
+  personalinvolucrado_id: 
+  otro: MyString
+  especifique: MyString
+  nombre_completo1: MyString
+  email1: MyString
+  telefono1: MyString
+  nombre_completo2: MyString
+  email2: MyString
+  telefono2: MyString
+  descripcion_del_evento: MyString
+  nombre_del_dilenciador: MyString
+  nombre_de_lider_de_informe: MyString
+
+two:
+  centro_id: 
+  area_o_proceso: MyString
+  lugar_de_ocurrencia: false
+  fecha_del_reporte: 2014-06-16
+  hora_del_reporte: MyString
+  funcionario_id: 
+  personalinvolucrado_id: 
+  otro: MyString
+  especifique: MyString
+  nombre_completo1: MyString
+  email1: MyString
+  telefono1: MyString
+  nombre_completo2: MyString
+  email2: MyString
+  telefono2: MyString
+  descripcion_del_evento: MyString
+  nombre_del_dilenciador: MyString
+  nombre_de_lider_de_informe: MyString

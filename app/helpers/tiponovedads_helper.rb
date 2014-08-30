@@ -1,0 +1,2 @@
+module TiponovedadsHelper
+end

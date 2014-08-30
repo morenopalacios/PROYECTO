@@ -1,0 +1,2 @@
+module TipodocsHelper
+end
