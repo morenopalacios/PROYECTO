@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140827140700) do
 
   create_table "accidentes", force: true do |t|
@@ -81,9 +80,6 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
   add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
   add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
-=======
-ActiveRecord::Schema.define(version: 20140811162332) do
->>>>>>> 4acdcb04e30381d93ce024f21c53ffda6503b376
 
   create_table "centros", force: true do |t|
     t.string   "nombre"
@@ -91,15 +87,12 @@ ActiveRecord::Schema.define(version: 20140811162332) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "departamentos", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-=======
->>>>>>> 4acdcb04e30381d93ce024f21c53ffda6503b376
   create_table "enfermedads", force: true do |t|
     t.integer  "centro_id"
     t.integer  "tipodoc_id"
@@ -188,14 +181,8 @@ ActiveRecord::Schema.define(version: 20140811162332) do
   add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
   add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
 
-<<<<<<< HEAD
   create_table "municipios", force: true do |t|
     t.string   "nombre"
-=======
-  create_table "logueos", force: true do |t|
-    t.string   "usuario"
-    t.string   "clave"
->>>>>>> 4acdcb04e30381d93ce024f21c53ffda6503b376
     t.datetime "created_at"
     t.datetime "updated_at"
   end
