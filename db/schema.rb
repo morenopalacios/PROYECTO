@@ -11,20 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140829182207) do
-
-  create_table "albums", force: true do |t|
-    t.text     "recomendacion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "image_file_name"
-    t.string   "image_content_type"
-    t.integer  "image_file_size"
-    t.datetime "image_updated_at"
-  end
-=======
-ActiveRecord::Schema.define(version: 20140827140700) do
 
   create_table "accidentes", force: true do |t|
     t.string   "diligenciador"
@@ -93,7 +80,16 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
   add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
   add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
->>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
+
+  create_table "albums", force: true do |t|
+    t.text     "recomendacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
 
   create_table "centros", force: true do |t|
     t.string   "nombre"
@@ -101,7 +97,6 @@ ActiveRecord::Schema.define(version: 20140827140700) do
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   create_table "cronogramas", force: true do |t|
     t.date     "fecha"
     t.string   "lugar_salida"
@@ -109,19 +104,18 @@ ActiveRecord::Schema.define(version: 20140827140700) do
     t.integer  "tipo_salida_id"
     t.string   "programa"
     t.string   "descripcion"
-=======
-  create_table "departamentos", force: true do |t|
-    t.string   "nombre"
->>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-<<<<<<< HEAD
   add_index "cronogramas", ["tipo_salida_id"], name: "index_cronogramas_on_tipo_salida_id"
 
-=======
->>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
+  create_table "departamentos", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "enfermedads", force: true do |t|
     t.integer  "funcionario_id"
     t.string   "codigodediagnostico"
@@ -202,6 +196,13 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   add_index "incidentes", ["centro_id"], name: "index_incidentes_on_centro_id"
   add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
   add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
+
+  create_table "logueos", force: true do |t|
+    t.string   "usuario"
+    t.string   "clave"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "municipios", force: true do |t|
     t.string   "nombre"
