@@ -11,6 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140829182207) do
 
   create_table "albums", force: true do |t|
@@ -22,6 +23,77 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
+=======
+ActiveRecord::Schema.define(version: 20140827140700) do
+
+  create_table "accidentes", force: true do |t|
+    t.string   "diligenciador"
+    t.string   "eps"
+    t.string   "afp"
+    t.string   "arl"
+    t.string   "documento"
+    t.integer  "tipodoc_id"
+    t.string   "tipo_de_vinculacion"
+    t.string   "razon_social"
+    t.string   "direccion_sede_principal"
+    t.string   "direccion_reportada"
+    t.string   "telefono_reportado"
+    t.string   "actividad_economica_sede_principal"
+    t.string   "codigo"
+    t.string   "telefono_sede_principal"
+    t.string   "fax_sede_principal"
+    t.string   "email_sede_principal"
+    t.integer  "departamento_id"
+    t.integer  "municipio_id"
+    t.string   "zona"
+    t.string   "actividad_economica_centro_trabajo"
+    t.string   "direccion_centro_trabajo"
+    t.string   "telefono_ct"
+    t.string   "fax_ct"
+    t.string   "email_ct"
+    t.integer  "departamento1"
+    t.integer  "municipio1"
+    t.string   "zona1"
+    t.integer  "funcionario_id"
+    t.date     "fecha_del_accidente"
+    t.string   "hora_del_accidente"
+    t.string   "dia_de_la_semana"
+    t.string   "jornada_en_que_sucede"
+    t.boolean  "realiza_su_labor"
+    t.string   "ocupacion_no_habitual"
+    t.string   "tiempo_laborado"
+    t.string   "lugar_donde_ocurrio_el_at"
+    t.string   "mecanismo_o_formato_del_at"
+    t.string   "tipo_de_lesion"
+    t.string   "sitio"
+    t.string   "tipo_de_accidente"
+    t.string   "parte_del_cuerpo_afectado"
+    t.string   "agente_del_accidente"
+    t.integer  "departamento2"
+    t.integer  "municipio2"
+    t.string   "zona2"
+    t.boolean  "mortal"
+    t.date     "fecha_mortal"
+    t.string   "descripcion_del_at"
+    t.boolean  "hubo_personas_que_presenciaron_el_accidente"
+    t.string   "testigo1"
+    t.integer  "tipodoc1"
+    t.string   "documento1"
+    t.string   "testigo2"
+    t.integer  "tipodoc2"
+    t.string   "documento2"
+    t.string   "responsable_informe"
+    t.integer  "tipodoc3"
+    t.string   "documento3"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accidentes", ["departamento_id"], name: "index_accidentes_on_departamento_id"
+  add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
+  add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
+  add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
+>>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
 
   create_table "centros", force: true do |t|
     t.string   "nombre"
@@ -29,6 +101,7 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   create_table "cronogramas", force: true do |t|
     t.date     "fecha"
     t.string   "lugar_salida"
@@ -36,12 +109,19 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.integer  "tipo_salida_id"
     t.string   "programa"
     t.string   "descripcion"
+=======
+  create_table "departamentos", force: true do |t|
+    t.string   "nombre"
+>>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
   add_index "cronogramas", ["tipo_salida_id"], name: "index_cronogramas_on_tipo_salida_id"
 
+=======
+>>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
   create_table "enfermedads", force: true do |t|
     t.integer  "funcionario_id"
     t.string   "codigodediagnostico"
@@ -123,9 +203,8 @@ ActiveRecord::Schema.define(version: 20140829182207) do
   add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
   add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
 
-  create_table "logueos", force: true do |t|
-    t.string   "usuario"
-    t.string   "clave"
+  create_table "municipios", force: true do |t|
+    t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

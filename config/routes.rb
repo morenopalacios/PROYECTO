@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
 
+<<<<<<< HEAD
   resources :albums
+=======
+  resources :accidentes
+
+  resources :municipios
+
+  resources :departamentos
+>>>>>>> 99ecdb647424b7d5e204b077dbda0c60e0ca9495
 
   get 'user_sessions/new'
 
