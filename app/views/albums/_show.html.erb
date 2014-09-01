@@ -1,0 +1,16 @@
+<div class="recomendacionOrden">
+<p id="notice"><%= notice %></p>
+<p>
+	<strong>Imagen:</strong>
+	<%= image_tag @album.image.url(:medium) %>
+</p>
+<div class="orden">
+<p>
+  <strong>Recomendacion:</strong>
+  <%= @album.recomendacion %>
+</p>
+</div>
+
+<%= link_to 'Editar', edit_album_path(@album),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
+<%= link_to 'Atras', albums_path, class: "btn btn-default btn-xs" %>
+</div>
