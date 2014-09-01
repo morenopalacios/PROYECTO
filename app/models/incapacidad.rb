@@ -17,5 +17,10 @@ class Incapacidad < ActiveRecord::Base
    validates :prorroga, :presence => true 
    validates :numeroinpacacidad, :presence => true 
    validates :origendelaincapacidad, :presence => true 
+
+   def self.estadistica_x_trimestre(fechIni, fechFin)
+      @t1 = Incapacidad.select('count(*) as numero_incapacidads').where('fechainicio between  ? and  ?',fechIni,fechFin)
+      @t1.pluck('count(*)').first
+  end
    
 end

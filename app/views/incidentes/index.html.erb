@@ -40,8 +40,8 @@
 </table>
 
 <br>
-<%= link_to 'Grafica de incidentes', incidentes_estadistica_path %>
-<br><br>
+<%= link_to 'Grafica de incidentes', incidentes_estadistica_path, remote: true %>
+<br>
  
 <%= button_to 'Nueva Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
 

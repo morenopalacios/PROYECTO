@@ -1,9 +1,9 @@
 class Incidente < ActiveRecord::Base
 
   def self.search(search, page)
-where(['upper(nombre_de_lider_de_informe) like ?',
-"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre_de_lider_de_informe")
-end
+   where(['upper(nombre_de_lider_de_informe) like ?',
+   "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre_de_lider_de_informe")
+  end
 
 
   belongs_to :centro

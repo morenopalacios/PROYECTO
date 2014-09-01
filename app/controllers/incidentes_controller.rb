@@ -1,10 +1,11 @@
 class IncidentesController < ApplicationController 
-  
+  #Incluimos el módulo definido en lib/models/grafica.rb
+ 
   before_action :set_incidente, only: [:show, :edit, :update, :destroy] 
  
   def estadistica
      @ano = Hash.new
-     @t1 = Incidente.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+     @t1 = Incidente.estadistica_x_trimestre("2014-04-01", "2014-06-30")
      @t2 = Incidente.estadistica_x_trimestre("2014-04-01", "2014-06-30")
      @t3 = Incidente.estadistica_x_trimestre("2014-07-01", "2014-09-30")
      @t4 = Incidente.estadistica_x_trimestre("2014-10-01", "2014-12-31")
