@@ -11,7 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140829182207) do
 
   create_table "albums", force: true do |t|
@@ -23,9 +22,6 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
   end
-=======
-ActiveRecord::Schema.define(version: 20140831225923) do
->>>>>>> 7bf4feb54f5ecdf1943a197dd47da9da26775c73
 
   create_table "centros", force: true do |t|
     t.string   "nombre"
@@ -55,18 +51,6 @@ ActiveRecord::Schema.define(version: 20140831225923) do
     t.date     "fecha"
   end
 
-<<<<<<< HEAD
-=======
-  add_index "enfermedads", ["centro_id"], name: "index_enfermedads_on_centro_id"
-  add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
-  add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
-
-  create_table "estadisticas", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
->>>>>>> 7bf4feb54f5ecdf1943a197dd47da9da26775c73
   create_table "funcionarios", force: true do |t|
     t.string   "nombres"
     t.string   "apellidos"
@@ -138,6 +122,13 @@ ActiveRecord::Schema.define(version: 20140831225923) do
   add_index "incidentes", ["centro_id"], name: "index_incidentes_on_centro_id"
   add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
   add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
+
+  create_table "logueos", force: true do |t|
+    t.string   "usuario"
+    t.string   "clave"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "personalinvolucrados", force: true do |t|
     t.string   "nombre"

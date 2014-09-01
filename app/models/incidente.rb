@@ -1,15 +1,10 @@
 class Incidente < ActiveRecord::Base
 
   def self.search(search, page)
-<<<<<<< HEAD
+
 where(['upper(fecha_del_reporte) like ?',
 "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fecha_del_reporte")
 end
-=======
-   where(['upper(nombre_de_lider_de_informe) like ?',
-   "%#{search}%".upcase]).paginate(page: page, per_page: 5).order("nombre_de_lider_de_informe")
-  end
->>>>>>> 7bf4feb54f5ecdf1943a197dd47da9da26775c73
 
 
   belongs_to :centro

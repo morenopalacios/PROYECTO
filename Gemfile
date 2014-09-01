@@ -60,6 +60,4 @@ gem 'lazybox' #gema de bootsrap
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'remotipart'
-
-gem 'bootstrap-datepicker-rails'
 gem 'googlecharts'
