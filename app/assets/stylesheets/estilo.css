@@ -116,10 +116,22 @@ p{
     margin-top: -520px;
     margin-left: 660px;
 }
+#formlogin1{
+    border: 1px solid black;
+    width: 100px;
+    height: 70px;
+    margin-top: -560px;
+    margin-left: 660px;
+}
 .cred{
     margin-top: 240px;
 }
 .back{
     margin-left: 727px;
     margin-top: 49px;
+}
+
+.back1{
+    margin-left: 727px;
+    margin-top: 135px;
 }
