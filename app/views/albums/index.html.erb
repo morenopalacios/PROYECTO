@@ -1,16 +1,18 @@
 <h1>Listado de album</h1>
 <div id="albums">
 	<table>
-	    <tr>
-	      <th></th>
-	      <th colspan="3"></th>
-	    </tr>
+			 <thead>
+			    <tr>
+			      <th></th>
+			      <th colspan="3"></th>
+			    </tr>
+			 </thead>
 	    <tbody>
            <%= render @albums %>
-        </tbody>
+     </tbody>
 
 	</table>
 </div>
 <br>
 
-<%= link_to 'Nuevo Album', new_album_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %>
+<%= link_to 'Nuevo Album', new_album_path, :remote => true,  class: "btn btn-primary btn-xs" %>

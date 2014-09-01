@@ -1,6 +1,8 @@
-<%= simple_form_for(@album, :html => { :class => 'form-horizontal', 
-                                       :multipart => true,
-                                       remote: true } ) do |f| %>
+<%= simple_form_for(@album, :html => { :class     => 'form-horizontal', 
+                                       :remotipart => true,
+                                       :remote    => true } ) do |f| %>
+
+
   <%= f.error_notification %>
   <div class="field">
   	<%= f.label :image %>
