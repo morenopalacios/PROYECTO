@@ -2,9 +2,18 @@ class IncapacidadsController < ApplicationController
   
   before_action :set_incapacidad, only: [:show, :edit, :update, :destroy]
 
- 
+
+ def estadistica
+   @ano = Hash.new
+   @t1 = Incapacidad.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+   @t2 = Incapacidad.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+   @t3 = Incapacidad.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+   @t4 = Incapacidad.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+   @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+ end 
+
   def index
-        @incapacidads = Incapacidad.search(params[:search], params[:page]) 
+        @incapacidads = Incapacidad.search(params[:search], params[:page]).order('fechainicio ASC')
   end 
  
   def show 

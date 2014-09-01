@@ -1,0 +1,14 @@
+<%= image_tag ( Gchart.pie_3d(:size => '600x300',
+:theme => :thirty7signals,	
+:title => "incidentes x trimestre",
+:bg => 'efefef',
+:line_colors => 'B22222,0077CC, FFA500',
+:legend => @ano.keys,#["trimestre 1", "trimestre 2","trimestre 3","trimestre 4"],
+:data => @ano.values,
+:axis_range => [nil, [0,200,400,600,800,1000]],
+:axis_with_labels => 'x,y',
+:labels => @ano.values )) %>
+
+<%= link_to 'Atras', incidentes_path, :class=>'btn btn-info btn-xs' %>
+
+

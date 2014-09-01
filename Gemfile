@@ -56,6 +56,10 @@ end
 gem 'simple_form', "3.1.0.rc1"
 gem 'lazybox' #gema de bootsrap
 
+
 gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'remotipart'
+
+gem 'bootstrap-datepicker-rails'
+gem 'googlecharts'

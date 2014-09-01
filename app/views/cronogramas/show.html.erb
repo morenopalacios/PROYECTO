@@ -1,0 +1,31 @@
+<%- model_class = Cronograma -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:fecha) %>:</strong></dt>
+  <dd><%= @cronograma.fecha %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:lugar_salida) %>:</strong></dt>
+  <dd><%= @cronograma.lugar_salida %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:ficha_grupo) %>:</strong></dt>
+  <dd><%= @cronograma.ficha_grupo %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:tipo_salida_id) %>:</strong></dt>
+  <dd><%= @cronograma.tipo_salida_id %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:programa) %>:</strong></dt>
+  <dd><%= @cronograma.programa %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:descripcion) %>:</strong></dt>
+  <dd><%= @cronograma.descripcion %></dd>
+</dl>
+
+<div class="form-actions">
+  <%= link_to t('.back', :default => t("helpers.links.Atras")),
+              cronogramas_path, :class => 'btn-default btn-xs'  %>
+  <%= link_to t('.edit', :default => t("helpers.links.Editar")),
+              edit_cronograma_path(@cronograma), :class => 'btn btn-warning btn-xs' %>
+  <%= link_to t('.destroy', :default => t("helpers.links.Eliminar")),
+              cronograma_path(@cronograma),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'esta seguro de eliminar esto?')) },
+              :class => 'btn btn-danger btn-xs' %>
+</div>

@@ -1,0 +1,39 @@
+
+<%- model_class = Cronograma -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<br>
+<%= form_tag cronogramas_path, :method => 'get' do %> 
+<% content_tag :label do %> 
+Ingrese fecha:
+<%= text_field_tag :search, params[:search] %> 
+<%= submit_tag "Buscar", :fecha => nil %> 
+<% end %> 
+<% end %> 
+<br>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:fecha) %></th>
+      <th><%= model_class.human_attribute_name(:lugar_salida) %></th>
+      <th><%= model_class.human_attribute_name(:ficha_grupo) %></th>
+      <th><%= model_class.human_attribute_name(:tipo_salida_nombre) %></th>
+      <th><%= model_class.human_attribute_name(:programa) %></th>
+      <th><%= model_class.human_attribute_name(:descripcion) %></th>
+      <th colspan="3"><%=t '.actions', :default => t("helpers.Acciones") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @cronogramas %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.Nuevo cronograma")),
+            new_cronograma_path,
+            :class => 'btn btn-primary btn-xs',
+            :remote => true %>
+
+<%= will_paginate @cronogramas, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+<br>
+Cronogramas: <%= @cronogramas.count %>

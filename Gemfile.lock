@@ -56,6 +56,7 @@ GEM
     execjs (2.1.0)
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
+    googlecharts (1.6.8)
     hike (1.2.3)
     i18n (0.6.9)
     jbuilder (2.0.7)
@@ -169,6 +170,7 @@ DEPENDENCIES
   bootstrap-datepicker-rails
   bootstrap-sass
   coffee-rails (~> 4.0.0)
+  googlecharts
   jbuilder (~> 2.0)
   jquery-rails
   lazybox

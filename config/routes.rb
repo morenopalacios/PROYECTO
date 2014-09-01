@@ -49,8 +49,18 @@ Rails.application.routes.draw do
 
   resources :user_sessions
 
-  resources :users 
+  resources :users
 
+  resources :cronogramas
+
+  resources :tipo_salidas
+
+  get 'incidentes_estadistica',to: 'incidentes#estadistica', :as => 'incidentes_estadistica'
+  get 'riesgos_estadistica',to: 'riesgos#estadistica', :as => 'riesgos_estadistica'
+  get 'enfermedads_estadistica',to: 'enfermedads#estadistica', :as => 'enfermedads_estadistica'
+  get 'incapacidads_estadistica',to: 'incapacidads#estadistica', :as => 'incapacidads_estadistica'
+
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

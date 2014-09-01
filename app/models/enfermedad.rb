@@ -15,5 +15,10 @@ class Enfermedad < ActiveRecord::Base
     validates :descripcion, :presence => true 
     validates :fecha, :presence => true 
     validates :codigodediagnostico, :presence => true 
+
+     def self.estadistica_x_trimestre(fechIni, fechFin)
+      @t1 = Enfermedad.select('count(*) as numero_enfermedades').where('fecha between  ? and  ?',fechIni,fechFin)
+      @t1.pluck('count(*)').first
+  end
    
 end
