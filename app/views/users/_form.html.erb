@@ -1,3 +1,9 @@
+<div class="login">
+<%= image_tag("inicio.png") %> 
+</div>
+
+  <div id="formlogin1">
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -27,6 +33,8 @@
 </div> 
 
 <div class="actions">
-<%= f.submit "Guardar" %>
+<%= f.submit "Guardar", class: "btn btn-info btn-xs" %>
 </div>
 <% end %>
+
+</div>

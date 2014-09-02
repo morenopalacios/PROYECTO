@@ -1,15 +1,11 @@
 <tr id=<%= "enfermedad_#{enfermedad.id}" %>> 
-   <td>
-      <i class='icon-eye-view'></i>
-      <%= truncate(enfermedad.fecha) %>
-      
-   </td>
-        <td><%= enfermedad.funcionario.nombres rescue nil %></td>
-        <td><%= enfermedad.descripcion %></td>
-        <td><%= enfermedad.fecha %></td>
-        <td><%= enfermedad.codigodediagnostico %></td>
    
-   <td><%= link_to 'Mostrar', enfermedad, remote: true, class: "btn btn-primary btn-xs" %></td>
-   <td><%= link_to 'Editar', edit_enfermedad_path(enfermedad), remote: true, class: "btn btn-danger btn-xs" %></td>
-   <td><%= link_to 'Eliminar', enfermedad, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-warning btn-xs", remote: true %></td>
+	<td><%= enfermedad.funcionario.nombres rescue nil %></td>
+	<td><%= enfermedad.descripcion %></td>
+	<td><%= enfermedad.fecha %></td>
+	<td><%= enfermedad.codigodediagnostico %></td>
+   
+    <td><%= link_to 'Ver', enfermedad, remote: true, class: "btn btn-success btn-xs" %></td>
+    <td><%= link_to 'Editar', edit_enfermedad_path(enfermedad), remote: true, class: "btn btn-warning btn-xs" %></td>
+    <td><%= link_to 'Eliminar', enfermedad, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger btn-xs", remote: true %></td>
 </tr>

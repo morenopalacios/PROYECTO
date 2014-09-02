@@ -22,7 +22,7 @@
 </div> 
 
 <div class="field">
-  funcionarios <br>
+  funcionarios 
   <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
   "Seleccione Funcionario" %>
 </div>
@@ -30,7 +30,18 @@
 <div class="form-group">
    <label for="fecha" class="col-sm-2 control-label">Fecha</label>
    <div class="col-sm-4">
-      <%= f.input :fecha, class: "form-control", label: false %>
+     <%= f.text_field :fecha, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,
+
+        });
+    </script>
    </div>
 </div> 
 
@@ -129,7 +140,7 @@
  
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn­-sm btn­-success" %> 
+   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
    </div> 
 </div> 
  

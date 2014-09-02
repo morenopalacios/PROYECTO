@@ -39,11 +39,13 @@ gem 'spring',        group: :development
 # gem 'debugger', group: [:development, :test]
 
 gem 'will_paginate'
+
  
 
 gem 'sorcery' #gema de login
 
 gem 'bootstrap-sass'
+
 group :development do 
 gem 'better_errors' 
 gem 'binding_of_caller' , :platforms=>[:mri_19, :mri_20, :rbx] 
@@ -54,5 +56,8 @@ end
 gem 'simple_form', "3.1.0.rc1"
 gem 'lazybox' #gema de bootsrap
 
-gem 'bootstrap-datepicker-rails'
+
+gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails'
+gem 'paperclip'
+gem 'remotipart'
 gem 'googlecharts'

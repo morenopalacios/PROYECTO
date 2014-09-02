@@ -1,0 +1,114 @@
+
+<%= simple_form_for(@accidente) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="accidente">
+        <%= f.input :diligenciador %>
+        <%= f.input :eps %>
+        <%= f.input :afp %>
+        <%= f.input :arl %>
+        <%= f.input :documento %>
+        <div class="field">
+            Tipo de documento <br>
+            <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :tipo_de_vinculacion %>
+        <%= f.input :razon_social %>
+        <%= f.input :direccion_sede_principal %>
+        <%= f.input :direccion_reportada %>
+        <%= f.input :telefono_reportado %>
+        <%= f.input :actividad_economica_sede_principal %>
+        <%= f.input :codigo %>
+        <%= f.input :telefono_sede_principal %>
+        <%= f.input :fax_sede_principal %>
+        <%= f.input :email_sede_principal %>
+        <div class="field">
+            Departamento <br>
+            <%= f.collection_select :departamento_id, Departamento.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <div class="field">
+            Municipio <br>
+            <%= f.collection_select :municipio_id, Municipio.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :zona %>
+        <%= f.input :actividad_economica_centro_trabajo %>
+        <%= f.input :direccion_centro_trabajo %>
+        <%= f.input :telefono_ct %>
+        <%= f.input :fax_ct %>
+        <%= f.input :email_ct %>
+        <div class="field">
+            Departamento <br>
+            <%= f.collection_select :departamento1, Departamento.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <div class="field">
+            Municipio <br>
+            <%= f.collection_select :municipio1, Municipio.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <div class="field">
+            Funcionario <br>
+            <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :zona1 %>
+        <%= f.input :fecha_del_accidente %>
+        <%= f.input :hora_del_accidente %>
+        <%= f.input :dia_de_la_semana %>
+        <%= f.input :jornada_en_que_sucede %>
+        <%= f.input :realiza_su_labor %>
+        <%= f.input :ocupacion_no_habitual %>
+        <%= f.input :tiempo_laborado %>
+        <%= f.input :lugar_donde_ocurrio_el_at %>
+        <%= f.input :mecanismo_o_formato_del_at %>
+        <%= f.input :tipo_de_lesion %>
+        <%= f.input :sitio %>
+        <%= f.input :tipo_de_accidente %>
+        <%= f.input :parte_del_cuerpo_afectado %>
+        <%= f.input :agente_del_accidente %>
+        <div class="field">
+            Departamento <br>
+            <%= f.collection_select :departamento2, Departamento.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <div class="field">
+            Municipio <br>
+            <%= f.collection_select :municipio2, Municipio.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :zona2 %>
+        <%= f.input :mortal %>
+        <%= f.input :fecha_mortal %>
+        <%= f.input :descripcion_del_at %>
+        <%= f.input :hubo_personas_que_presenciaron_el_accidente %>
+        <%= f.input :testigo1 %>
+        <div class="field">
+            Tipo de documento <br>
+            <%= f.collection_select :tipodoc1, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :documento1 %>
+        <%= f.input :testigo2 %>
+        <div class="field">
+            Tipo de documento <br>
+            <%= f.collection_select :tipodoc2, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :documento2 %>
+        <%= f.input :responsable_informe %>
+        <div class="field">
+            Tipo de documento <br>
+            <%= f.collection_select :tipodoc3, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
+            "Seleccione" %>
+        </div>
+        <%= f.input :documento3 %>
+  
+
+  <div class="form-actions">
+    <%= f.submit "Guardar", class: "btn btn-warning" %>
+  </div>
+  </div>
+<% end %>

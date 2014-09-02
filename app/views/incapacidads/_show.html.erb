@@ -1,6 +1,3 @@
-<div class='formulario'> 
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br>
 <div class="incapacidad">
 
 <p id="notice"><%= notice %></p>
@@ -46,7 +43,7 @@
 
 </div>
 
-<%= button_to 'Editar', edit_incapacidad_path(@incapacidad),:method=>"get", class: "btn btn-primary btn-xs", remote: true  %>
-<%= link_to 'Atras', incapacidads_path %>
+<%= link_to 'Editar', edit_incapacidad_path(@incapacidad),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
+<%= link_to 'Atras', incapacidads_path, class: "btn btn-default btn-xs" %>
 <hr>
 </div>
