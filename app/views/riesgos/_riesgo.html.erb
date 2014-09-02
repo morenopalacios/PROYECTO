@@ -1,26 +1,17 @@
 <tr id=<%= "riesgo_#{riesgo.id}" %>> 
-    <td>
-      <i class='icon-eye-view'></i>
-      <%= truncate(riesgo.empresa) %>
-    </td>
-        <td><%= riesgo.empresa %></td>
-        <td><%= riesgo.funcionario.nombres rescue nil%></td>
-        <td><%= riesgo.fecha %></td>
-        <td><%= riesgo.areadeseccionopuestodetrabajo %></td>
-        <td><%= riesgo.clasederiesgo %></td>
-        <td><%= riesgo.factorderiesgo %></td>
-        <td><%= riesgo.fuentegeneradora %></td>
-        <td><%= riesgo.efectoconocido %></td>
-        <td><%= riesgo.numerodeexpuestos %></td>
-        <td><%= riesgo.tiempo %></td>
-        <td><%= riesgo.controlesexitentes %></td>
-        <td><%= riesgo.controlesrecomendados %></td>
-        <td><%= riesgo.consecuencia %></td>
-        <td><%= riesgo.exposicion %></td>
-        <td><%= riesgo.factordeponderacion %></td>
-        <td><%= riesgo.repercuciondelriesgo %></td>
-   
-  <td><%= link_to 'Ver', riesgo, remote: true, class: "btn btn-primary btn-xs" %></td>
-  <td><%= link_to 'Editar', edit_riesgo_path(riesgo), remote: true, class: "btn btn-danger btn-xs" %></td>
-   <td><%= link_to 'Eliminar', riesgo, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-warning btn-xs", remote: true %></td>
+
+    <td><%= riesgo.empresa %></td>
+    <td><%= riesgo.funcionario.nombres rescue nil%></td>
+    <td><%= riesgo.fecha %></td>
+    <td><%= riesgo.clasederiesgo %></td>
+    <td><%= riesgo.factorderiesgo %></td>
+    <td><%= riesgo.fuentegeneradora %></td>
+    <td><%= riesgo.efectoconocido %></td> 
+    <td><%= riesgo.tiempo %></td>
+    <td><%= riesgo.consecuencia %></td>
+    <td><%= riesgo.exposicion %></td>
+    <td><%= link_to 'Ver', riesgo, class: "btn btn-success btn-xs" %></td>
+    <td><%= link_to 'Editar', edit_riesgo_path(riesgo), class: "btn btn-warning btn-xs" %></td>
+    <td><%= link_to 'Eliminar', riesgo, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger btn-xs" %></td>
+    
 </tr>

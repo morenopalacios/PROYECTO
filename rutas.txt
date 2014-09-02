@@ -1,0 +1,131 @@
+                  Prefix Verb   URI Pattern                              Controller#Action
+       user_sessions_new GET    /user_sessions/new(.:format)             user_sessions#new
+    user_sessions_create GET    /user_sessions/create(.:format)          user_sessions#create
+   user_sessions_destroy GET    /user_sessions/destroy(.:format)         user_sessions#destroy
+                   users GET    /users(.:format)                         users#index
+                         POST   /users(.:format)                         users#create
+                new_user GET    /users/new(.:format)                     users#new
+               edit_user GET    /users/:id/edit(.:format)                users#edit
+                    user GET    /users/:id(.:format)                     users#show
+                         PATCH  /users/:id(.:format)                     users#update
+                         PUT    /users/:id(.:format)                     users#update
+                         DELETE /users/:id(.:format)                     users#destroy
+                    home GET    /home(.:format)                          static_pages#home
+                    help GET    /help(.:format)                          static_pages#help
+                   about GET    /about(.:format)                         static_pages#about
+                 contact GET    /contact(.:format)                       static_pages#contact
+                    root GET    /                                        static_pages#home
+       static_pages_home GET    /static_pages/home(.:format)             static_pages#home
+       static_pages_help GET    /static_pages/help(.:format)             static_pages#help
+    static_pages_contact GET    /static_pages/contact(.:format)          static_pages#contact
+      static_pages_about GET    /static_pages/about(.:format)            static_pages#about
+                   login GET    /login(.:format)                         user_sessions#new
+                  logout GET    /logout(.:format)                        user_sessions#destroy
+              incidentes GET    /incidentes(.:format)                    incidentes#index
+                         POST   /incidentes(.:format)                    incidentes#create
+           new_incidente GET    /incidentes/new(.:format)                incidentes#new
+          edit_incidente GET    /incidentes/:id/edit(.:format)           incidentes#edit
+               incidente GET    /incidentes/:id(.:format)                incidentes#show
+                         PATCH  /incidentes/:id(.:format)                incidentes#update
+                         PUT    /incidentes/:id(.:format)                incidentes#update
+                         DELETE /incidentes/:id(.:format)                incidentes#destroy
+            funcionarios GET    /funcionarios(.:format)                  funcionarios#index
+                         POST   /funcionarios(.:format)                  funcionarios#create
+         new_funcionario GET    /funcionarios/new(.:format)              funcionarios#new
+        edit_funcionario GET    /funcionarios/:id/edit(.:format)         funcionarios#edit
+             funcionario GET    /funcionarios/:id(.:format)              funcionarios#show
+                         PATCH  /funcionarios/:id(.:format)              funcionarios#update
+                         PUT    /funcionarios/:id(.:format)              funcionarios#update
+                         DELETE /funcionarios/:id(.:format)              funcionarios#destroy
+                 riesgos GET    /riesgos(.:format)                       riesgos#index
+                         POST   /riesgos(.:format)                       riesgos#create
+              new_riesgo GET    /riesgos/new(.:format)                   riesgos#new
+             edit_riesgo GET    /riesgos/:id/edit(.:format)              riesgos#edit
+                  riesgo GET    /riesgos/:id(.:format)                   riesgos#show
+                         PATCH  /riesgos/:id(.:format)                   riesgos#update
+                         PUT    /riesgos/:id(.:format)                   riesgos#update
+                         DELETE /riesgos/:id(.:format)                   riesgos#destroy
+            incapacidads GET    /incapacidads(.:format)                  incapacidads#index
+                         POST   /incapacidads(.:format)                  incapacidads#create
+         new_incapacidad GET    /incapacidads/new(.:format)              incapacidads#new
+        edit_incapacidad GET    /incapacidads/:id/edit(.:format)         incapacidads#edit
+             incapacidad GET    /incapacidads/:id(.:format)              incapacidads#show
+                         PATCH  /incapacidads/:id(.:format)              incapacidads#update
+                         PUT    /incapacidads/:id(.:format)              incapacidads#update
+                         DELETE /incapacidads/:id(.:format)              incapacidads#destroy
+             enfermedads GET    /enfermedads(.:format)                   enfermedads#index
+                         POST   /enfermedads(.:format)                   enfermedads#create
+          new_enfermedad GET    /enfermedads/new(.:format)               enfermedads#new
+         edit_enfermedad GET    /enfermedads/:id/edit(.:format)          enfermedads#edit
+              enfermedad GET    /enfermedads/:id(.:format)               enfermedads#show
+                         PATCH  /enfermedads/:id(.:format)               enfermedads#update
+                         PUT    /enfermedads/:id(.:format)               enfermedads#update
+                         DELETE /enfermedads/:id(.:format)               enfermedads#destroy
+    personalinvolucrados GET    /personalinvolucrados(.:format)          personalinvolucrados#index
+                         POST   /personalinvolucrados(.:format)          personalinvolucrados#create
+ new_personalinvolucrado GET    /personalinvolucrados/new(.:format)      personalinvolucrados#new
+edit_personalinvolucrado GET    /personalinvolucrados/:id/edit(.:format) personalinvolucrados#edit
+     personalinvolucrado GET    /personalinvolucrados/:id(.:format)      personalinvolucrados#show
+                         PATCH  /personalinvolucrados/:id(.:format)      personalinvolucrados#update
+                         PUT    /personalinvolucrados/:id(.:format)      personalinvolucrados#update
+                         DELETE /personalinvolucrados/:id(.:format)      personalinvolucrados#destroy
+            tiponovedads GET    /tiponovedads(.:format)                  tiponovedads#index
+                         POST   /tiponovedads(.:format)                  tiponovedads#create
+         new_tiponovedad GET    /tiponovedads/new(.:format)              tiponovedads#new
+        edit_tiponovedad GET    /tiponovedads/:id/edit(.:format)         tiponovedads#edit
+             tiponovedad GET    /tiponovedads/:id(.:format)              tiponovedads#show
+                         PATCH  /tiponovedads/:id(.:format)              tiponovedads#update
+                         PUT    /tiponovedads/:id(.:format)              tiponovedads#update
+                         DELETE /tiponovedads/:id(.:format)              tiponovedads#destroy
+                tipodocs GET    /tipodocs(.:format)                      tipodocs#index
+                         POST   /tipodocs(.:format)                      tipodocs#create
+             new_tipodoc GET    /tipodocs/new(.:format)                  tipodocs#new
+            edit_tipodoc GET    /tipodocs/:id/edit(.:format)             tipodocs#edit
+                 tipodoc GET    /tipodocs/:id(.:format)                  tipodocs#show
+                         PATCH  /tipodocs/:id(.:format)                  tipodocs#update
+                         PUT    /tipodocs/:id(.:format)                  tipodocs#update
+                         DELETE /tipodocs/:id(.:format)                  tipodocs#destroy
+                 centros GET    /centros(.:format)                       centros#index
+                         POST   /centros(.:format)                       centros#create
+              new_centro GET    /centros/new(.:format)                   centros#new
+             edit_centro GET    /centros/:id/edit(.:format)              centros#edit
+                  centro GET    /centros/:id(.:format)                   centros#show
+                         PATCH  /centros/:id(.:format)                   centros#update
+                         PUT    /centros/:id(.:format)                   centros#update
+                         DELETE /centros/:id(.:format)                   centros#destroy
+           user_sessions GET    /user_sessions(.:format)                 user_sessions#index
+                         POST   /user_sessions(.:format)                 user_sessions#create
+        new_user_session GET    /user_sessions/new(.:format)             user_sessions#new
+       edit_user_session GET    /user_sessions/:id/edit(.:format)        user_sessions#edit
+            user_session GET    /user_sessions/:id(.:format)             user_sessions#show
+                         PATCH  /user_sessions/:id(.:format)             user_sessions#update
+                         PUT    /user_sessions/:id(.:format)             user_sessions#update
+                         DELETE /user_sessions/:id(.:format)             user_sessions#destroy
+                         GET    /users(.:format)                         users#index
+                         POST   /users(.:format)                         users#create
+                         GET    /users/new(.:format)                     users#new
+                         GET    /users/:id/edit(.:format)                users#edit
+                         GET    /users/:id(.:format)                     users#show
+                         PATCH  /users/:id(.:format)                     users#update
+                         PUT    /users/:id(.:format)                     users#update
+                         DELETE /users/:id(.:format)                     users#destroy
+             cronogramas GET    /cronogramas(.:format)                   cronogramas#index
+                         POST   /cronogramas(.:format)                   cronogramas#create
+          new_cronograma GET    /cronogramas/new(.:format)               cronogramas#new
+         edit_cronograma GET    /cronogramas/:id/edit(.:format)          cronogramas#edit
+              cronograma GET    /cronogramas/:id(.:format)               cronogramas#show
+                         PATCH  /cronogramas/:id(.:format)               cronogramas#update
+                         PUT    /cronogramas/:id(.:format)               cronogramas#update
+                         DELETE /cronogramas/:id(.:format)               cronogramas#destroy
+            tipo_salidas GET    /tipo_salidas(.:format)                  tipo_salidas#index
+                         POST   /tipo_salidas(.:format)                  tipo_salidas#create
+         new_tipo_salida GET    /tipo_salidas/new(.:format)              tipo_salidas#new
+        edit_tipo_salida GET    /tipo_salidas/:id/edit(.:format)         tipo_salidas#edit
+             tipo_salida GET    /tipo_salidas/:id(.:format)              tipo_salidas#show
+                         PATCH  /tipo_salidas/:id(.:format)              tipo_salidas#update
+                         PUT    /tipo_salidas/:id(.:format)              tipo_salidas#update
+                         DELETE /tipo_salidas/:id(.:format)              tipo_salidas#destroy
+  incidentes_estadistica GET    /incidentes_estadistica(.:format)        incidentes#estadistica
+     riesgos_estadistica GET    /riesgos_estadistica(.:format)           riesgos#estadistica
+ enfermedads_estadistica GET    /enfermedads_estadistica(.:format)       enfermedads#estadistica
+incapacidads_estadistica GET    /incapacidads_estadistica(.:format)      incapacidads#estadistica

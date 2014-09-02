@@ -1,20 +1,4 @@
-.formulario{
-	width: 650px;
-	height: 470px;
-	border: 2px black solid;
-	overflow-x:scroll;
-	margin-top: 10px;
 
-}
-
-.enfermedad{
-    width: 540px;
-    height: 200px;
-    border: 2px black solid;
-    overflow-x:scroll;
-    margin-top: 10px;
-
-}
 
 /*table, th, td {
     border: 1px solid black;
@@ -31,69 +15,7 @@ thead {
 
 
  
-Estilos del menu principal con los modulos
-______________________________________________________________________________
 
-*/ 
-
-
-.menu{
-    list-style:none;
-    padding:0px;
-    margin:0px;
-
-}
-.menu li{
-    margin:0px;
-    padding:0px;
-    float:left;
-    position:relative;
-    top:1px;
-}
-.menu li a{
-    display: block;
-    width: 80px;
-    height: 50px;
-    padding: 7px;
-    line-height:30px;
-    text-decoration: none;
-    text-align: center;
-    color: #FFF;
-    background-color: #044687;
-    position: relative;
- 
-}
-.menu li .navc{
-    width: 80px;
-    height: 30px;
-    padding: 4px;
-}
-.menu li a:hover{
-    background-color:#033769;
-}
-.menu ul{
-    position:absolute;
-    left:10px;
-    top:37px;
-    margin:0px;
-    list-style:none;
-    padding:0px;
-    opacity:0;
-    transition:opacity .35s ease .2s;
-    -webkit-transition:opacity .35s ease .2s;
-    -moz-transition:opacity .35s ease .2s;
-    -o-transition:opacity .35s ease .2s;
-    visibility:hidden;  
-}
-.menu ul li a{
-    border-left:none;
-    display:block;
-    text-align:left;
-}
-.menu li:hover ul{
-    opacity:1;
-    visibility:visible;
-}
 
 .paginac{
     width: 100%;
@@ -110,7 +32,7 @@ ______________________________________________________________________________
 
 
 /*estilos de los pasos para manejar el software "inicio"*/
-/*Estilos para los pasos*/
+
 #pasos
 {
     max-width: 100%;
@@ -143,3 +65,77 @@ p{
     font-family: georgia;
 }
 
+/*galeria*/
+#albums{
+    width: 1300px;
+    height: 420px;
+    background-color: #f8f8f8;
+    border: 2px solid #3399ff;
+    border-radius: 5px;
+    z-index: 100;
+    opacity: 1;
+    box-shadow: 0 0px 10px #0066cc, 0 0px 5px #787878 inset;
+    overflow-y:scroll;
+    overflow-x:none;
+}
+.albm{
+    height: 200px;
+    width: 350px;
+    float: left;
+    position: relative;
+    margin: 20px 10px 6px 22px;
+    list-style: none;
+    border: 1px none #ddd;
+    padding: 13px 10px;
+    border: 1px solid #999;
+    box-shadow: 0px 0px 3px 2px gray;
+    border-radius: 5px;
+    background-color: #ffffff;
+    overflow-y:scroll;
+    overflow-x:none;
+}
+.recomendacionOrden{
+    text-align: center;
+}
+.orden{
+    border: 1px solid transparent;
+    width: 260px;
+    height: 70px;
+    color:black;
+    word-break: break-all;
+    word-wrap: break-word;
+    overflow-y:scroll;
+    overflow-x:scroll; 
+}
+
+/*logueo*/
+#formlogin{
+    border: 1px solid black;
+    width: 100px;
+    height: 70px;
+    margin-top: -520px;
+    margin-left: 660px;
+}
+#formlogin1{
+    border: 1px solid black;
+    width: 100px;
+    height: 70px;
+    margin-top: -560px;
+    margin-left: 660px;
+}
+.cred{
+    margin-top: 240px;
+}
+.back{
+    margin-left: 727px;
+    margin-top: 49px;
+}
+
+.back1{
+    margin-left: 727px;
+    margin-top: 135px;
+}
+
+.iniciar{
+    
+}

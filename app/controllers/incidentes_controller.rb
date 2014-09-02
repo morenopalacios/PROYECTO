@@ -1,11 +1,19 @@
 class IncidentesController < ApplicationController 
-  
+  #Incluimos el módulo definido en lib/models/grafica.rb
+ 
   before_action :set_incidente, only: [:show, :edit, :update, :destroy] 
  
-
+  def estadistica
+     @ano = Hash.new
+     @t1 = Incidente.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+     @t2 = Incidente.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+     @t3 = Incidente.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+     @t4 = Incidente.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+     @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+  end
  
   def index 
-        @incidentes = Incidente.search(params[:search], params[:page]) 
+      @incidentes = Incidente.search(params[:search], params[:page]).order('fecha_del_reporte ASC')
   end 
  
   def show 
@@ -17,18 +25,46 @@ class IncidentesController < ApplicationController
  
   def edit 
   end 
+
+  def create
+     
+     @incidente = Incidente.new(incidente_params) 
+     
+    respond_to do |format|
+      if @incidente.save
+        format.html { redirect_to @incidente, notice: 'incidente was successfully created.' }
+        format.json { render :show, status: :created, location: @incidente }
+      else
+        format.html { render :new }
+        format.json { render json: @incidente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
  
-  def create 
-       @incidente = Incidente.new(incidente_params) 
-       render action: :new unless @incidente.save 
-  end 
+
+  def update
+    respond_to do |format|
+      if @incidente.update(incidente_params)
+        format.html { redirect_to @incidente, notice: 'incidente was successfully updated.' }
+        format.json { render :show, status: :ok, location: @incidente }
+      else
+        format.html { render :edit }
+        format.json { render json: @incidente.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
  
-  def update 
-        render action: :edit unless @incidente.update_attributes(incidente_params) 
-  end 
+ 
  
   def destroy 
        @incidente.destroy 
+       respond_to do |format|
+          format.html { redirect_to incidentes_path, notice: 'incidente was successfully destroy.' }
+          format.json { render :show, status: :ok, location: @incidente }
+          
+       end 
+    
   end 
  
   private 

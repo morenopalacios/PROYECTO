@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140827140700) do
+ActiveRecord::Schema.define(version: 20140829182207) do
 
   create_table "accidentes", force: true do |t|
     t.string   "diligenciador"
@@ -81,11 +81,34 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
   add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
 
+  create_table "albums", force: true do |t|
+    t.text     "recomendacion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
   create_table "centros", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "cronogramas", force: true do |t|
+    t.date     "fecha"
+    t.string   "lugar_salida"
+    t.string   "ficha_grupo"
+    t.integer  "tipo_salida_id"
+    t.string   "programa"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cronogramas", ["tipo_salida_id"], name: "index_cronogramas_on_tipo_salida_id"
 
   create_table "departamentos", force: true do |t|
     t.string   "nombre"
@@ -94,9 +117,6 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   end
 
   create_table "enfermedads", force: true do |t|
-    t.integer  "centro_id"
-    t.integer  "tipodoc_id"
-    t.string   "documento"
     t.integer  "funcionario_id"
     t.string   "codigodediagnostico"
     t.datetime "created_at"
@@ -104,10 +124,6 @@ ActiveRecord::Schema.define(version: 20140827140700) do
     t.string   "descripcion"
     t.date     "fecha"
   end
-
-  add_index "enfermedads", ["centro_id"], name: "index_enfermedads_on_centro_id"
-  add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
-  add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
 
   create_table "funcionarios", force: true do |t|
     t.string   "nombres"
@@ -181,6 +197,13 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
   add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
 
+  create_table "logueos", force: true do |t|
+    t.string   "usuario"
+    t.string   "clave"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "municipios", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -215,6 +238,12 @@ ActiveRecord::Schema.define(version: 20140827140700) do
   end
 
   add_index "riesgos", ["funcionario_id"], name: "index_riesgos_on_funcionario_id"
+
+  create_table "tipo_salidas", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "tipodocs", force: true do |t|
     t.string   "nombre"

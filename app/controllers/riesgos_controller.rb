@@ -2,10 +2,18 @@ class RiesgosController  < ApplicationController
   
   before_action :set_riesgo, only: [:show, :edit, :update, :destroy] 
  
+  def estadistica
+     @ano = Hash.new
+     @t1 = Riesgo.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+     @t2 = Riesgo.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+     @t3 = Riesgo.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+     @t4 = Riesgo.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+     @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+  end
 
  
   def index 
-        @riesgos = Riesgo.search(params[:search], params[:page]) 
+    @riesgos = Riesgo.search(params[:search], params[:page]).order('fecha ASC') 
   end 
  
   def show 
@@ -17,20 +25,49 @@ class RiesgosController  < ApplicationController
  
   def edit 
   end 
+
+  def create
+     
+     @riesgo = Riesgo.new(riesgo_params) 
+
+    respond_to do |format|
+      if @riesgo.save
+        format.html { redirect_to @riesgo, notice: 'riesgo was successfully created.' }
+        format.json { render :show, status: :created, location: @riesgo }
+      else
+        format.html { render :new }
+        format.json { render json: @riesgo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+
+
  
-  def create 
-       @riesgo = Riesgo.new(riesgo_params) 
-       render action: :new unless @riesgo.save 
+def update
+    respond_to do |format|
+      if @riesgo.update(riesgo_params)
+        format.html { redirect_to @riesgo, notice: 'riesgo was successfully updated.' }
+        format.json { render :show, status: :ok, location: @riesgo }
+      else
+        format.html { render :edit }
+        format.json { render json: @riesgo.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+  
+ 
+def destroy 
+      @riesgo.destroy 
+       respond_to do |format|
+          format.html { redirect_to incidentes_path, notice: 'riesgo was successfully destroy.' }
+          format.json { render :show, status: :ok, location: @riesgo }
+          
+       end 
+    
   end 
  
-  def update 
-        render action: :edit unless @riesgo.update_attributes(riesgo_params) 
-  end 
- 
-  def destroy 
-       @riesgo.destroy 
-  end 
- 
+
   private 
   # Use callbacks to share common setup or constraints between actions. 
   def set_riesgo 

@@ -13,10 +13,13 @@
   </div> 
 <% end %> 
 
+<div class="funcionario">
+
+
 <h5>SISTEMA INTEGRADO DE GESTIÓN REPORTE INCIDENTE LABORALES</h5>
   
   <div class="field">
-    funcionarios <br>
+    funcionarios 
     <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
     "Seleccione Funcionario" %>
   </div>
@@ -29,15 +32,26 @@
  </div>
 
 <div class="field">
-    lugar de ocurrencia<br>
-    dentro de la entidad: <%= f.radio_button(:lugar_de_ocurrencia, true) %>
-    fuera de la entidad: <%= f.radio_button(:lugar_de_ocurrencia, false) %>
+    lugar de ocurrencia:
+    dentro de la entidad <%= f.radio_button(:lugar_de_ocurrencia, true) %>
+    fuera de la entidad <%= f.radio_button(:lugar_de_ocurrencia, false) %>
 </div>
 
 <div class="form-group">
    <label for="fecha_del_reporte" class="col-sm-2 control-label">Fecha_del_reporte</label>
    <div class="col-sm-4">
-      <%= f.input :fecha_del_reporte, class: "form-control", label: false %>
+      <%= f.text_field :fecha_del_reporte, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,
+
+        });
+    </script>
    </div>
  </div>
 
@@ -49,10 +63,8 @@
    </div>
 </div>
 
-
-<h5>PERSONAL INVOLUCRADO</h5>
 <div class="field">
-  personal  <br>
+  personal involucrado
   <%= f.collection_select :personalinvolucrado_id, Personalinvolucrado.all, :id, :nombre, class: "form-control", prompt:
   "Seleccione personal" %>
 </div> 
@@ -137,8 +149,13 @@
  
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn­-sm btn­-success" %> 
+   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
+
+
    </div> 
+</div> 
+
+
 </div> 
  
 <% end %> 

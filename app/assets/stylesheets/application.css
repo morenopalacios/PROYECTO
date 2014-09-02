@@ -17,8 +17,10 @@
  *= require lazybox 
  *= require_tree . 
  *= require_self 
+ *= require bootstrap-datepicker
  */ 
  
+
 
  /*Estilos del primer menu*/
 #menu1{

@@ -1,31 +1,22 @@
 <tr id=<%= "funcionario_#{funcionario.id}" %>> 
-   <td>
-      <i class='icon-eye-view'></i>
-      <%= truncate(funcionario.nombres) %>
-   </td>
+  
         <td><%= funcionario.nombres %></td>
         <td><%= funcionario.apellidos %></td>
         <td><%= funcionario.tipodoc.nombre rescue nil %></td>
-        <td><%= funcionario.identificacion %></td>
-        <td><%= funcionario.lugar_de_expedicion %></td>
-        <td><%= funcionario.lugar_de_nacimiento %></td>
-        <td><%= funcionario.fecha_de_nacimiento %></td>
+        <td><%= funcionario.identificacion %></td> 
         <td><%= funcionario.edad %></td>
         <td><%= mostrar_genero(funcionario.genero )%></td>
         <td><%= funcionario.telefono %></td>
-        <td><%= funcionario.mail %></td>
-        <td><%= funcionario.centro.nombre rescue nil %></td>
+        <td><%= funcionario.mail %></td> 
         <td><%= funcionario.cargo %></td>
         <td><%= funcionario.area %></td>
         <td><%= funcionario.codigo %></td>
-        <td><%= funcionario.fecha_de_ingreso %></td>
         <td><%= funcionario.antiguedad %></td>
-        <td><%= funcionario.funciones_principales %></td>
         <td><%= funcionario.eps %></td>
         <td><%= funcionario.afp %></td>
         <td><%= funcionario.arl %></td>
    
-   <td><%= link_to 'Mostrar', funcionario, remote: true, class: "btn btn-primary btn-xs" %></td>
-   <td><%= link_to 'Editar', edit_funcionario_path(funcionario), remote: true, class: "btn btn-danger btn-xs" %></td>
-   <td><%= link_to 'Eliminar', funcionario, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-warning btn-xs", remote: true %></td>
+   <td><%= link_to 'Ver', funcionario,  class: "btn btn-success btn-xs" %></td>
+   <td><%= link_to 'Editar', edit_funcionario_path(funcionario), class: "btn btn-warning btn-xs" %></td>
+   <td><%= link_to 'Eliminar', funcionario, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger btn-xs"  %></td>
 </tr>

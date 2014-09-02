@@ -1,9 +1,5 @@
 <div class='enfermedad'> 
 
-<br><br><br><br><br><br><br>
-<br><br><br><br><br><br>
-<div class="enfermedad">
-
 <p id="notice"><%= notice %></p>
 
 <p>
@@ -26,9 +22,9 @@
   <%= @enfermedad.codigodediagnostico %>
 </p>
 
-</div>
 
-<%= button_to 'Editar', edit_enfermedad_path(@enfermedad),:method=>"get", class: "btn btn-primary btn-xs", remote: true  %>
-<%= link_to 'Atras', enfermedads_path %>
+
+<%= link_to 'Editar', edit_enfermedad_path(@enfermedad),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
+<%= link_to 'Atras', enfermedads_path, class: "btn btn-default btn-xs" %>
 <hr>
 </div>

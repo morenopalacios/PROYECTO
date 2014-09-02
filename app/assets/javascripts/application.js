@@ -14,6 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require jquery.remotipart
 //= require lazybox 
 //= require_tree .
+//=require bootstrap-datepicker
+
+
 

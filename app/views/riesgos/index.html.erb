@@ -1,4 +1,3 @@
-<br><br><br><br><br><br><br>
 <h1>Listado riesgo</h1>
 	<%= form_tag riesgos_path, :method => 'get' do %>
 	<% content_tag :label do %>
@@ -8,7 +7,7 @@
 	<% end %>
 	<% end %>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Empresa</th>
@@ -16,13 +15,13 @@
       <th>Fecha</th>
       <th>Clase de riesgo</th>
       <th>Factor de riesgo</th>
-      <th>Efecto conocido</th>
-      <th>Numero de expuestos</th>
+      <td>fuente generadora </td>
+      <th>Efecto conocido</th> 
       <th>Tiempo</th>
       <th>Consecuencia</th>
       <th>Exposicion</th>
       
-      <th colspan="3">Acciones</th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -32,8 +31,10 @@
 </table>
 
 <br>
+<%= link_to 'Grafica de Riegos', riesgos_estadistica_path, remote: true %>
+<br>
  
-<%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%= link_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

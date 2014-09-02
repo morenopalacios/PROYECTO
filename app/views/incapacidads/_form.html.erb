@@ -23,7 +23,18 @@
    <div class="form­-group"> 
     <label for="name" class="col-­sm-­3 control­-label">Fecha inicio</label>  
     <div class="col­-md-­4"> 
-       <%= f.input_field :fechainicio, class: 'form­-control'  %> 
+       <%= f.text_field :fechainicio, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,
+
+        });
+    </script>
     </div> 
    </div>
 
@@ -31,7 +42,18 @@
    <div class="form­-group"> 
     <label for="name" class="col-­sm-­3 control­-label">Fecha terminacion</label>  
     <div class="col­-md-­4"> 
-       <%= f.input_field :fechaterminacion, class: 'form­-control' %> 
+        <%= f.text_field :fechaterminacion, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,
+
+        });
+    </script>
     </div> 
    </div>
 
@@ -72,7 +94,7 @@
  
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn­-sm btn­-success" %> 
+   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
    </div> 
 </div> 
  

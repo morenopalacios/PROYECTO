@@ -14,16 +14,16 @@ end
   belongs_to :centro
 
 
-    # validar un atributo booleano 
-    validates :genero, inclusion: [true, false] 
-    # Validar que los atributos sean obligatorios 
-    validates :nombres, :presence => true 
-    validates :apellidos, :presence => true 
-    validates :tipodoc_id, :presence => true 
-    validates :identificacion, :presence => true 
-    validates :lugar_de_expedicion, :presence => true 
-    validates :telefono, :presence => true 
-    validates :mail, :presence => true 
+  # validar un atributo booleano 
+  validates :genero, inclusion: [true, false] 
+  # Validar que los atributos sean obligatorios 
+  validates :nombres, :presence => true 
+  validates :apellidos, :presence => true 
+  validates :tipodoc_id, :presence => true 
+  validates :identificacion, :presence => true 
+  validates :lugar_de_expedicion, :presence => true 
+  validates :telefono, :presence => true 
+  validates :mail, :presence => true 
 	validates :centro_id, :presence => true 
 	validates :codigo, :presence => true 
 	validates :eps , :presence => true 
@@ -34,9 +34,9 @@ end
 	validates :edad , :presence => true 
 	validates :area , :presence => true 
 	validates :cargo, :presence => true 
-	validates :fecha_de_ingreso , :presence => true 
+	validates :fecha_de_ingreso, :presence => true 
 	validates :antiguedad , :presence => true 
-    validates :funciones_principales , :presence => true 
+  validates :funciones_principales , :presence => true 
     
      # validar que un atributos unicos
     validates :identificacion, uniqueness: { message: "No se puede Repetir" }

@@ -1,4 +1,3 @@
-<br><br><br><br><br>
 <h1>Listado incapacidad</h1>
 	<%= form_tag incapacidads_path, :method => 'get' do %>
 	<% content_tag :label do %>
@@ -8,7 +7,7 @@
 	<% end %>
 	<% end %>
 
-<table class="table">
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Funcionario</th>
@@ -30,8 +29,10 @@
 </table>
 
 <br>
+<%= link_to 'Grafica de incapacidades',  incapacidads_estadistica_path, remote: true %>
+<br>
  
-<%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%= link_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <%= will_paginate @incapacidads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

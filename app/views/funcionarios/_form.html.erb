@@ -13,7 +13,7 @@
   </div> 
 <% end %> 
  
-
+<div class="formulario" >
 
  <div class="form-group">
    <label for="nombres" class="col-sm-2 control-label">Nombres</label>
@@ -31,7 +31,7 @@
 
 
 <div class="field">
-  Tipodoc <br> 
+  Tipodoc
   <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
   "Seleccione tipo de documento " %>
 </div>
@@ -62,9 +62,21 @@
 <div class="form-group">
    <label for="fecha_de_nacimiento" class="col-sm-2 control-label">Fecha_de_nacimiento</label>
    <div class="col-sm-4">
-      <%= f.input :fecha_de_nacimiento, class: "form-control", label: false %>
+        <%= f.text_field :fecha_de_nacimiento, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,
+
+        });
+    </script>
    </div>
  </div>
+
 
  <div class="form-group">
    <label for="edad" class="col-sm-2 control-label">Edad</label>
@@ -90,7 +102,18 @@
  <div class="form-group">
    <label for="fecha_de_ingreso" class="col-sm-2 control-label">Fecha_de_ingreso</label>
    <div class="col-sm-4">
-      <%= f.input :fecha_de_ingreso, class: "form-control", label: false %>
+      <%= f.text_field :fecha_de_ingreso, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,
+
+        });
+    </script>
    </div>
  </div>
 
@@ -109,7 +132,7 @@
  </div>
 
 <div class="field">
-  Genero<br>
+  Genero
   Masculino: <%= f.radio_button(:genero, true) %>
   Femenino: <%= f.radio_button(:genero, false) %>
 </div>
@@ -121,9 +144,16 @@
    </div>
  </div>
 
+ <div class="form-group">
+   <label for="mail" class="col-sm-2 control-label">Email</label>
+   <div class="col-sm-4">
+      <%= f.input :mail, class: "form-control", label: false %>
+   </div>
+ </div>
+
 
 <div class="field">
-   Centro <br>
+   Centro
   <%= f.collection_select :centro_id, Centro.all, :id, :nombre, class: "form-control", prompt:
   "Seleccione Centro" %>
 </div>
@@ -159,8 +189,9 @@
 
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn­-sm btn­-success" %> 
+   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
    </div> 
 </div> 
- 
+
+</div>
 <% end %> 

@@ -1,4 +1,3 @@
-<br><br><br><br><br>
 <h1>Listado incidentes</h1>
 	<%= form_tag incidentes_path, :method => 'get' do %>
 	<% content_tag :label do %>
@@ -8,25 +7,21 @@
 	<% end %>
 	<% end %>
 
-<table class="table">
+
+<table class="table table-bordered">
   <thead>
     <tr>
-       <th>Funcionario</th>
+      
+      <th>Funcionario</th>
       <th>Area o proceso</th>
       <th>Lugar de ocurrencia</th>
       <th>Fecha del reporte</th>
-      <th>Hora del reporte</th>
-      <th>Personalinvolucrado</th>
+      <th>Personal involucrado</th>
       <th>Otro</th>
       <th>Especifique</th>
       <th>Nombre completo1</th>
       <th>Email1</th>
       <th>Telefono1</th>
-      <th>Nombre completo2</th>
-      <th>Email2</th>
-      <th>Telefono2</th>
-      
-      
       <th colspan="3">Opciones</th>
     </tr>
   </thead>
@@ -37,8 +32,10 @@
 </table>
 
 <br>
+<%= link_to 'Grafica de incidentes', incidentes_estadistica_path, remote: true %>
+<br>
  
-<%= button_to 'Nueva Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <%= will_paginate @incidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
