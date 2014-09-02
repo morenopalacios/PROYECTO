@@ -125,13 +125,12 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.date     "fecha"
   end
 
-<<<<<<< HEAD
+
   add_index "enfermedads", ["centro_id"], name: "index_enfermedads_on_centro_id"
   add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
   add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
 
-=======
->>>>>>> 5f086725b6d0265c7a57be6c449d6cc6c55396c8
+
   create_table "funcionarios", force: true do |t|
     t.string   "nombres"
     t.string   "apellidos"
