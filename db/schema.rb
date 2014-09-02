@@ -48,11 +48,6 @@ ActiveRecord::Schema.define(version: 20140831225923) do
   add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
   add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
 
-  create_table "estadisticas", force: true do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "funcionarios", force: true do |t|
     t.string   "nombres"
     t.string   "apellidos"

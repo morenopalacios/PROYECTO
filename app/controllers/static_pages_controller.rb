@@ -14,6 +14,8 @@ class StaticPagesController < ApplicationController
 
   def about
   end
+  def estadistica
+  end
 
   
 end

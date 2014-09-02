@@ -121,6 +121,9 @@ form { min­width: 300px; }
 /* footer */
 
 footer {
+  position: absolute;
+  bottom:0px;
+  width:100%;
   margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;

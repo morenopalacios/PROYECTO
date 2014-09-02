@@ -11,7 +11,10 @@ Rails.application.routes.draw do
   match '/home', to: 'static_pages#home',  via: 'get' 
   match '/help',to: 'static_pages#help',  via: 'get' 
   match '/about',   to: 'static_pages#about',  via: 'get' 
-  match '/contact', to: 'static_pages#contact',  via: 'get' 
+  match '/contact', to: 'static_pages#contact',  via: 'get'
+#estadistica
+ match '/estadistica', to: 'static_pages#estadistica',  via: 'get' 
+
  
   root :to => 'static_pages#home' 
 
@@ -26,6 +29,9 @@ Rails.application.routes.draw do
   get 'login' => 'user_sessions#new', :as => :login 
   
   get 'logout' => 'user_sessions#destroy', :as => :logout 
+
+  get 'static_pages/estadistica'
+
 
   resources :incidentes
 
