@@ -1,4 +1,5 @@
-<%= simple_form_for(@incidente, :html => {:class => 'form­horizontal' } ) do  |f| %>
+<div class="formulario">
+<%= simple_form_for(@incidente, :html => {:class => 'form­-horizontal' } ) do  |f| %>
 
   <% if @incidente.errors.any? %> 
       <div id="error_explanation"> 
@@ -13,32 +14,31 @@
   </div> 
 <% end %> 
 
-<div class="funcionario">
 
 
 <h5>SISTEMA INTEGRADO DE GESTIÓN REPORTE INCIDENTE LABORALES</h5>
   
   <div class="field">
-    funcionarios 
+    <b>Funcionarios </b> 
     <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
     "Seleccione Funcionario" %>
   </div>
 
 <div class="form-group">
-   <label for="area_o_proceso" class="col-sm-2 control-label">Área_o_proceso</label>
+   <label for="area_o_proceso" class="col-sm-2 control-label">Área o proceso</label>
    <div class="col-sm-4">
       <%= f.input :area_o_proceso, class: "form-control", label: false %>
    </div>
- </div>
+</div>
 
 <div class="field">
-    lugar de ocurrencia:
-    dentro de la entidad <%= f.radio_button(:lugar_de_ocurrencia, true) %>
-    fuera de la entidad <%= f.radio_button(:lugar_de_ocurrencia, false) %>
+    <b>Lugar de ocurrencia:</b> 
+    Dentro de la entidad <%= f.radio_button(:lugar_de_ocurrencia, true) %>
+    Fuera de la entidad <%= f.radio_button(:lugar_de_ocurrencia, false) %>
 </div>
 
 <div class="form-group">
-   <label for="fecha_del_reporte" class="col-sm-2 control-label">Fecha_del_reporte</label>
+  <label for="fecha_del_reporte" class="col-sm-2 control-label">Fecha del reporte</label>
    <div class="col-sm-4">
       <%= f.text_field :fecha_del_reporte, class: 'datepicker' %>
         <script type="text/javascript">
@@ -52,19 +52,19 @@
 
         });
     </script>
-   </div>
+ </div>
  </div>
 
 
 <div class="form-group">
-   <label for="hora_del_reporte" class="col-sm-2 control-label">Hora_del_reporte</label>
+   <label for="hora_del_reporte" class="col-sm-2 control-label">Hora del reporte</label>
    <div class="col-sm-4">
       <%= f.input :hora_del_reporte, class: "form-control", label: false %>
    </div>
 </div>
 
 <div class="field">
-  personal involucrado
+  <b> Personal involucrado</b> 
   <%= f.collection_select :personalinvolucrado_id, Personalinvolucrado.all, :id, :nombre, class: "form-control", prompt:
   "Seleccione personal" %>
 </div> 
@@ -85,7 +85,7 @@
 </div>
 
 <div class="form-group">
-   <label for="nombre_completo1" class="col-sm-2 control-label">Nombre_completo1</label>
+   <label for="nombre_completo1" class="col-sm-2 control-label">Nombre completo1</label>
    <div class="col-sm-4">
       <%= f.input :nombre_completo1, class: "form-control", label: false %>
    </div>
@@ -106,7 +106,7 @@
 </div>
 
 <div class="form-group">
-   <label for="nombre_completo2" class="col-sm-2 control-label">Nombre_completo2</label>
+   <label for="nombre_completo2" class="col-sm-2 control-label">Nombre ompleto2</label>
    <div class="col-sm-4">
       <%= f.input :nombre_completo2, class: "form-control", label: false %>
    </div>
@@ -127,21 +127,21 @@
 </div>
 
 <div class="form-group">
-   <label for="descripcion_del_evento" class="col-sm-2 control-label">Descripción_del_evento</label>
+   <label for="descripcion_del_evento" class="col-sm-2 control-label">Descripción del evento</label>
    <div class="col-sm-4">
       <%= f.input :descripcion_del_evento, class: "form-control", label: false %>
    </div>
 </div>
 
 <div class="form-group">
-   <label for="nombre_del_dilenciador" class="col-sm-2 control-label">Nombre_del_dilenciador</label>
+   <label for="nombre_del_dilenciador" class="col-sm-2 control-label">Nombre del dilenciador</label>
    <div class="col-sm-4">
       <%= f.input :nombre_del_dilenciador, class: "form-control", label: false %>
    </div>
 </div>
 
 <div class="form-group">
-   <label for="nombre_de_lider_de_informe" class="col-sm-2 control-label">Nombre_de_lider_de_informe</label>
+   <label for="nombre_de_lider_de_informe" class="col-sm-2 control-label">Nombre de lider de informe</label>
    <div class="col-sm-4">
       <%= f.input :nombre_de_lider_de_informe, class: "form-control", label: false %>
    </div>
@@ -149,13 +149,15 @@
  
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
-
-
+    <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
+    <%= link_to 'Atras', incidentes_path, class: "btn btn-default btn-xs" %>
    </div> 
 </div> 
 
 
-</div> 
  
 <% end %> 
+
+</div>
+
+
