@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.integer  "municipio1"
     t.string   "zona1"
     t.integer  "funcionario_id"
-    t.date     "fecha_del_accidente"
+    t.date     "fchAc"
     t.string   "hora_del_accidente"
     t.string   "dia_de_la_semana"
     t.string   "jornada_en_que_sucede"
@@ -75,11 +75,6 @@ ActiveRecord::Schema.define(version: 20140829182207) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
-  add_index "accidentes", ["departamento_id"], name: "index_accidentes_on_departamento_id"
-  add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
-  add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
-  add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
 
   create_table "albums", force: true do |t|
     t.text     "recomendacion"

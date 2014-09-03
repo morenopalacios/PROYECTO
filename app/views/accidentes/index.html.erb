@@ -38,7 +38,7 @@
       <tr>
         <td><%= accidente.diligenciador %></td>
         <td><%= accidente.funcionario.nombres rescue nil %></td>
-        <td><%= accidente.fecha_del_accidente %></td>
+        <td><%= accidente.fchAc %></td>
         <td><%= accidente.hora_del_accidente %></td>
         <td><%= accidente.dia_de_la_semana %></td>
         <td><%= accidente.lugar_donde_ocurrio_el_at %></td>
@@ -52,7 +52,7 @@
 
         <td><%= link_to 'Ver', accidente, class: "btn btn-success btn-xs" %></td>
         <td><%= link_to 'Editar', edit_accidente_path(accidente), class: "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Eliminar', accidente, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Seguro que quiere eliminar el registro?' } %></td>
+        <td><%= link_to 'Eliminar', accidente, class: "btn btn-danger btn-xs", method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
