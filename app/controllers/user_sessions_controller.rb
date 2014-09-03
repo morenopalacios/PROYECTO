@@ -10,7 +10,7 @@ class UserSessionsController < ApplicationController
      if @user = login(params[:email], params[:password]) 
        redirect_back_or_to(:home, notice: 'Bienvenido a SANO') 
      else 
-       flash.now[:alert] = 'Correo o Contraseña incorrecta' 
+       flash.now[:alert] = 'Falló el ingreso' 
        render action: 'new' 
      end 
   end 
