@@ -3,8 +3,18 @@ class AccidentesController < ApplicationController
 
   # GET /accidentes
   # GET /accidentes.json
+ def estadistica
+   @ano = Hash.new
+   @t1 = Accidente.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+   @t2 = Accidente.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+   @t3 = Accidente.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+   @t4 = Accidente.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+   @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+ end
+
+
   def index
-    @accidentes = Accidente.search(params[:search], params[:page])
+    @accidentes = Accidente.search(params[:search], params[:page]).order('fecha_del_accidente ACS')
   end
 
   # GET /accidentes/1
