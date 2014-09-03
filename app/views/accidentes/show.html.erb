@@ -1,5 +1,5 @@
 
-<div class="accidente">
+<div class="formulario">
 
 <p id="notice"><%= notice %></p>
 
@@ -293,7 +293,7 @@
   <%= @accidente.documento3 %>
 </p>
 
-<%= link_to 'Editar', edit_accidente_path(@accidente) %> |
-<%= link_to 'Atras', accidentes_path %>
+<%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %> |
+<%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
 
 </div>

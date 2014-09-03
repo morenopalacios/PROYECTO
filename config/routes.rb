@@ -25,7 +25,7 @@ Rails.application.routes.draw do
  match '/estadistica', to: 'static_pages#estadistica',  via: 'get' 
 
  
-  root :to => 'static_pages#home' 
+  root :to => 'user_sessions#new' 
 
   get 'static_pages/home'
 

@@ -31,7 +31,7 @@
 
 
 <div class="field">
-  Tipodoc
+  <b>Tipodoc</b> 
   <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
   "Seleccione tipo de documento " %>
 </div>
@@ -45,7 +45,7 @@
 
  
  <div class="form-group">
-   <label for="lugar_de_expedicion" class="col-sm-2 control-label">lugar_de_expedición</label>
+   <label for="lugar_de_expedicion" class="col-sm-2 control-label">Lugar de expedición</label>
    <div class="col-sm-4">
       <%= f.input :lugar_de_expedicion, class: "form-control", label: false %>
    </div>
@@ -53,14 +53,14 @@
 
 
 <div class="form-group">
-   <label for="lugar_de_nacimiento" class="col-sm-2 control-label">Lugar_de_nacimiento</label>
+   <label for="lugar_de_nacimiento" class="col-sm-2 control-label">Lugar de nacimiento</label>
    <div class="col-sm-4">
       <%= f.input :lugar_de_nacimiento, class: "form-control", label: false %>
    </div>
  </div>
 
 <div class="form-group">
-   <label for="fecha_de_nacimiento" class="col-sm-2 control-label">Fecha_de_nacimiento</label>
+   <label for="fecha_de_nacimiento" class="col-sm-2 control-label">Fecha de nacimiento</label>
    <div class="col-sm-4">
         <%= f.text_field :fecha_de_nacimiento, class: 'datepicker' %>
         <script type="text/javascript">
@@ -100,7 +100,7 @@
  </div>
 
  <div class="form-group">
-   <label for="fecha_de_ingreso" class="col-sm-2 control-label">Fecha_de_ingreso</label>
+   <label for="fecha_de_ingreso" class="col-sm-2 control-label">Fecha de ingreso</label>
    <div class="col-sm-4">
       <%= f.text_field :fecha_de_ingreso, class: 'datepicker' %>
         <script type="text/javascript">
@@ -125,14 +125,14 @@
  </div>
 
  <div class="form-group">
-   <label for="funciones_principales" class="col-sm-2 control-label">Funciones_principales</label>
+   <label for="funciones_principales" class="col-sm-2 control-label">Funciones principales</label>
    <div class="col-sm-4">
       <%= f.input :funciones_principales, class: "form-control", label: false %>
    </div>
  </div>
 
 <div class="field">
-  Genero
+  <b>Genero</b> 
   Masculino: <%= f.radio_button(:genero, true) %>
   Femenino: <%= f.radio_button(:genero, false) %>
 </div>
@@ -153,7 +153,7 @@
 
 
 <div class="field">
-   Centro
+   <b>Centro</b> 
   <%= f.collection_select :centro_id, Centro.all, :id, :nombre, class: "form-control", prompt:
   "Seleccione Centro" %>
 </div>

@@ -1,11 +1,13 @@
 <div class="login">
-<%= image_tag("inicio.png") %> 
+<%= image_tag("Final.gif") %> 
 </div>
 
 <div id="formlogin">
  
-
 <%= form_tag user_sessions_path, :method => :post do %> 
+
+<h3>Iniciar Session</h3>
+
 
    <div class="field"> 
     <%= label_tag :email %><br /> 
@@ -21,4 +23,5 @@
     <%= submit_tag "Ingresar", class: "btn btn-info btn-xs" %> 
   </div> 
 <% end %>
+
 </div>

@@ -2,7 +2,7 @@
 <%= simple_form_for(@accidente) do |f| %>
   <%= f.error_notification %>
 
-  <div class="accidente">
+  <div class="formulario">
         <%= f.input :diligenciador %>
         <%= f.input :eps %>
         <%= f.input :afp %>
@@ -108,7 +108,7 @@
   
 
   <div class="form-actions">
-    <%= f.submit "Guardar", class: "btn btn-warning" %>
+    <%= f.submit "Guardar", class: "btn btn-warning btn-xs" %>
   </div>
   </div>
 <% end %>

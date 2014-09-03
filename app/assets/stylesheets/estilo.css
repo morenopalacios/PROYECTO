@@ -67,7 +67,7 @@ p{
 
 /*galeria*/
 #albums{
-    width: 1300px;
+    width: 1270px;
     height: 420px;
     background-color: #f8f8f8;
     border: 2px solid #3399ff;
@@ -77,6 +77,7 @@ p{
     box-shadow: 0 0px 10px #0066cc, 0 0px 5px #787878 inset;
     overflow-y:scroll;
     overflow-x:none;
+    margin-left: 8px;
 }
 .albm{
     height: 200px;
@@ -110,32 +111,44 @@ p{
 
 /*logueo*/
 #formlogin{
-    border: 1px solid black;
-    width: 100px;
+    border: 1px solid transparent;
+    width: 200px;
     height: 70px;
-    margin-top: -520px;
-    margin-left: 660px;
+    margin-top: -390px;
+    margin-left: 910px;
 }
+
 #formlogin1{
-    border: 1px solid black;
+    border: 1px solid transparent;
     width: 100px;
     height: 70px;
-    margin-top: -560px;
-    margin-left: 660px;
+    margin-top: -480px;
+    margin-left: 895px;
 }
 .cred{
-    margin-top: 240px;
+    margin-top: 300px;
 }
 .back{
-    margin-left: 727px;
-    margin-top: 49px;
+    margin-left: 975px;
+    margin-top: 105px;
 }
 
 .back1{
-    margin-left: 727px;
-    margin-top: 135px;
+    margin-left: 960px;
+    margin-top: 208px;
 }
 
-.iniciar{
-    
+
+.login{
+
+margin: 0px auto;
+background-position: 60% 100%;
+background-repeat: no-repeat;
+margin-top: -80px;
+margin-left: -10px;
+
+
+
 }
+
+
