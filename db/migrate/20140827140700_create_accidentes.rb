@@ -29,7 +29,7 @@ class CreateAccidentes < ActiveRecord::Migration
       t.integer :municipio1
       t.string :zona1
       t.references :funcionario, index: true
-      t.date :fecha_del_accidente
+      t.date :fchAc
       t.string :hora_del_accidente
       t.string :dia_de_la_semana
       t.string :jornada_en_que_sucede
