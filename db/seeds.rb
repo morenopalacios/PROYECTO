@@ -61,9 +61,20 @@ tipo_salidas.each do | tipo_salida |
 end
 
 
+tiporiesgos = [{nombre: "Clase I, de Riesgo Mínimo"}, {nombre: "Clase II, de Riesgo Bajo"}, {nombre: "Clase III, de Riesgo Medio"}, {nombre: "Clase IV, de Riesgo Alto"}, {nombre: "Clase V, de Riesgo Máximo"}]
+
+tiporiesgos.each do | tiporiesgo |
+
+	Tiporiesgo.where(tiporiesgo ).first_or_create		
+end
 
 
+tipoincapacidads = [{nombre: "Incapacidad Laboral Transitoria"}, {nombre: "Invalidez Provisional"}, {nombre: "Invalidez Permanente"}, {nombre: "Incapacidad Permanente Parcial"}, {nombre: "Incapacidad Permanente Total"}, {nombre: "Incapacidad Permanente Absoluta"}, {nombre: "Gran Invalidez"}]
 
+tipoincapacidads.each do | tipoincapacidad |
+
+	Tipoincapacidad.where(tipoincapacidad).first_or_create		
+end
 
 
 
