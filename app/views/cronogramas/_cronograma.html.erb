@@ -2,7 +2,7 @@
    <td><%= cronograma.fecha %></td>
    <td><%= cronograma.lugar_salida %></td>
    <td><%= cronograma.ficha_grupo %></td>
-   <td><%= cronograma.tipo_salida_id %></td>
+   <td><%= cronograma.tipo_salida_nombre rescue nil %></td>
    <td><%= cronograma.programa %></td>
    <td><%= cronograma.descripcion %></td>
    <td><%= link_to 'Ver', cronograma, :class => 'btn btn-success btn-xs' %></td>

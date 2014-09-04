@@ -14,7 +14,7 @@ class AccidentesController < ApplicationController
 
 
   def index
-    @accidentes = Accidente.search(params[:search], params[:page]).order('fecha_del_accidente ACS')
+    @accidentes = Accidente.search(params[:search], params[:page]).order('fchAc ASC')
   end
 
   # GET /accidentes/1

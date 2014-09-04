@@ -59,12 +59,11 @@
 </table>
 
 
-<br>
-<%= link_to 'Consultar grafica', accidentes_estadistica_path, class: "btn btn-primary btn-xs" %>
-
-
 <%= link_to 'Nuevo Accidente', new_accidente_path, class: "btn btn-primary btn-xs" %>
 
+<br><br>
+<%= link_to 'Consultar grafica', accidentes_estadistica_path, remote: true, class: "btn btn-info btn-xs" %>
+<br>
 <%= will_paginate @accidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
 &raquo;' %>
 <br>

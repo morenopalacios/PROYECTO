@@ -78,6 +78,7 @@ Rails.application.routes.draw do
   get 'riesgos_estadistica',to: 'riesgos#estadistica', :as => 'riesgos_estadistica'
   get 'enfermedads_estadistica',to: 'enfermedads#estadistica', :as => 'enfermedads_estadistica'
   get 'incapacidads_estadistica',to: 'incapacidads#estadistica', :as => 'incapacidads_estadistica'
+  get 'accidentes_estadistica',to: 'accidentes#estadistica', :as => 'accidentes_estadistica'
 
   
   # The priority is based upon order of creation: first created -> highest priority.
