@@ -46,7 +46,12 @@ class FuncionariosController < ApplicationController
   end
  
   def destroy 
-       @funcionario.destroy 
+       @funcionario.destroy
+       respond_to do |format|
+          format.html { redirect_to funcionarios_path, notice: 'funcionario was successfully destroy.' }
+          format.json { render :show, status: :ok, location: @funcionario }
+          
+       end
   end 
  
   private 

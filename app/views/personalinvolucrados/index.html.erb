@@ -1,6 +1,6 @@
-<h1>Listing personalinvolucrados</h1>
+<h1>Lista de  personal involucrado</h1>
 
-<table>
+<table class="table table-bordered">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -12,9 +12,9 @@
     <% @personalinvolucrados.each do |personalinvolucrado| %>
       <tr>
         <td><%= personalinvolucrado.nombre %></td>
-        <td><%= link_to 'Show', personalinvolucrado %></td>
-        <td><%= link_to 'Edit', edit_personalinvolucrado_path(personalinvolucrado) %></td>
-        <td><%= link_to 'Destroy', personalinvolucrado, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', personalinvolucrado %></td>
+        <td><%= link_to 'Editar', edit_personalinvolucrado_path(personalinvolucrado) %></td>
+        <td><%= link_to 'Eliminar', personalinvolucrado, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Personalinvolucrado', new_personalinvolucrado_path %>
+<%= link_to 'Nuevo Personal involucrado', new_personalinvolucrado_path %>

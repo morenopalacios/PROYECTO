@@ -1,7 +1,7 @@
 class Accidente < ActiveRecord::Base
 	def self.search(search, page)
-		where(['upper(fecha_del_accidente) like ?',
-		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fecha_del_accidente")
+		where(['upper(fchAc) like ?',
+		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fchAc")
 	end
   belongs_to :tipodoc
   belongs_to :departamento
@@ -37,7 +37,7 @@ validates :departamento1, :presence => true
 validates :municipio1, :presence => true
 validates :zona1, :presence => true
 #validates :funcionario_id, :presence => true
-validates :fecha_del_accidente, :presence => true
+validates :fchAc, :presence => true
 validates :hora_del_accidente, :presence => true
 validates :dia_de_la_semana, :presence => true
 validates :jornada_en_que_sucede, :presence => true

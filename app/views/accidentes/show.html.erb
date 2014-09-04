@@ -145,7 +145,7 @@
 
 <p>
   <strong>Fecha del accidente:</strong>
-  <%= @accidente.fecha_del_accidente %>
+  <%= @accidente.fchAc %>
 </p>
 
 <p>
@@ -293,7 +293,8 @@
   <%= @accidente.documento3 %>
 </p>
 
-<%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %> |
-<%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
+<p class="text-center"><%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %> |
+                       <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
+</p>
 
 </div>
