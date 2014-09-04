@@ -12,6 +12,8 @@
   </ul> 
   </div> 
 <% end %> 
+
+
  
 <div class="formulario" >
 
@@ -50,7 +52,6 @@
       <%= f.input :lugar_de_expedicion, class: "form-control", label: false %>
    </div>
  </div>
-
 
 <div class="form-group">
    <label for="lugar_de_nacimiento" class="col-sm-2 control-label">Lugar de nacimiento</label>
@@ -148,6 +149,7 @@
    <label for="mail" class="col-sm-2 control-label">Email</label>
    <div class="col-sm-4">
       <%= f.input :mail, class: "form-control", label: false %>
+
    </div>
  </div>
 
@@ -190,6 +192,8 @@
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
    <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
+   <%= link_to 'Atras', funcionarios_path, class: "btn btn-default btn-xs" %>
+
    </div> 
 </div> 
 

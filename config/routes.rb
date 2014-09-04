@@ -48,8 +48,6 @@ Rails.application.routes.draw do
 
   resources :personalinvolucrados
 
-  resources :tiponovedads
-
   resources :tipodocs
 
   resources :centros

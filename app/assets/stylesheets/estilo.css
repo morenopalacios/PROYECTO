@@ -140,15 +140,17 @@ p{
 
 
 .login{
-
 margin: 0px auto;
 background-position: 60% 100%;
 background-repeat: no-repeat;
 margin-top: -80px;
 margin-left: -10px;
 
-
-
 }
 
+.atrasediperfil{
+  margin-left: 95px;
+  margin-top: -32px;
+
+}
 
