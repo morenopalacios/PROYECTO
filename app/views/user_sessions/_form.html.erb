@@ -2,26 +2,28 @@
 <%= image_tag("Final.gif") %> 
 </div>
 
-<div id="formlogin">
- 
-<%= form_tag user_sessions_path, :method => :post do %> 
-
-<h3>Iniciar Session</h3>
-
-
-   <div class="field"> 
-    <%= label_tag :email %><br /> 
-    <%= text_field_tag :email %> 
-  </div> 
-
-  <div class="field"> 
-    <%= label_tag :password %><br /> 
-    <%= password_field_tag :password %> 
-  </div>
+<div>
+  <div id="formlogin">
    
-  <div class="actions"> 
-    <%= submit_tag "Ingresar", class: "btn btn-info btn-xs" %> 
-  </div> 
-<% end %>
+  <%= form_tag user_sessions_path, :method => :post do %> 
 
+  <h3>Iniciar Session</h3>
+
+
+     <div class="field"> 
+      <%= label_tag :email %><br /> 
+      <%= text_field_tag :email %> 
+    </div> 
+
+    <div class="field"> 
+      <%= label_tag :password %><br /> 
+      <%= password_field_tag :password %> 
+    </div>
+     
+    <div class="actions"> 
+      <%= submit_tag "Ingresar", class: "btn btn-info btn-xs" %> 
+    </div> 
+  <% end %>
+
+  </div>
 </div>

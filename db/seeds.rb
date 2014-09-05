@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-<<<<<<< HEAD
+
 
 
 
@@ -86,9 +86,6 @@ end
 
 
 
-
-
-=======
 municipios=[{nombre:"Santafé de Bogotá"},{nombre:"Puerto Nariño"},{nombre:"Leticia"},
 {nombre:"Medellín"},{nombre:"Abejorral"},{nombre:"Abriaqui"},{nombre:"Alejandría"},{nombre:"Amagá"},
 {nombre:"Amalfi"},{nombre:"Andes"},{nombre:"Angelópolis"},{nombre:"Angostura"},{nombre:"Anorí"},
@@ -871,4 +868,3 @@ departamentos=[{nombre:"Amazonas"},{nombre:"Antioquia"},{nombre:"Arauca"},{nombr
 departamentos.each do |departamento|
 	Departamento.create(departamento)
 end
->>>>>>> 5d7de7d3c8249b507afac754ea01827ad17d0de6
