@@ -1,4 +1,4 @@
-<h1>Listing departamentos</h1>
+<h1>Lista de departamentos</h1>
 
 <table>
   <thead>
@@ -12,9 +12,9 @@
     <% @departamentos.each do |departamento| %>
       <tr>
         <td><%= departamento.nombre %></td>
-        <td><%= link_to 'Show', departamento %></td>
-        <td><%= link_to 'Edit', edit_departamento_path(departamento) %></td>
-        <td><%= link_to 'Destroy', departamento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', departamento %></td>
+        <td><%= link_to 'Editar', edit_departamento_path(departamento) %></td>
+        <td><%= link_to 'Eliminar', departamento, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -22,4 +22,4 @@
 
 <br>
 
-<%= link_to 'New Departamento', new_departamento_path %>
+<%= link_to 'Nuevo Departamento', new_departamento_path %>

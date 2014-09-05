@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
 
+  resources :tipoaccidentes
+
   resources :albums
 
   resources :accidentes
