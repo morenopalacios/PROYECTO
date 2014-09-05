@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-<<<<<<< HEAD
+
   resources :tipoincapacidads
 
   resources :tipoenfermedads
@@ -9,9 +9,8 @@ Rails.application.routes.draw do
   resources :tiporiesgos
 
   resources :tipoincidentes
-=======
+
   resources :tipoaccidentes
->>>>>>> 3dfa728ed55248615dd94972eeaf56e7e73499ee
 
   resources :albums
 
