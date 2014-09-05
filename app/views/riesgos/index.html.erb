@@ -30,11 +30,13 @@
   </tbody>
 </table>
 
+ 
+<%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %>
+
 <br>
-<%= link_to 'Grafica de Riegos', riesgos_estadistica_path, remote: true %>
+<%= link_to 'Grafica de Riegos', riesgos_estadistica_path, remote: true, class: "btn btn-info btn-xs" %>
 <br>
  
-<%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
