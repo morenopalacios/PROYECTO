@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20140904140613) do
+=======
+ActiveRecord::Schema.define(version: 20140904132905) do
+>>>>>>> 3dfa728ed55248615dd94972eeaf56e7e73499ee
 
   create_table "accidentes", force: true do |t|
     t.string   "diligenciador"
@@ -235,6 +239,12 @@ ActiveRecord::Schema.define(version: 20140904140613) do
   add_index "riesgos", ["funcionario_id"], name: "index_riesgos_on_funcionario_id"
 
   create_table "tipo_salidas", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tipoaccidentes", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"

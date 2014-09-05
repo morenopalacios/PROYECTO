@@ -853,7 +853,7 @@ municipios=[{nombre:"Santafé de Bogotá"},{nombre:"Puerto Nariño"},{nombre:"Le
 {nombre:"Cumaribo"}]
 
 municipios.each do |municipio|
-	     			Municipio.create(municipio) 
+	     			Municipio.where(municipio).first_or_create 
 	   			end
 
 
@@ -866,5 +866,16 @@ departamentos=[{nombre:"Amazonas"},{nombre:"Antioquia"},{nombre:"Arauca"},{nombr
 	{nombre:"Valle del Cauca"},{nombre:"Vaupés"},{nombre:"Vichada"} ]
 	
 departamentos.each do |departamento|
+<<<<<<< HEAD
 	Departamento.create(departamento)
 end
+=======
+	Departamento.where(departamento).first_or_create
+end
+tipoaccidentes=[{nombre:"Leve"},{nombre:"Grave"},{nombre:"Mortal"},{nombre:"In Itinere"},{nombre:"Con Baja"},
+{nombre:"Sin Baja"}]
+
+tipoaccidentes.each do |tipoaccidente|
+	Tipoaccidente.where(tipoaccidente).first_or_create
+end
+>>>>>>> 3dfa728ed55248615dd94972eeaf56e7e73499ee
