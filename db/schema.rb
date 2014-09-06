@@ -76,11 +76,6 @@ ActiveRecord::Schema.define(version: 20140904140613) do
     t.datetime "updated_at"
   end
 
-  add_index "accidentes", ["departamento_id"], name: "index_accidentes_on_departamento_id"
-  add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
-  add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
-  add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
-
   create_table "albums", force: true do |t|
     t.text     "recomendacion"
     t.datetime "created_at"
@@ -270,6 +265,12 @@ ActiveRecord::Schema.define(version: 20140904140613) do
   end
 
   create_table "tipoincidentes", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tiponovedads", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
