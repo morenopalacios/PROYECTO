@@ -15,6 +15,7 @@ class StaticPagesController < ApplicationController
   def about
   end
   def estadistica
+     tipo = params[:grafica] if params[:grafica]
   end
 
   

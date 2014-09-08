@@ -1,6 +1,10 @@
 h2{
 color:blue;
 }
+h3{
+	color:blue;
+	margin-left: 20px;
+}
 #estadis{
  margin: 0px auto;
 
@@ -11,4 +15,11 @@ right: 0px;
 bottom: 35px;
 
 
+}
+.imagen{
+	float:left;
+	size:20px 10px 5px 5px;
+	margin-left: 50px;
+	max-width:70px;
+	max-height: 50px;
 }

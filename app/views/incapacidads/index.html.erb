@@ -31,10 +31,7 @@
 <%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <br>
-<%= link_to 'Grafica de incapacidades',  incapacidads_estadistica_path, remote: true, class: "btn btn-info btn-xs"  %>
-<br>
  
-
 <%= will_paginate @incapacidads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
 Incapacidads: <%= @incapacidads.count %>
