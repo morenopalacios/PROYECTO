@@ -1,4 +1,4 @@
-<div class="formulario">
+
 
 <%= simple_form_for(@riesgo, :html => {:class => 'form­-horizontal' } ) do  |f| %>
 
@@ -15,8 +15,24 @@
   </div> 
 <% end %> 
  
+<div class="formulario">
 
-<div class="form-group">
+<div class="container-fluid">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#home" role="tab" data-toggle="tab">Pantalla 1</a></li>
+      <li><a href="#profile" role="tab" data-toggle="tab">Pantalla 2</a></li>
+      <li><a href="#messages" role="tab" data-toggle="tab">Pantalla 3</a></li>
+    </ul>
+
+   
+    <br>
+
+    <!-- Tab panes 1-->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <div class="form-group">
    <label for="empresa" class="col-sm-2 control-label">Empresa</label>
    <div class="col-sm-4">
       <%= f.input :empresa, class: "form-control", label: false %>
@@ -54,12 +70,12 @@
    </div>
 </div> 
 
-<div class="form-group">
-   <label for="clasederiesgo" class="col-sm-2 control-label">Clase de riesgo</label>
-   <div class="col-sm-4">
-      <%= f.input :clasederiesgo, class: "form-control", label: false %>
-   </div>
-</div> 
+
+<div class="field">
+  <b>Tipo de riesgo</b> 
+  <%= f.collection_select :tiporiesgo_id, Tiporiesgo.all, :id, :nombre, class: "form-control", prompt:
+  "Seleccione Tipo de riesgo" %>
+</div>
 
 <div class="form-group">
    <label for="factorderiesgo" class="col-sm-2 control-label">Factor de riesgo</label>
@@ -68,89 +84,104 @@
    </div>
 </div> 
 
-<div class="form-group">
-   <label for="fuentegeneradora" class="col-sm-2 control-label">Fuente generadora</label>
-   <div class="col-sm-4">
-      <%= f.input :fuentegeneradora, class: "form-control", label: false %>
-   </div>
-</div> 
 
-<div class="form-group">
-   <label for="efectoconocido" class="col-sm-2 control-label">Efecto conocido</label>
-   <div class="col-sm-4">
-      <%= f.input :efectoconocido, class: "form-control", label: false %>
-   </div>
-</div> 
+</div>
 
-<div class="form-group">
-   <label for="numerodeexpuestos" class="col-sm-2 control-label">Numero de expuestos</label>
-   <div class="col-sm-4">
-      <%= f.input :numerodeexpuestos, class: "form-control", label: false %>
-   </div>
-</div> 
+    <!-- Tab panes 2-->
+  <div class="tab-pane" id="profile">     
+      <div class="form-group">
+         <label for="fuentegeneradora" class="col-sm-2 control-label">Fuente generadora</label>
+       <div class="col-sm-4">
+          <%= f.input :fuentegeneradora, class: "form-control", label: false %>
+       </div>
+     </div> 
 
-<div class="form-group">
-   <label for="tiempo" class="col-sm-2 control-label">Tiempo</label>
-   <div class="col-sm-4">
-      <%= f.input :tiempo, class: "form-control", label: false %>
-   </div>
-</div> 
+    <div class="form-group">
+       <label for="efectoconocido" class="col-sm-2 control-label">Efecto conocido</label>
+       <div class="col-sm-4">
+          <%= f.input :efectoconocido, class: "form-control", label: false %>
+       </div>
+    </div> 
 
-<div class="form-group">
-   <label for="controlesexitentes" class="col-sm-2 control-label">Controles exitentes</label>
-   <div class="col-sm-4">
-      <%= f.input :controlesexitentes, class: "form-control", label: false %>
-   </div>
-</div> 
+    <div class="form-group">
+       <label for="numerodeexpuestos" class="col-sm-2 control-label">Numero de expuestos</label>
+       <div class="col-sm-4">
+          <%= f.input :numerodeexpuestos, class: "form-control", label: false %>
+       </div>
+    </div> 
 
-<div class="form-group">
-   <label for="controlesrecomendados" class="col-sm-2 control-label">Controles recomendados</label>
-   <div class="col-sm-4">
-      <%= f.input :controlesrecomendados, class: "form-control", label: false %>
-   </div>
-</div> 
+    <div class="form-group">
+       <label for="tiempo" class="col-sm-2 control-label">Tiempo</label>
+       <div class="col-sm-4">
+          <%= f.input :tiempo, class: "form-control", label: false %>
+       </div>
+    </div> 
 
-<div class="form-group">
-   <label for="consecuencia" class="col-sm-2 control-label">Consecuencia</label>
-   <div class="col-sm-4">
-      <%= f.input :consecuencia, class: "form-control", label: false %>
-   </div>
-</div> 
+    <div class="form-group">
+       <label for="controlesexitentes" class="col-sm-2 control-label">Controles exitentes</label>
+       <div class="col-sm-4">
+          <%= f.input :controlesexitentes, class: "form-control", label: false %>
+       </div>
+    </div> 
 
-<div class="form-group">
-   <label for="exposicion" class="col-sm-2 control-label">Exposición</label>
-   <div class="col-sm-4">
-      <%= f.input :exposicion, class: "form-control", label: false %>
-   </div>
-</div> 
+    <div class="form-group">
+       <label for="controlesrecomendados" class="col-sm-2 control-label">Controles recomendados</label>
+       <div class="col-sm-4">
+          <%= f.input :controlesrecomendados, class: "form-control", label: false %>
+       </div>
+    </div> 
+</div>
 
-<div class="form-group">
-   <label for="factordeponderacion" class="col-sm-2 control-label">Factor de ponderación</label>
-   <div class="col-sm-4">
-      <%= f.input :factordeponderacion, class: "form-control", label: false %>
-   </div>
-</div> 
+       <!-- Tab panes 3-->
+   <div class="tab-pane" id="messages">
+     <div class="form-group">
+       <label for="consecuencia" class="col-sm-2 control-label">Consecuencia</label>
+       <div class="col-sm-4">
+          <%= f.input :consecuencia, class: "form-control", label: false %>
+       </div>
+    </div> 
+
+    <div class="form-group">
+       <label for="exposicion" class="col-sm-2 control-label">Exposición</label>
+       <div class="col-sm-4">
+          <%= f.input :exposicion, class: "form-control", label: false %>
+       </div>
+    </div> 
+
+    <div class="form-group">
+       <label for="factordeponderacion" class="col-sm-2 control-label">Factor de ponderación</label>
+       <div class="col-sm-4">
+          <%= f.input :factordeponderacion, class: "form-control", label: false %>
+       </div>
+    </div> 
 
 
-<div class="form-group">
-   <label for="repercuciondelriesgo" class="col-sm-2 control-label">Repercucion del riesgo</label>
-   <div class="col-sm-4">
-      <%= f.input :repercuciondelriesgo, class: "form-control", label: false %>
-   </div>
+    <div class="form-group">
+       <label for="repercuciondelriesgo" class="col-sm-2 control-label">Repercucion del riesgo</label>
+       <div class="col-sm-4">
+          <%= f.input :repercuciondelriesgo, class: "form-control", label: false %>
+       </div>
+    </div> 
+
+     
+    <div class="form­-group"> 
+       <div class="col­-sm­-offset­-2 col-­sm­-10"> 
+         <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
+         <%= link_to 'Atras', riesgos_path, class: "btn btn-default btn-xs" %>
+       </div> 
+    </div> 
+
 </div> 
+<<<<<<< HEAD
 <div class="field">
     Tipo Riesgos <br>
     <%= f.collection_select :tiporiesgo_id, Tiporiesgo.all, :id, :nombres, class: "form-control", prompt:
     "Seleccione Tipo riesgo" %>
   </div>
+=======
+</div>
+</div>
+>>>>>>> 7e033ad0594b841318ab9af908219a6ea455cd2d
 
- 
-<div class="form­-group"> 
-   <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
-   <%= link_to 'Atras', riesgos_path, class: "btn btn-default btn-xs" %>
-
-   </div> 
-</div> 
- 
-<% end %> 
+</div>
+<% end %>

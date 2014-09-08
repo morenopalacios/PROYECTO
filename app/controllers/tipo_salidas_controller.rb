@@ -1,14 +1,11 @@
 class TipoSalidasController < ApplicationController
+
   before_action :set_tipo_salida, only: [:show, :edit, :update, :destroy]
 
-  # GET /tipo_salidas
-  # GET /tipo_salidas.json
   def index
     @tipo_salidas = TipoSalida.search(params[:search], params[:page])
   end
 
-  # GET /tipo_salidas/1
-  # GET /tipo_salidas/1.json
   def show
   end
 

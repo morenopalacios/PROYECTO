@@ -58,9 +58,14 @@ Rails.application.routes.draw do
 
   resources :funcionarios
 
-  resources :riesgos
+  resources :riesgos do 
+    resources :tiporiesgos
+  end
 
-  resources :incapacidads
+  resources :incapacidads do
+    resources :tipoincapacidads
+  end
+
 
   resources :enfermedads
 

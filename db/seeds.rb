@@ -869,6 +869,7 @@ departamentos.each do |departamento|
 
 	Departamento.where(departamento).first_or_create
 end
+
 tipoaccidentes=[{nombre:"Leve"},{nombre:"Grave"},{nombre:"Mortal"},{nombre:"In Itinere"},{nombre:"Con Baja"},
 {nombre:"Sin Baja"}]
 

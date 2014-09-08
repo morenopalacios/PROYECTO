@@ -1,10 +1,11 @@
 class Cronograma < ActiveRecord::Base
+
   belongs_to :tipo_salida
 
   validates :fecha, :presence => true
 	validates :lugar_salida, :presence => true
 	validates :ficha_grupo , :presence => true
-  validates :tipo_salida, :presence => true
+  validates :tipo_salida_id, :presence => true
 	validates :programa, :presence => true
 	validates :descripcion, :presence => true
 
