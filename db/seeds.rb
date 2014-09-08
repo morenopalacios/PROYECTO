@@ -78,6 +78,16 @@ tipoincapacidads.each do | tipoincapacidad |
 end
 
 
+tipoenfermedads = [{nombre: "Enfermedades agudas"}, {nombre: "Enfermedades Cronicas"}, {nombre: "Enfermedades contagiosas"}, {nombre: "Enfermedades no contagiosas"}, {nombre: "Enfermedades endémicas"}, {nombre: "Enfermedades esporádicas"}, {nombre: "Enfermedades epidémicas"}]
+
+tipoenfermedads.each do | tipoenfermedad |
+
+	Tipoenfermedad.where(tipoenfermedad).first_or_create		
+end
+
+
+
+
 
 
 

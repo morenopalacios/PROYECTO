@@ -1,7 +1,8 @@
-<div class="formulario">
+
 <%= simple_form_for(@accidente) do |f| %>
   <%= f.error_notification %>
 
+<div class="formulario">
 
   <h5><b>Nuevo Accidente</b></h5>
   
@@ -431,11 +432,11 @@
 
     
   <div class="form-actions">
-  <p class="text-center"><%= f.submit "Guardar", class: "btn btn-warning btn-xs" %>
-     <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
-  </p>
+    <p class="text-center"><%= f.submit "Guardar",class: "btn btn-info btn-xs" %>
+       <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
+    </p>
+  </div>
 
-  
   </div>
-  </div>
+
 <% end %>
