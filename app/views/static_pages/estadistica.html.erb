@@ -12,9 +12,8 @@
 <%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> -->
 
 <!--link de estadistica por riesgoscon las imagenes-->
-<div id= "con">
- <h3>Grafica de Riesgos</h3>
-<br>
+ <p>Seleccione la forma en como desea ver las grafica</p>
+ <h3>Grafica de Riesgos</h3><br>
 <%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(grafica: "pie_3d"), remote: true %> 
 <!--grafica de barras de 3d-->
 <%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(grafica: "bar"), remote: true %> 
@@ -59,8 +58,6 @@
 <%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "bar"), remote: true %> 
 <!--grafica de line de 3d-->
 <%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "line"), remote: true %> <br><br>
-
-</div>
 
 
 

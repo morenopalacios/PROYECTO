@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20140904140613) do
     t.integer  "municipio1"
     t.string   "zona1"
     t.integer  "funcionario_id"
-    t.date     "fecha_del_accidente"
+    t.date     "fchAc"
     t.string   "hora_del_accidente"
     t.string   "dia_de_la_semana"
     t.string   "jornada_en_que_sucede"
@@ -256,7 +256,6 @@ ActiveRecord::Schema.define(version: 20140904140613) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
-
 
   create_table "tipoenfermedads", force: true do |t|
     t.string   "nombre"
