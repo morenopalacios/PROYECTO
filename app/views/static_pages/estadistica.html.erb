@@ -5,16 +5,15 @@
 <title>Estadistica</title>
 </head>
 <body >
-
+<!--grafica general de estadistica
 <h3>GRAFICA POR TRIMESTRE NOVEDAD</h3>
 <br>
-<!--grafica general de estadistica-->
-<%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> 
+
+<%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> -->
 
 <!--link de estadistica por riesgoscon las imagenes-->
-
-
-  <h3>Grafica de Riesgos</h3>
+<div id= "con">
+ <h3>Grafica de Riesgos</h3>
 <br>
 <%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(grafica: "pie_3d"), remote: true %> 
 <!--grafica de barras de 3d-->
@@ -61,7 +60,7 @@
 <!--grafica de line de 3d-->
 <%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "line"), remote: true %> <br><br>
 
-
+</div>
 
 
 

@@ -8,11 +8,12 @@ h3{
 #estadis{
  margin: 0px auto;
 
- background-position: 50% 100%;
+ background-position: 60% 200%;
  background-repeat: no-repeat;
 position: absolute;
 right: 0px;
-bottom: 35px;
+bottom: -400px;
+top:-100;
 
 
 }
