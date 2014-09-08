@@ -1,9 +1,21 @@
-
+<div class="formulario">
 <%= simple_form_for(@accidente) do |f| %>
   <%= f.error_notification %>
 
-  <div class="formulario">
-      <div class="form-group">
+
+  <h5><b>Nuevo Accidente</b></h5>
+  
+ <div class="container-fluid">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#home" role="tab" data-toggle="tab">Pantalla 1</a></li>
+      <li><a href="#profile" role="tab" data-toggle="tab">Pantalla 2</a></li>
+      <li><a href="#messages" role="tab" data-toggle="tab">Pantalla 3</a></li>
+    </ul>
+
+
+        <div class="form-group">
         <label for="nombres" class="col-sm-2 control-label">Diligenciador</label>
         <div class="col-sm-4">
         <%= f.input :diligenciador, class: "form-control", label: false %>
