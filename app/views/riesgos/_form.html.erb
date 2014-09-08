@@ -139,6 +139,12 @@
    </div>
 </div> 
 
+<div class="field">
+    Tipo Riesgos <br>
+    <%= f.collection_select :tiporiesgo_id, Tiporiesgo.all, :id, :nombres, class: "form-control", prompt:
+    "Seleccione Tipo riesgo" %>
+  </div>
+
  
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 

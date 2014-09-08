@@ -416,6 +416,12 @@
         <%= f.input :documento3, class: "form-control", label: false %>
         </div>
      </div>
+
+     <div class="field">
+    Tipo Accidentes <br>
+    <%= f.collection_select :tipoaccidente_id, Tipoaccidente.all, :id, :nombres, class: "form-control", prompt:
+    "Seleccione Tipo accidente" %>
+  </div>
   
 
   <div class="form-actions">
