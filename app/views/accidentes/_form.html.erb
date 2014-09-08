@@ -3,108 +3,419 @@
   <%= f.error_notification %>
 
   <div class="formulario">
-        <%= f.input :diligenciador %>
-        <%= f.input :eps %>
-        <%= f.input :afp %>
-        <%= f.input :arl %>
-        <%= f.input :documento %>
-        <div class="field">
-            Tipo de documento <br>
+      <div class="form-group">
+        <label for="nombres" class="col-sm-2 control-label">Diligenciador</label>
+        <div class="col-sm-4">
+        <%= f.input :diligenciador, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+     <div class="form-group">
+        <label for="" class="col-sm-2 control-label">EPS</label>
+        <div class="col-sm-4">
+        <%= f.input :eps, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+     <div class="form-group">
+        <label for="" class="col-sm-2 control-label">AFP</label>
+        <div class="col-sm-4">
+        <%= f.input :afp, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label">ARL</label>
+        <div class="col-sm-4">
+        <%= f.input :arl, class: "form-control", label: false %>
+        </div>
+      </div>
+       
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Documento</label>
+        <div class="col-sm-4">
+        <%= f.input :documento, class: "form-control", label: false %>
+        </div>
+      </div>
+
+      <div class="form-group">
+       <label for="" class="col-sm-2 control-label">Tipo de documento</label> 
             <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
+      </div>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Tipo de vinculación</label>
+        <div class="col-sm-4">
+        <%= f.input :tipo_de_vinculacion, class: "form-control", label: false %>
         </div>
-        <%= f.input :tipo_de_vinculacion %>
-        <%= f.input :razon_social %>
-        <%= f.input :direccion_sede_principal %>
-        <%= f.input :direccion_reportada %>
-        <%= f.input :telefono_reportado %>
-        <%= f.input :actividad_economica_sede_principal %>
-        <%= f.input :codigo %>
-        <%= f.input :telefono_sede_principal %>
-        <%= f.input :fax_sede_principal %>
-        <%= f.input :email_sede_principal %>
-        <div class="field">
-            Departamento <br>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Razon social</label>
+        <div class="col-sm-4">
+        <%= f.input :razon_social, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Dirección sede principal</label>
+        <div class="col-sm-4">
+        <%= f.input :direccion_sede_principal, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Dirección reportada</label>
+        <div class="col-sm-4">
+        <%= f.input :direccion_reportada, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Teléfono reportado</label>
+        <div class="col-sm-4">
+        <%= f.input :telefono_reportado, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Actvidad económica sede principal</label>
+        <div class="col-sm-4">
+        <%= f.input :actividad_economica_sede_principal, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Código</label>
+        <div class="col-sm-4">
+        <%= f.input :codigo, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Teléfono sede principal</label>
+        <div class="col-sm-4">
+        <%= f.input :telefono_sede_principal, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Fax sede pricipal</label>
+        <div class="col-sm-4">
+        <%= f.input :fax_sede_principal, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Email sede pricipal</label>
+        <div class="col-sm-4">
+        <%= f.input :email_sede_principal, class: "form-control", label: false %>
+        </div>
+      </div>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Departamento</label>
             <%= f.collection_select :departamento_id, Departamento.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <div class="field">
-            Municipio <br>
-            <%= f.collection_select :municipio_id, Municipio.all, :id, :nombre, class: "form-control", prompt:
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Municipio</label>
+            <%= f.collection_select :municipio_id, Municipio.all, :id, :nombre, class: "form-control", 
+            prompt:
             "Seleccione" %>
         </div>
-        <%= f.input :zona %>
-        <%= f.input :actividad_economica_centro_trabajo %>
-        <%= f.input :direccion_centro_trabajo %>
-        <%= f.input :telefono_ct %>
-        <%= f.input :fax_ct %>
-        <%= f.input :email_ct %>
-        <div class="field">
-            Departamento <br>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Zona</label>
+        <div class="col-sm-4">
+        <%= f.input :zona, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Actvidad económica centro trabaja</label>
+        <div class="col-sm-4">
+        <%= f.input :actividad_economica_centro_trabajo, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Dirección centro trabajo</label>
+        <div class="col-sm-4">
+        <%= f.input :direccion_centro_trabajo, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Teléfono ct</label>
+        <div class="col-sm-4">
+        <%= f.input :telefono_ct, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Fax ct</label>
+        <div class="col-sm-4">
+        <%= f.input :fax_ct, class: "form-control", label: false %>
+        </div>
+      </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Email ct</label>
+        <div class="col-sm-4">
+        <%= f.input :email_ct, class: "form-control", label: false %>
+        </div>
+      </div>
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Departamento</label>
             <%= f.collection_select :departamento1, Departamento.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <div class="field">
-            Municipio <br>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Municipio</label>
             <%= f.collection_select :municipio1, Municipio.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <div class="field">
-            Funcionario <br>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Zona</label>
+        <div class="col-sm-4">
+        <%= f.input :zona1, class: "form-control", label: false %>
+        </div>
+     </div>
+
+         <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Funcionario</label>
             <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <%= f.input :zona1 %>
-        <%= f.input :fchAc %>
-        <%= f.input :hora_del_accidente %>
-        <%= f.input :dia_de_la_semana %>
-        <%= f.input :jornada_en_que_sucede %>
-        <%= f.input :realiza_su_labor %>
-        <%= f.input :ocupacion_no_habitual %>
-        <%= f.input :tiempo_laborado %>
-        <%= f.input :lugar_donde_ocurrio_el_at %>
-        <%= f.input :mecanismo_o_formato_del_at %>
-        <%= f.input :tipo_de_lesion %>
-        <%= f.input :sitio %>
-        <%= f.input :tipo_de_accidente %>
-        <%= f.input :parte_del_cuerpo_afectado %>
-        <%= f.input :agente_del_accidente %>
-        <div class="field">
-            Departamento <br>
+
+        <label for="fchAc" class="col-sm-2 control-label">Fecha del accidente</label>
+        <%= f.text_field :fchAc, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,})
+        </script>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label"></label>
+        <div class="col-sm-4">
+        </div>
+     </div>
+
+      <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Hora del accidente</label>
+        <div class="col-sm-4">
+        <%= f.input :hora_del_accidente, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Día de la semana</label>
+        <div class="col-sm-4">
+        <%= f.input :dia_de_la_semana, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Jornada en que sucede</label>
+        <div class="col-sm-4">
+        <%= f.input :jornada_en_que_sucede, class: "form-control", label: false %>
+        </div>
+     </div>
+
+          <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Realiza su labor</label>
+          Si: <%= f.radio_button(:realiza_su_labor, true) %>
+          No: <%= f.radio_button(:realiza_su_labor, false) %>
+        </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Ocupación no habitual</label>
+        <div class="col-sm-4">
+        <%= f.input :ocupacion_no_habitual, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Tiempo laborado</label>
+        <div class="col-sm-4">
+        <%= f.input :tiempo_laborado, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Lugar donde ocurrió el at</label>
+        <div class="col-sm-4">
+        <%= f.input :lugar_donde_ocurrio_el_at, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Mecanismo o formato del at</label>
+        <div class="col-sm-4">
+        <%= f.input :mecanismo_o_formato_del_at, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Tipo de lesión</label>
+        <div class="col-sm-4">
+        <%= f.input :tipo_de_lesion, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+         <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Sitio</label>
+        <div class="col-sm-4">
+        <%= f.input :sitio, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Tipo de accidente</label>
+        <div class="col-sm-4">
+        <%= f.input :tipo_de_accidente, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Parte del cuerpo afectado</label>
+        <div class="col-sm-4">
+        <%= f.input :parte_del_cuerpo_afectado, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Agente del accidente</label>
+        <div class="col-sm-4">
+        <%= f.input :agente_del_accidente, class: "form-control", label: false %>
+        </div>
+     </div>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Departamneto</label>
             <%= f.collection_select :departamento2, Departamento.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <div class="field">
-            Municipio <br>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Municipio</label>
             <%= f.collection_select :municipio2, Municipio.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <%= f.input :zona2 %>
-        <%= f.input :mortal %>
-        <%= f.input :fecha_mortal %>
-        <%= f.input :descripcion_del_at %>
-        <%= f.input :hubo_personas_que_presenciaron_el_accidente %>
-        <%= f.input :testigo1 %>
-        <div class="field">
-            Tipo de documento <br>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Zona</label>
+        <div class="col-sm-4">
+        <%= f.input :zona2, class: "form-control", label: false %>
+        </div>
+     </div>
+
+        <div class="form-group">
+          <label for="" class="col-sm-2 control-label">Mortal?</label>
+          Si: <%= f.radio_button(:mortal, true) %>
+          No: <%= f.radio_button(:mortal, false) %>
+        </div>
+
+        <label for="fchAc" class="col-sm-2 control-label">Fecha mortal</label>
+         <%= f.text_field :fecha_mortal, class: 'datepicker' %>
+        <script type="text/javascript">
+         $('.datepicker').datepicker({
+          language: "es",
+          format: "yyyy/mm/dd",
+          keyboardNavigation:false,
+          forceParse:false,
+          autoclose:true,
+          todayHighlight:true,})
+        </script>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label"></label>
+        <div class="col-sm-4">
+        </div>
+     </div>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Descripción del at</label>
+        <div class="col-sm-4">
+        <%= f.input :descripcion_del_at, class: "form-control", label: false %>
+        </div>
+     </div>
+     
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Hubo personas que presenciarón el accidente?</label>
+          Si: <%= f.radio_button(:hubo_personas_que_presenciaron_el_accidente, true) %>
+          No: <%= f.radio_button(:hubo_personas_que_presenciaron_el_accidente, false) %>
+        </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Testigo 1</label>
+        <div class="col-sm-4">
+        <%= f.input :testigo1, class: "form-control", label: false %>
+        </div>
+     </div>
+
+          <div class="form-group">
+       <label for="" class="col-sm-2 control-label">Tipo de documento</label>
             <%= f.collection_select :tipodoc1, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <%= f.input :documento1 %>
-        <%= f.input :testigo2 %>
-        <div class="field">
-            Tipo de documento <br>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Documento</label>
+        <div class="col-sm-4">
+        <%= f.input :documento1, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Testigo 2</label>
+        <div class="col-sm-4">
+        <%= f.input :testigo2, class: "form-control", label: false %>
+        </div>
+     </div>
+
+        <div class="form-group">
+            <label for="" class="col-sm-2 control-label">Tipo de documento</label>
             <%= f.collection_select :tipodoc2, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <%= f.input :documento2 %>
-        <%= f.input :responsable_informe %>
-        <div class="field">
-            Tipo de documento <br>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Documento</label>
+        <div class="col-sm-4">
+        <%= f.input :documento2, class: "form-control", label: false %>
+        </div>
+     </div>
+        
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Responsable informe</label>
+        <div class="col-sm-4">
+        <%= f.input :responsable_informe, class: "form-control", label: false %>
+        </div>
+     </div>
+
+         <div class="form-group">
+       <label for="" class="col-sm-2 control-label">Tipo de documento</label>
             <%= f.collection_select :tipodoc3, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
             "Seleccione" %>
         </div>
-        <%= f.input :documento3 %>
+
+        <div class="form-group">
+        <label for="" class="col-sm-2 control-label">Documento</label>
+        <div class="col-sm-4">
+        <%= f.input :documento3, class: "form-control", label: false %>
+        </div>
+     </div>
   
 
   <div class="form-actions">

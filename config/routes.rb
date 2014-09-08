@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+
   resources :tipoincapacidads
 
   resources :tipoenfermedads
@@ -8,6 +9,9 @@ Rails.application.routes.draw do
   resources :tiporiesgos
 
   resources :tipoincidentes
+
+  resources :tipoaccidentes
+
 
   resources :albums
 

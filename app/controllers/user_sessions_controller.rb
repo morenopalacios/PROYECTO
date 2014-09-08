@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
  
   def create 
      if @user = login(params[:email], params[:password]) 
-       redirect_back_or_to(:home, notice: 'Bienvenido a SANO') 
+       redirect_back_or_to(:home, notice: 'Bienvenido  a SANO '+ current_user.email) 
      else 
        flash.now[:alert] = 'Falló el ingreso' 
        render action: 'new' 

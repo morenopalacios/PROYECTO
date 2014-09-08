@@ -245,18 +245,27 @@ ActiveRecord::Schema.define(version: 20140904140613) do
     t.datetime "updated_at"
   end
 
+  create_table "tipoaccidentes", force: true do |t|
+    t.string   "nombre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "tipodocs", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+<<<<<<< HEAD
+=======
   create_table "tipoenfermedads", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
+>>>>>>> 673b74bcf09e527b800edac94eec606418859d63
   create_table "tipoincapacidads", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"

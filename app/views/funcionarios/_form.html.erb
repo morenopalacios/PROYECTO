@@ -13,189 +13,127 @@
   </div> 
 <% end %> 
 
-
- 
 <div class="formulario" >
 
- <div class="form-group">
-   <label for="nombres" class="col-sm-2 control-label">Nombres</label>
-   <div class="col-sm-4">
-      <%= f.input :nombres, class: "form-control", label: false %>
-   </div>
- </div>
+<div class="container-fluid">
 
- <div class="form-group">
-   <label for="apellidos" class="col-sm-2 control-label">Apellidos</label>
-   <div class="col-sm-4">
-      <%= f.input :apellidos, class: "form-control", label: false %>
-   </div>
- </div>
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#home" role="tab" data-toggle="tab">Pantalla 1</a></li>
+      <li><a href="#profile" role="tab" data-toggle="tab">Pantalla 2</a></li>
+      <li><a href="#messages" role="tab" data-toggle="tab">Pantalla 3</a></li>
+      <li><a href="#settings" role="tab" data-toggle="tab">Pantalla 4</a></li>
+    </ul>
 
+   
+    <br>
 
-<div class="field">
-  <b>Tipodoc</b> 
-  <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
-  "Seleccione tipo de documento " %>
+    <!-- Tab panes 1-->
+    <div class="tab-content">
+      <div class="tab-pane active" id="home">
+        <div class="form-group">
+           <label for="nombres" class="col-sm-2 control-label">Nombres</label>
+           <div class="col-sm-4">
+              <%= f.input :nombres, class: "form-control", label: false %>
+           </div>
+        </div>
+        
+       <div class="form-group">
+         <label for="apellidos" class="col-sm-2 control-label">Apellidos</label>
+         <div class="col-sm-4">
+            <%= f.input :apellidos, class: "form-control", label: false %>
+         </div>
+       </div>
+
+        <div class="field">
+          <b>Tipodoc</b> 
+          <%= f.collection_select :tipodoc_id, Tipodoc.all, :id, :nombre, class: "form-control", prompt:
+          "Seleccione tipo de documento " %>
+        </div>
+
+      </div>
+
+    <!-- Tab panes 2-->
+      <div class="tab-pane" id="profile">
+           <div class="form-group">
+             <label for="identificacion" class="col-sm-2 control-label">Identificacion</label>
+             <div class="col-sm-4">
+                <%= f.input :identificacion, class: "form-control", label: false %>
+             </div>
+           </div>
+
+           <div class="form-group">
+             <label for="lugar_de_expedicion" class="col-sm-2 control-label">Lugar de expedición</label>
+             <div class="col-sm-4">
+                <%= f.input :lugar_de_expedicion, class: "form-control", label: false %>
+             </div>
+           </div>
+
+           <div class="form-group">
+             <label for="lugar_de_nacimiento" class="col-sm-2 control-label">Lugar de nacimiento</label>
+             <div class="col-sm-4">
+                <%= f.input :lugar_de_nacimiento, class: "form-control", label: false %>
+             </div>
+           </div>
+      </div>
+
+       <!-- Tab panes 3-->
+
+      <div class="tab-pane" id="messages">
+           <div class="form-group">
+             <label for="fecha_de_nacimiento" class="col-sm-2 control-label">Fecha de nacimiento</label>
+             <div class="col-sm-4">
+                  <%= f.text_field :fecha_de_nacimiento, class: 'datepicker' %>
+                  <script type="text/javascript">
+                   $('.datepicker').datepicker({
+                    language: "es",
+                    format: "yyyy/mm/dd",
+                    keyboardNavigation:false,
+                    forceParse:false,
+                    autoclose:true,
+                    todayHighlight:true,
+
+                  });
+              </script>
+             </div>
+           </div>
+    
+
+      <div class="form-group">
+         <label for="edad" class="col-sm-2 control-label">Edad</label>
+         <div class="col-sm-4">
+            <%= f.input :edad, class: "form-control", label: false %>
+         </div>
+      </div>
+
+      <div class="form-group">
+         <label for="area" class="col-sm-2 control-label">Área</label>
+         <div class="col-sm-4">
+            <%= f.input :area, class: "form-control", label: false %>
+         </div>
+      </div>
 </div>
 
-<div class="form-group">
-   <label for="identificacion" class="col-sm-2 control-label">Identificacion</label>
-   <div class="col-sm-4">
-      <%= f.input :identificacion, class: "form-control", label: false %>
-   </div>
- </div>
+        
+        <!-- Tab panes 4-->
+      <div class="tab-pane" id="settings">     
+           <div class="form-group">
+             <label for="cargo" class="col-sm-2 control-label">Cargo</label>
+             <div class="col-sm-4">
+                <%= f.input :cargo, class: "form-control", label: false %>
+             </div>
+           </div>
 
- 
- <div class="form-group">
-   <label for="lugar_de_expedicion" class="col-sm-2 control-label">Lugar de expedición</label>
-   <div class="col-sm-4">
-      <%= f.input :lugar_de_expedicion, class: "form-control", label: false %>
-   </div>
- </div>
-
-<div class="form-group">
-   <label for="lugar_de_nacimiento" class="col-sm-2 control-label">Lugar de nacimiento</label>
-   <div class="col-sm-4">
-      <%= f.input :lugar_de_nacimiento, class: "form-control", label: false %>
-   </div>
- </div>
-
-<div class="form-group">
-   <label for="fecha_de_nacimiento" class="col-sm-2 control-label">Fecha de nacimiento</label>
-   <div class="col-sm-4">
-        <%= f.text_field :fecha_de_nacimiento, class: 'datepicker' %>
-        <script type="text/javascript">
-         $('.datepicker').datepicker({
-          language: "es",
-          format: "yyyy/mm/dd",
-          keyboardNavigation:false,
-          forceParse:false,
-          autoclose:true,
-          todayHighlight:true,
-
-        });
-    </script>
-   </div>
- </div>
+          
+           <div class="actions">
+               <%= f.submit "Guardar" %>
+           </div>
+      </div>
 
 
- <div class="form-group">
-   <label for="edad" class="col-sm-2 control-label">Edad</label>
-   <div class="col-sm-4">
-      <%= f.input :edad, class: "form-control", label: false %>
-   </div>
- </div>
-
- <div class="form-group">
-   <label for="area" class="col-sm-2 control-label">Área</label>
-   <div class="col-sm-4">
-      <%= f.input :area, class: "form-control", label: false %>
-   </div>
- </div>
-
- <div class="form-group">
-   <label for="cargo" class="col-sm-2 control-label">Cargo</label>
-   <div class="col-sm-4">
-      <%= f.input :cargo, class: "form-control", label: false %>
-   </div>
- </div>
-
- <div class="form-group">
-   <label for="fecha_de_ingreso" class="col-sm-2 control-label">Fecha de ingreso</label>
-   <div class="col-sm-4">
-      <%= f.text_field :fecha_de_ingreso, class: 'datepicker' %>
-        <script type="text/javascript">
-         $('.datepicker').datepicker({
-          language: "es",
-          format: "yyyy/mm/dd",
-          keyboardNavigation:false,
-          forceParse:false,
-          autoclose:true,
-          todayHighlight:true,
-
-        });
-    </script>
-   </div>
- </div>
-
-<div class="form-group">
-   <label for="antiguedad" class="col-sm-2 control-label">Antiguedad</label>
-   <div class="col-sm-4">
-      <%= f.input :antiguedad, class: "form-control", label: false %>
-   </div>
- </div>
-
- <div class="form-group">
-   <label for="funciones_principales" class="col-sm-2 control-label">Funciones principales</label>
-   <div class="col-sm-4">
-      <%= f.input :funciones_principales, class: "form-control", label: false %>
-   </div>
- </div>
-
-<div class="field">
-  <b>Genero</b> 
-  Masculino: <%= f.radio_button(:genero, true) %>
-  Femenino: <%= f.radio_button(:genero, false) %>
-</div>
-
-<div class="form-group">
-   <label for="telefono" class="col-sm-2 control-label">Telefono</label>
-   <div class="col-sm-4">
-      <%= f.input :telefono, class: "form-control", label: false %>
-   </div>
- </div>
-
- <div class="form-group">
-   <label for="mail" class="col-sm-2 control-label">Email</label>
-   <div class="col-sm-4">
-      <%= f.input :mail, class: "form-control", label: false %>
-
-   </div>
- </div>
-
-
-<div class="field">
-   <b>Centro</b> 
-  <%= f.collection_select :centro_id, Centro.all, :id, :nombre, class: "form-control", prompt:
-  "Seleccione Centro" %>
-</div>
-
-<div class="form-group">
-   <label for="codigo" class="col-sm-2 control-label">codigo</label>
-   <div class="col-sm-4">
-      <%= f.input :codigo, class: "form-control", label: false %>
-   </div>
- </div>
-
-<div class="form-group">
-   <label for="eps" class="col-sm-2 control-label">eps</label>
-   <div class="col-sm-4">
-      <%= f.input :eps, class: "form-control", label: false %>
-   </div>
- </div>
-
-<div class="form-group">
-   <label for="afp" class="col-sm-2 control-label">afp</label>
-   <div class="col-sm-4">
-      <%= f.input :afp, class: "form-control", label: false %>
-   </div>
- </div>
-
-
-<div class="form-group">
-   <label for="arl" class="col-sm-2 control-label">arl</label>
-   <div class="col-sm-4">
-      <%= f.input :arl, class: "form-control", label: false %>
-   </div>
- </div>
-
-<div class="form­-group"> 
-   <div class="col­-sm­-offset­-2 col-­sm­-10"> 
-   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
-   <%= link_to 'Atras', funcionarios_path, class: "btn btn-default btn-xs" %>
-
-   </div> 
-</div> 
+    </div>
 
 </div>
-<% end %> 
+
+<% end %>
+

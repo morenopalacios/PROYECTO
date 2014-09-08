@@ -28,7 +28,7 @@ class MunicipiosController < ApplicationController
 
     respond_to do |format|
       if @municipio.save
-        format.html { redirect_to @municipio, notice: 'Municipio was successfully created.' }
+        format.html { redirect_to @municipio, notice: 'Registro creado exitosamente.' }
         format.json { render :show, status: :created, location: @municipio }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class MunicipiosController < ApplicationController
   def update
     respond_to do |format|
       if @municipio.update(municipio_params)
-        format.html { redirect_to @municipio, notice: 'Municipio was successfully updated.' }
+        format.html { redirect_to @municipio, notice: 'Registro actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @municipio }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class MunicipiosController < ApplicationController
   def destroy
     @municipio.destroy
     respond_to do |format|
-      format.html { redirect_to municipios_url, notice: 'Municipio was successfully destroyed.' }
+      format.html { redirect_to municipios_url, notice: 'Registro eliminado.' }
       format.json { head :no_content }
     end
   end

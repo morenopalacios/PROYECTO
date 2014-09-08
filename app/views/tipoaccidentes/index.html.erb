@@ -1,0 +1,25 @@
+<h1>Lista tipoaccidentes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @tipoaccidentes.each do |tipoaccidente| %>
+      <tr>
+        <td><%= tipoaccidente.nombre %></td>
+        <td><%= link_to 'Ver', tipoaccidente %></td>
+        <td><%= link_to 'Editar', edit_tipoaccidente_path(tipoaccidente) %></td>
+        <td><%= link_to 'Eliminar', tipoaccidente, method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Tipoaccidente', new_tipoaccidente_path %>

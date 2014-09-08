@@ -29,7 +29,8 @@ thead {
     background-size: 1370px 660px;
 }
 
-
+/*border-style:dashed ;
+    border-style:double;*/
 
 /*estilos de los pasos para manejar el software "inicio"*/
 
@@ -43,10 +44,11 @@ thead {
     float: left;
     margin: 1em;
     padding: .5em;
-    border: 1px solid #000;
+    border: 5px solid #D9D919;
     width: 300px;
     height: 155px;
     font-family: georgia;
+    border-style:double;
 }
 
 h4
@@ -133,12 +135,6 @@ p{
     margin-top: 105px;
 }
 
-.back1{
-    margin-left: 960px;
-    margin-top: 208px;
-}
-
-
 .login{
 margin: 0px auto;
 background-position: 60% 100%;
@@ -154,3 +150,14 @@ margin-left: -10px;
 
 }
 
+
+.imainicio{
+
+    margin-left: 45%;
+    margin-top: -300px;
+    position: absolute;
+    width: 40px;
+    height: 69px;
+
+
+}

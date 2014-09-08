@@ -187,4 +187,4 @@ edit_personalinvolucrado GET    /personalinvolucrados/:id/edit(.:format) persona
      riesgos_estadistica GET    /riesgos_estadistica(.:format)           riesgos#estadistica
  enfermedads_estadistica GET    /enfermedads_estadistica(.:format)       enfermedads#estadistica
 incapacidads_estadistica GET    /incapacidads_estadistica(.:format)      incapacidads#estadistica
-  accidentes_estadistica GET    /accidentes_estadistica(.:format)        accidentess#estadistica
+  accidentes_estadistica GET    /accidentes_estadistica(.:format)        accidentes#estadistica
