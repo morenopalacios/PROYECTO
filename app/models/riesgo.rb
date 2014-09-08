@@ -6,6 +6,7 @@ class Riesgo < ActiveRecord::Base
     end
     
   belongs_to :funcionario
+  has_many :tiporiesgos
 
     
     validates :empresa, :presence => true 

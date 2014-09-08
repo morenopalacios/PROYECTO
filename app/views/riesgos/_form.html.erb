@@ -70,12 +70,12 @@
    </div>
 </div> 
 
-<div class="form-group">
-   <label for="clasederiesgo" class="col-sm-2 control-label">Clase de riesgo</label>
-   <div class="col-sm-4">
-      <%= f.input :clasederiesgo, class: "form-control", label: false %>
-   </div>
-</div> 
+
+<div class="field">
+  <b>Tipo de riesgo</b> 
+  <%= f.collection_select :tiporiesgo_id, Tiporiesgo.all, :id, :nombre, class: "form-control", prompt:
+  "Seleccione Tipo de riesgo" %>
+</div>
 
 <div class="form-group">
    <label for="factorderiesgo" class="col-sm-2 control-label">Factor de riesgo</label>
