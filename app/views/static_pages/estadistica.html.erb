@@ -1,0 +1,69 @@
+<html>
+<head>
+<meta charset= "utf-8">
+    <link href="css/estadistica.css" type="text/css" rel="stylesheet" >
+<title>Estadistica</title>
+</head>
+<body >
+<!--grafica general de estadistica
+<h3>GRAFICA POR TRIMESTRE NOVEDAD</h3>
+<br>
+
+<%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> -->
+
+<!--link de estadistica por riesgoscon las imagenes-->
+ <p>Seleccione la forma en como desea ver las grafica</p>
+ <h3>Grafica de Riesgos</h3><br>
+<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(grafica: "pie_3d"), remote: true %> 
+<!--grafica de barras de 3d-->
+<%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(grafica: "bar"), remote: true %> 
+<!--grafica de line de 3d-->
+<%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(grafica: "line"), remote: true %> <br><br>
+
+
+<!--link de estadistica por incidente-->
+<h3>Grafica de incidente</h3>
+
+<br>
+<!--grafica de torta de 3d-->
+<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), incidentes_estadistica_path(grafica: "pie_3d"), remote: true %> 
+<!--grafica de barras de 3d-->
+<%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), incidentes_estadistica_path(grafica: "bar"), remote: true %> 
+<!--grafica de line de 3d-->
+<%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), incidentes_estadistica_path(grafica: "line"), remote: true %> <br><br>
+
+<!--grafica por Acidentes-->
+
+<h3>Grafica de Accidentes</h3>
+<br>
+<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), accidentes_estadistica_path(grafica: "pie_3d"), remote: true %> 
+<!--grafica de barras de 3d-->
+<%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), accidentes_estadistica_path(grafica: "bar"), remote: true %> 
+<!--grafica de line de 3d-->
+<%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), accidentes_estadistica_path(grafica: "line"), remote: true %> <br><br>
+
+<!--grafica por Enfermedades-->
+<h3>Grafica de Enfermedad</h3>
+<br>
+<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), enfermedads_estadistica_path(grafica: "pie_3d"), remote: true %> 
+<!--grafica de barras de 3d-->
+<%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), enfermedads_estadistica_path(grafica: "bar"), remote: true %> 
+<!--grafica de line de 3d-->
+<%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), enfermedads_estadistica_path(grafica: "line"), remote: true %> <br><br>
+
+<!--grafica por incapacidades-->
+<h3>Grafica de Incapacidad</h3>
+<br>
+<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "pie_3d"), remote: true %> 
+<!--grafica de barras de 3d-->
+<%= link_to image_tag("barras.png", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "bar"), remote: true %> 
+<!--grafica de line de 3d-->
+<%= link_to image_tag("linechart.png", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "line"), remote: true %> <br><br>
+
+
+
+</body>
+<div id="estadis">
+<%= image_tag("estadistica1.gif") %>
+</div>
+</html>

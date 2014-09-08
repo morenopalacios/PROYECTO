@@ -2,12 +2,24 @@ class EnfermedadsController < ApplicationController
   before_action :set_enfermedad, only: [:show, :edit, :update, :destroy]
 
  def estadistica
+   @tipo = params[:grafica] 
+   
    @ano = Hash.new
    @t1 = Enfermedad.estadistica_x_trimestre("2014-01-01", "2014-03-30")
    @t2 = Enfermedad.estadistica_x_trimestre("2014-04-01", "2014-06-30")
    @t3 = Enfermedad.estadistica_x_trimestre("2014-07-01", "2014-09-30")
    @t4 = Enfermedad.estadistica_x_trimestre("2014-10-01", "2014-12-31")
    @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
+   @datos= { :size => '700x400',
+            :theme => :thirty7signals, 
+            :title => "enfermedad por trimestre", 
+            :bg => 'efefef', 
+            :line_colors => 'B22222,0077CC, FFA500',
+            :legend => @ano.keys,
+            :data => @ano.values,
+            :axis_range => [nil, [0,200,400,600,800,1000]],
+            :axis_with_labels => 'x,y',
+            :labels => @ano.values }
  end
 
  

@@ -24,13 +24,10 @@
   </tbody>
 </table>
 
-<br>
-<%= link_to 'Grafica de enfermedades',  enfermedads_estadistica_path, remote: true %>
-<br>
+
  
 <%= button_to 'Nueva Enfermedad', new_enfermedad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
-
-
+<br>
 
 <%= will_paginate @enfermedads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

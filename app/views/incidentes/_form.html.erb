@@ -169,6 +169,12 @@
       <%= f.input :nombre_de_lider_de_informe, class: "form-control", label: false %>
    </div>
 </div> 
+
+<div class="field">
+    <b>Tipo de incidente</b> <br>
+    <%= f.collection_select :tipoincidente_id, Tipoincidente.all, :id, :nombre, class: "form-control", prompt:
+    "Seleccione Tipo incidente" %>
+  </div>
  
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 

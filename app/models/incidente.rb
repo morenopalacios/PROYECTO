@@ -1,5 +1,7 @@
 class Incidente < ActiveRecord::Base
 
+ belongs_to :tipoincidente
+
   def self.search(search, page)
 
 where(['upper(fecha_del_reporte) like ?',

@@ -31,11 +31,8 @@
   </tbody>
 </table>
 
-<br>
-<%= link_to 'Grafica de incidentes', incidentes_estadistica_path, remote: true %>
-<br>
- 
 <%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
+
 
 <%= will_paginate @incidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
