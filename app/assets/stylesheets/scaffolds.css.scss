@@ -1,8 +1,8 @@
 body {
 
- background-image: url("fondo.png");
+  background-image: url("fondo.png");
   background-repeat: no-repeat;
-  background-size: 1370px 1090px;
+  background-size: 1370px 1090px; 
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -77,8 +77,9 @@ div {
     list-style: square;
   }
 
+
 .formulario{
-  
+  box-shadow: 1px 2px 10px #000;
   border_radius:6px;
   margin:40px auto;
   width:900px;
