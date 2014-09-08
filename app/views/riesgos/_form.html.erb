@@ -124,16 +124,19 @@
        </div>
     </div> 
 
-    <div class="form-group">
+    
+</div>
+
+       <!-- Tab panes 3-->
+   <div class="tab-pane" id="messages">
+
+   <div class="form-group">
        <label for="controlesrecomendados" class="col-sm-2 control-label">Controles recomendados</label>
        <div class="col-sm-4">
           <%= f.input :controlesrecomendados, class: "form-control", label: false %>
        </div>
     </div> 
-</div>
-
-       <!-- Tab panes 3-->
-   <div class="tab-pane" id="messages">
+    
      <div class="form-group">
        <label for="consecuencia" class="col-sm-2 control-label">Consecuencia</label>
        <div class="col-sm-4">
@@ -162,7 +165,6 @@
           <%= f.input :repercuciondelriesgo, class: "form-control", label: false %>
        </div>
     </div> 
-
      
     <div class="form­-group"> 
        <div class="col­-sm­-offset­-2 col-­sm­-10"> 
@@ -172,11 +174,8 @@
     </div> 
 
 
-<div class="field">
-    Tipo Riesgos <br>
-    <%= f.collection_select :tiporiesgo_id, Tiporiesgo.all, :id, :nombres, class: "form-control", prompt:
-    "Seleccione Tipo riesgo" %>
-  </div>
+ 
+
 </div>
 
 
