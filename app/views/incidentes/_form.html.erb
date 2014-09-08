@@ -148,8 +148,8 @@
 </div> 
 
 <div class="field">
-    Tipo incidentes <br>
-    <%= f.collection_select :tipoincidente_id, Tipoincidente.all, :id, :nombres, class: "form-control", prompt:
+    <b>Tipo de incidente</b> <br>
+    <%= f.collection_select :tipoincidente_id, Tipoincidente.all, :id, :nombre, class: "form-control", prompt:
     "Seleccione Tipo incidente" %>
   </div>
  

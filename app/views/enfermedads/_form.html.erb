@@ -54,8 +54,8 @@
    </div>
 
  <div class="field">
-    Tipo enfermedad <br>
-    <%= f.collection_select :tipoenfermedad_id, Tipoenfermedad.all, :id, :nombres, class: "form-control", prompt:
+    <b>Tipo enfermedad<b> <br>
+    <%= f.collection_select :tipoenfermedad_id, Tipoenfermedad.all, :id, :nombre, class: "form-control", prompt:
     "Seleccione Tipo enfermedad" %>
   </div>
 
