@@ -78,10 +78,19 @@ message: 'Formato no valido' }
 validates :email_ct, format: { with: /\A([^@\s]+)@((?:[-a-z0-9]+\.)+[a-z]{2,})\Z/i,
 message: 'Formato no valido' }
 
+ def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |accidente|
+      csv << accidente.attributes.values_at(*column_names)
+    end
+  end
+
 def self.estadistica_x_trimestre(fechIni, fechFin)
       @t1 = Accidente.select('count(*) as numero_accidentes').where('fchAc between  ? and  ?',fechIni,fechFin)
       @t1.pluck('count(*)').first
   end
-   
 
+
+end
 end

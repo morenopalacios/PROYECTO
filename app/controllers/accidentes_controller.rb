@@ -25,7 +25,12 @@ class AccidentesController < ApplicationController
 
 
   def index
-    @accidentes = Accidente.search(params[:search], params[:page]).order('fchAc ASC')
+     @accidentes = Accidente.search(params[:search], params[:page]).order(:fchAc, 'fchAc ASC')
+     respond_to do |format|
+      format.html
+      format.csv { send_data @accidentes.to_csv }
+      format.xls { send_data @accidentes.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /accidentes/1
