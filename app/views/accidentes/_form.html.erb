@@ -326,7 +326,7 @@
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Tipo de accidente</label>
         <div class="col-sm-4">
-        <%= f.input :tipo_de_accidente, class: "form-control", label: false %>
+        <%= f.collection_select :tipo_de_accidente, Tipoaccidente.all, :id, :nombre, class: "form-control", prompt: "Seleccione Tipo de accidente" %>
         </div>
      </div>
         
@@ -467,18 +467,15 @@
 
     
   <div class="form-actions">
-<<<<<<< HEAD
+
     <p class="text-center"><%= f.submit "Guardar",class: "btn btn-info btn-xs" %>
        <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
     </p>
-=======
-  <p class="text-center"><%= f.submit "Guardar", class: "btn btn-warning btn-xs" %>
-                         <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
-  </p>
+
   </div>
   </div>
   </div>
->>>>>>> 45730e2fccaf97f374735c28b26e5607309672f9
+
   </div>
 
   </div>
