@@ -31,8 +31,14 @@
   </tbody>
 </table>
 
-<%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> <br>
 
+<p>
+  Descarga:
+  <%= link_to "CSV", incidentes_path(format: "csv") %> |
+  <%= link_to "Excel", incidentes_path(format: "xls") %>
+</p>
+<br>
 
 <%= will_paginate @incidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

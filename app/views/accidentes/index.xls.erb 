@@ -62,6 +62,8 @@
       <Cell><Data ss:Type="String">responsable_informe</Data></Cell> 
       <Cell><Data ss:Type="String">tipodoc3</Data></Cell> 
       <Cell><Data ss:Type="String">documento3</Data></Cell> 
+       <Cell><Data ss:Type="INTERGER">tipoaccidente_id</Data></Cell> 
+      
         
       </Row>
     <% @accidentes.each do |accidentes| %>
@@ -121,6 +123,7 @@
       <Cell><Data ss:Type="String"><%= accidente .responsable_informe %></Data></Cell> 
       <Cell><Data ss:Type="String"><%= accidente .tipodoc3 %></Data></Cell> 
       <Cell><Data ss:Type="String"><%= accidente .documento3 %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .tipoaccidente_id %></Data></Cell> 
       </Row>
     <% end %>
     </Table>

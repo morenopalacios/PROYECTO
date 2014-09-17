@@ -33,7 +33,14 @@
  
 <%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %>
 
+<br>
 
+<p>
+  Descarga:
+  <%= link_to "CSV", riesgos_path(format: "csv") %> |
+  <%= link_to "Excel", riesgos_path(format: "xls") %>
+</p>
+<br>
 
 <%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

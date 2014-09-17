@@ -1,0 +1,64 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+
+<Row>
+      <Cell><Data ss:Type="INTERGER">id</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">centro_id</Data></Cell> 
+      <Cell><Data ss:Type="String">area_o_proceso</Data></Cell> 
+      <Cell><Data ss:Type="String">lugar_de_ocurrencia</Data></Cell> 
+      <Cell><Data ss:Type="String">fecha_del_reporte</Data></Cell> 
+      <Cell><Data ss:Type="String"> hora_del_reporte</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">funcionario_id</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">personalinvolucrado_id</Data></Cell>    
+      <Cell><Data ss:Type="String">otro</Data></Cell>    
+      <Cell><Data ss:Type="String">especifique</Data></Cell> 
+      <Cell><Data ss:Type="String"> nombre_completo1</Data></Cell> 
+      <Cell><Data ss:Type="String"> email1</Data></Cell> 
+      <Cell><Data ss:Type="String">telefono1</Data></Cell> 
+     <Cell><Data ss:Type="String">especifique</Data></Cell> 
+     <Cell><Data ss:Type="String">nombre_completo2</Data></Cell> 
+      <Cell><Data ss:Type="String"> email2</Data></Cell> 
+      <Cell><Data ss:Type="String">telefono2</Data></Cell> 
+      <Cell><Data ss:Type="String"> descripcion_del_evento</Data></Cell> 
+      <Cell><Data ss:Type="String"> nombre_del_dilenciador</Data></Cell> 
+      <Cell><Data ss:Type="String">nombre_de_lider_de_informe</Data></Cell> 
+     <Cell><Data ss:Type="INTERGER"> tipoincidente_id</Data></Cell> 
+     
+
+  
+      </Row>
+    <% @incidentes.each do |incidentes| %>
+      <Row>
+        <Cell><Data ss:Type="INTERGER"><%= incidente.id %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= incidente.centro_id %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= incidente.area_o_proceso %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= incidente.lugar_de_ocurrencia %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= incidente.fecha_del_reporte %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= incidente.hora_del_reporte %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= incidente.funcionario_id %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= incidente.personalinvolucrado_id %></Data></Cell>    
+      <Cell><Data ss:Type="String"><%= incidente.otro %></Data></Cell>    
+      <Cell><Data ss:Type="String"><%= incidente .especifique %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= incidente.nombre_completo1 %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= incidente.email1 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= incidente.telefono1 %></Data></Cell>
+      <Cell><Data ss:Type="String"> <%= incidente.especifique %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= incidente. nombre_completo2 %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= incidente.email2 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= incidente.telefono2 %></Data></Cell>
+     <Cell><Data ss:Type="String"> <%= incidente.descripcion_del_evento %></Data></Cell> 
+     <Cell><Data ss:Type="String"> <%= incidente. nombre_del_dilenciador %></Data></Cell> 
+     <Cell><Data ss:Type="String"> <%= incidente.nombre_de_lider_de_informe %></Data></Cell> 
+     <Cell><Data ss:Type="INTERGER"> <%= incidente. tipoincidente_id %></Data></Cell> 
+
+ </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
