@@ -21,17 +21,17 @@
 <p><h3>Nuevo usuario</h3></p>
 
 <div class="field">  
-<%= f.label :email %><br />  
+<%= f.label :Correo %><br />  
 <%= f.text_field :email %> 
 </div> 
 
 <div class="field"> 
-<%= f.label :password %><br />  
+<%= f.label :Contraseña %><br />  
 <%= f.password_field :password %>  
 </div> 
 
 <div class="field"> 
-<%= f.label :password_confirmation %><br />  
+<%= f.label :Corfirmar_contraseña %><br />  
 <%= f.password_field :password_confirmation %> 
 </div> 
 
@@ -40,7 +40,7 @@
   <%= link_to 'Ver', @user, class: "btn btn-success btn-xs" %> 
 </div>
 <div class="atrasediperfil">
-<%= link_to 'Atras', users_path , class: "btn btn-default btn-xs" %>
+<%= link_to 'Atras', login_path , class: "btn btn-default btn-xs" %>
 </div>
 <% end %>
 
