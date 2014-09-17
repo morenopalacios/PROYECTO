@@ -66,6 +66,10 @@ Rails.application.routes.draw do
     resources :tipoincapacidads
   end
 
+  resources :accidentes do
+    resources :tipoaccidentes
+  end
+
 
   resources :enfermedads
 
