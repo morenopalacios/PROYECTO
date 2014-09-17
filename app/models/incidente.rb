@@ -27,6 +27,15 @@ end
    validates :nombre_del_dilenciador , :presence => true 
    validates :nombre_de_lider_de_informe, :presence => true
 
+   def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |incidente|
+      csv << Incidente.attributes.values_at(*column_names)
+    end
+  end
+end
+
  def self.estadistica_x_trimestre(fechIni, fechFin)
       @t1 = Incidente.select('count(*) as numero_incidentes').where('fecha_del_reporte  between  ? and  ?',fechIni,fechFin)
       @t1.pluck('count(*)').first
