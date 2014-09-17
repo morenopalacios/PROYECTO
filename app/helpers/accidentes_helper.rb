@@ -39,5 +39,9 @@ module AccidentesHelper
         	when "bar"
         		 image_tag ( Gchart.bar(datosG) )			
         end
-	end	
+	end
+
+	def mostrartipoaccidente(id)
+		Tipoaccidente.where(:id => id).pluck(:nombre).first
+	end		
 end

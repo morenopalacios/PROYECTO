@@ -23,7 +23,12 @@ class IncidentesController < ApplicationController
             :labels => @ano.values }
  end
   def index 
-      @incidentes = Incidente.search(params[:search], params[:page]).order('fecha_del_reporte ASC')
+      @incidentes = Incidente.search(params[:search], params[:page]).order(:fecha_del_reporte, 'fecha_del_reporte ASC')
+      respond_to do |format|
+      format.html
+      format.csv { send_data @incidentes.to_csv }
+      format.xls { send_data @incidentes.to_csv(col_sep: "\t") }
+    end
   end 
  
   def show 

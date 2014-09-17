@@ -2,8 +2,26 @@
 <%= simple_form_for(@accidente) do |f| %>
   <%= f.error_notification %>
 
-  <div class="formulario">
-      <div class="form-group">
+<div class="formulario">
+
+  <h5><b>Nuevo Accidente</b></h5>
+  
+ <div class="container-fluid">
+
+    <!-- Nav tabs -->
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="active"><a href="#home" role="tab" data-toggle="tab">Pantalla 1</a></li>
+      <li><a href="#profile" role="tab" data-toggle="tab">Pantalla 2</a></li>
+      <li><a href="#messages" role="tab" data-toggle="tab">Pantalla 3</a></li>
+       <li><a href="#settings" role="tab" data-toggle="tab">Pantalla 4</a></li>
+        <li><a href="#set" role="tab" data-toggle="tab">Pantalla 5</a></li>
+         <li><a href="#setting" role="tab" data-toggle="tab">Pantalla 6</a></li>
+    </ul>
+<!-- Tab panes 1-->
+
+<div class="tab-content">
+  <div class="tab-pane active" id="home">
+        <div class="form-group">
         <label for="nombres" class="col-sm-2 control-label">Diligenciador</label>
         <div class="col-sm-4">
         <%= f.input :diligenciador, class: "form-control", label: false %>
@@ -71,6 +89,11 @@
         <%= f.input :direccion_reportada, class: "form-control", label: false %>
         </div>
       </div>
+
+      </div>
+
+       <!-- Tab panes 2-->
+      <div class="tab-pane" id="profile">
         
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Teléfono reportado</label>
@@ -79,12 +102,14 @@
         </div>
       </div>
         
-        <div class="form-group">
-        <label for="" class="col-sm-2 control-label">Actvidad económica sede principal</label>
-        <div class="col-sm-4">
-        <%= f.input :actividad_economica_sede_principal, class: "form-control", label: false %>
-        </div>
+      <div class="form-group">
+          <label for="" class="col-sm-2 control-label">Actvidad económica sede principal</label>
+          <div class="col-sm-4">
+          <%= f.input :actividad_economica_sede_principal, class: "form-control", label: false %>
+          </div>
       </div>
+
+      
         
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Código</label>
@@ -140,6 +165,11 @@
         <%= f.input :actividad_economica_centro_trabajo, class: "form-control", label: false %>
         </div>
       </div>
+
+      </div>
+
+       <!-- Tab panes 3-->
+   <div class="tab-pane" id="messages">
         
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Dirección centro trabajo</label>
@@ -168,6 +198,9 @@
         <%= f.input :email_ct, class: "form-control", label: false %>
         </div>
       </div>
+
+      
+
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Departamento</label>
             <%= f.collection_select :departamento1, Departamento.all, :id, :nombre, class: "form-control", prompt:
@@ -210,6 +243,11 @@
         <div class="col-sm-4">
         </div>
      </div>
+
+     </div>
+
+       <!-- Tab panes 4-->
+   <div class="tab-pane" id="settings">
 
       <div class="form-group">
         <label for="" class="col-sm-2 control-label">Hora del accidente</label>
@@ -279,11 +317,16 @@
         <%= f.input :sitio, class: "form-control", label: false %>
         </div>
      </div>
+
+     </div>
+
+       <!-- Tab panes 5-->
+   <div class="tab-pane" id="set">
         
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Tipo de accidente</label>
         <div class="col-sm-4">
-        <%= f.input :tipo_de_accidente, class: "form-control", label: false %>
+        <%= f.collection_select :tipo_de_accidente, Tipoaccidente.all, :id, :nombre, class: "form-control", prompt: "Seleccione Tipo de accidente" %>
         </div>
      </div>
         
@@ -350,6 +393,11 @@
         <%= f.input :descripcion_del_at, class: "form-control", label: false %>
         </div>
      </div>
+
+     </div>
+
+       <!-- Tab panes 6-->
+   <div class="tab-pane" id="setting">
      
         <div class="form-group">
         <label for="" class="col-sm-2 control-label">Hubo personas que presenciarón el accidente?</label>
@@ -419,11 +467,17 @@
 
     
   <div class="form-actions">
-  <p class="text-center"><%= f.submit "Guardar", class: "btn btn-warning btn-xs" %>
-     <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
-  </p>
 
-  
+    <p class="text-center"><%= f.submit "Guardar",class: "btn btn-info btn-xs" %>
+       <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
+    </p>
+
   </div>
   </div>
+  </div>
+
+  </div>
+
+  </div>
+
 <% end %>

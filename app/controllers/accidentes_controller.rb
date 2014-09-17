@@ -25,7 +25,12 @@ class AccidentesController < ApplicationController
 
 
   def index
-    @accidentes = Accidente.search(params[:search], params[:page]).order('fchAc ASC')
+     @accidentes = Accidente.search(params[:search], params[:page]).order(:fchAc, 'fchAc ASC')
+     respond_to do |format|
+      format.html
+      format.csv { send_data @accidentes.to_csv }
+      format.xls { send_data @accidentes.to_csv(col_sep: "\t") }
+    end
   end
 
   # GET /accidentes/1
@@ -90,6 +95,6 @@ class AccidentesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def accidente_params
-      params.require(:accidente).permit(:diligenciador, :eps, :afp, :arl, :documento, :tipodoc_id, :tipo_de_vinculacion, :razon_social, :direccion_sede_principal, :direccion_reportada, :telefono_reportado, :actividad_economica_sede_principal, :codigo, :telefono_sede_principal, :fax_sede_principal, :email_sede_principal, :departamento_id, :municipio_id, :zona, :actividad_economica_centro_trabajo, :direccion_centro_trabajo, :telefono_ct, :fax_ct, :email_ct, :departamento1, :municipio1, :zona1, :funcionario_id, :fchAc, :hora_del_accidente, :dia_de_la_semana, :jornada_en_que_sucede, :realiza_su_labor, :ocupacion_no_habitual, :tiempo_laborado, :lugar_donde_ocurrio_el_at, :mecanismo_o_formato_del_at, :tipo_de_lesion, :sitio, :tipo_de_accidente, :parte_del_cuerpo_afectado, :agente_del_accidente, :departamento2, :municipio2, :zona2, :mortal, :fecha_mortal, :descripcion_del_at, :hubo_personas_que_presenciaron_el_accidente, :testigo1, :tipodoc1, :documento1, :testigo2, :tipodoc2, :documento2, :responsable_informe, :tipodoc3, :documento3)
+      params.require(:accidente).permit(:diligenciador, :eps, :afp, :arl, :documento, :tipodoc_id, :tipo_de_vinculacion, :razon_social, :direccion_sede_principal, :direccion_reportada, :telefono_reportado, :actividad_economica_sede_principal, :codigo, :telefono_sede_principal, :fax_sede_principal, :email_sede_principal, :departamento_id, :municipio_id, :zona, :actividad_economica_centro_trabajo, :direccion_centro_trabajo, :telefono_ct, :fax_ct, :email_ct, :departamento1, :municipio1, :zona1, :funcionario_id, :fchAc, :hora_del_accidente, :dia_de_la_semana, :jornada_en_que_sucede, :realiza_su_labor, :ocupacion_no_habitual, :tiempo_laborado, :lugar_donde_ocurrio_el_at, :mecanismo_o_formato_del_at, :tipo_de_lesion, :sitio, :tipo_de_accidente, :tipoaccidente_id, :parte_del_cuerpo_afectado, :agente_del_accidente, :departamento2, :municipio2, :zona2, :mortal, :fecha_mortal, :descripcion_del_at, :hubo_personas_que_presenciaron_el_accidente, :testigo1, :tipodoc1, :documento1, :testigo2, :tipodoc2, :documento2, :responsable_informe, :tipodoc3, :documento3)
     end
 end

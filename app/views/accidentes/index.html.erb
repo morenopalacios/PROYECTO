@@ -44,7 +44,7 @@
         <td><%= accidente.lugar_donde_ocurrio_el_at %></td>
         <td><%= accidente.tipo_de_lesion %></td>
         <td><%= accidente.sitio %></td>
-        <td><%= accidente.tipo_de_accidente %></td>
+        <td><%= mostrartipoaccidente(accidente.tipo_de_accidente) %></td>
         <td><%= accidente.parte_del_cuerpo_afectado %></td>
         <td><%= accidente.agente_del_accidente %></td>
         <td><%= accidente.descripcion_del_at %></td>
@@ -62,6 +62,12 @@
 <%= link_to 'Nuevo Accidente', new_accidente_path, class: "btn btn-primary btn-xs" %>
 
 <br><br>
+
+<p>
+  Descarga:
+  <%= link_to "CSV", accidentes_path(format: "csv") %> |
+  <%= link_to "Excel", accidentes_path(format: "xls") %>
+</p>
 
 <%= will_paginate @accidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
 &raquo;' %>
