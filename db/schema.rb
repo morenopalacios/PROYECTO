@@ -74,14 +74,7 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.string   "documento3"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tipoaccidente_id"
   end
-
-  add_index "accidentes", ["departamento_id"], name: "index_accidentes_on_departamento_id"
-  add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
-  add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
-  add_index "accidentes", ["tipoaccidente_id"], name: "index_accidentes_on_tipoaccidente_id"
-  add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
 
   create_table "albums", force: true do |t|
     t.text     "recomendacion"
@@ -131,11 +124,6 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.integer  "tipoenfermedad_id"
   end
 
-  add_index "enfermedads", ["centro_id"], name: "index_enfermedads_on_centro_id"
-  add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
-  add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
-  add_index "enfermedads", ["tipoenfermedad_id"], name: "index_enfermedads_on_tipoenfermedad_id"
-
   create_table "funcionarios", force: true do |t|
     t.string   "nombres"
     t.string   "apellidos"
@@ -177,11 +165,7 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.string   "origendelaincapacidad"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tipoincapacidad_id"
   end
-
-  add_index "incapacidads", ["funcionario_id"], name: "index_incapacidads_on_funcionario_id"
-  add_index "incapacidads", ["tipoincapacidad_id"], name: "index_incapacidads_on_tipoincapacidad_id"
 
   create_table "incidentes", force: true do |t|
     t.integer  "centro_id"
@@ -206,11 +190,6 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.datetime "updated_at"
     t.integer  "tipoincidente_id"
   end
-
-  add_index "incidentes", ["centro_id"], name: "index_incidentes_on_centro_id"
-  add_index "incidentes", ["funcionario_id"], name: "index_incidentes_on_funcionario_id"
-  add_index "incidentes", ["personalinvolucrado_id"], name: "index_incidentes_on_personalinvolucrado_id"
-  add_index "incidentes", ["tipoincidente_id"], name: "index_incidentes_on_tipoincidente_id"
 
   create_table "municipios", force: true do |t|
     t.string   "nombre"
@@ -243,11 +222,7 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.string   "repercuciondelriesgo"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "tiporiesgo_id"
   end
-
-  add_index "riesgos", ["funcionario_id"], name: "index_riesgos_on_funcionario_id"
-  add_index "riesgos", ["tiporiesgo_id"], name: "index_riesgos_on_tiporiesgo_id"
 
   create_table "tipo_salidas", force: true do |t|
     t.string   "nombre"
