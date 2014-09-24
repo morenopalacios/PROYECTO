@@ -1,16 +1,10 @@
 
-<%- model_class = Cronograma -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
-</div>
-<br>
-<%= form_tag cronogramas_path, :method => 'get' do %> 
-<% content_tag :label do %> 
+
+<h1>Lista de centros</h1>
+
 Ingrese fecha:
 <%= text_field_tag :search, params[:search] %> 
 <%= submit_tag "Buscar", :fecha => nil %> 
-<% end %> 
-<% end %> 
 <br>
 <table class="table table-bordered">
   <thead>
