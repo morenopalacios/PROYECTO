@@ -26,6 +26,15 @@ class Riesgo < ActiveRecord::Base
     validates :factordeponderacion,:presence => true
     validates :repercuciondelriesgo, :presence => true 
 
+    def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |riesgo|
+      csv << Riesgo.attributes.values_at(*column_names)
+    end
+  end
+end
+
    def self.estadistica_x_trimestre(fechIni, fechFin)
       @t1 = Riesgo.select('count(*) as numero_riesgos').where('fecha  between  ? and  ?',fechIni,fechFin)
       @t1.pluck('count(*)').first

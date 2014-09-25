@@ -24,8 +24,13 @@ class RiesgosController  < ApplicationController
 
  
   def index 
-    @riesgos = Riesgo.search(params[:search], params[:page]).order('fecha ASC') 
-  end 
+    @riesgos = Riesgo.search(params[:search], params[:page]).order(:fecha, 'fecha ASC') 
+    respond_to do |format|
+      format.html
+      format.csv { send_data @riesgos .to_csv }
+      format.xls { send_data @riesgos .to_csv(col_sep: "\t") }
+    end
+  end  
  
   def show 
   end 

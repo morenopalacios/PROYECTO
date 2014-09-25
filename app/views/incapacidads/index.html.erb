@@ -1,4 +1,4 @@
-<h1>Listado incapacidad</h1>
+<center><h1><b>INCAPACIDADES</b></h1></center><br><br>
 	<%= form_tag incapacidads_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Fecha inicio:
@@ -32,9 +32,20 @@
 <%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <br>
+
+<p>
+  Descarga:
+  <%= link_to "CSV", incapacidads_path(format: "csv") %> --
+  <%= link_to "Excel", incapacidads_path(format: "xls") %>
+</p>
  
 <%= will_paginate @incapacidads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
 Incapacidads: <%= @incapacidads.count %>
+
+
+
+
+
  
 

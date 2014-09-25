@@ -1,0 +1,43 @@
+
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="INTEGER">ID</Data></Cell>
+        <Cell><Data ss:Type="INTEGER">Funcionarios</Data></Cell>
+        <Cell><Data ss:Type="Date">Fecha inicio</Data></Cell>
+        <Cell><Data ss:Type="Date">Fecha terminación</Data></Cell>
+        <Cell><Data ss:Type="String">Tipo de incapacidad</Data></Cell>
+        <Cell><Data ss:Type="String">Total dias</Data></Cell>
+        <Cell><Data ss:Type="String">Dias acobrar</Data></Cell>
+        <Cell><Data ss:Type="String">Prorroga</Data></Cell>
+        <Cell><Data ss:Type="String">Numero inpacacidad</Data></Cell>
+        <Cell><Data ss:Type="String">Origen de la incapacidad</Data></Cell>
+        <Cell><Data ss:Type="String">Prorroga</Data></Cell>
+      </Row>
+    <% @incapacidads.each do |incapacidad| %>
+      <Row>
+        <Cell><Data ss:Type="INTEGER"><%= incapacidad.id %></Data></Cell>
+        <Cell><Data ss:Type="INTEGER"><%=  incapacidad.funcionario.nombres rescue nil  %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= incapacidad.fechainicio %></Data></Cell>
+        <Cell><Data ss:Type="Date"><%= incapacidad.fechaterminacion %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.tipoincapacidad_id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.totaldias %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.diasacobrar %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.prorroga %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.numeroinpacacidad %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.origendelaincapacidad %></Data></Cell>
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+
+
+
+

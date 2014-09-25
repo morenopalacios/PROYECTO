@@ -1,0 +1,132 @@
+<?xml version="1.0"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:o="urn:schemas-microsoft-com:office:office"
+  xmlns:x="urn:schemas-microsoft-com:office:excel"
+  xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+  xmlns:html="http://www.w3.org/TR/REC-html40">
+  <Worksheet ss:Name="Sheet1">
+    <Table>
+      <Row>
+        <Cell><Data ss:Type="INTERGER">id</Data></Cell> 
+      <Cell><Data ss:Type="String">diligenciador</Data></Cell> 
+      <Cell><Data ss:Type="String">eps</Data></Cell> 
+      <Cell><Data ss:Type="String">afp</Data></Cell> 
+      <Cell><Data ss:Type="String">arl</Data></Cell> 
+      <Cell><Data ss:Type="String"> documento</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">tipodoc_id</Data></Cell> 
+      <Cell><Data ss:Type="String">tipo_de_vinculacion</Data></Cell>    
+      <Cell><Data ss:Type="String">razon_social</Data></Cell>    
+      <Cell><Data ss:Type="String">direccion_sede_principal</Data></Cell> 
+      <Cell><Data ss:Type="String"> direccion_reportada</Data></Cell> 
+      <Cell><Data ss:Type="String"> telefono_reportado</Data></Cell> 
+      <Cell><Data ss:Type="String">actividad_economica_sede_principal</Data></Cell> 
+      <Cell><Data ss:Type="String">codigo</Data></Cell> 
+      <Cell><Data ss:Type="String">telefono_sede_principal</Data></Cell> 
+      <Cell><Data ss:Type="String">fax_sede_principal</Data></Cell> 
+      <Cell><Data ss:Type="String">email_sede_principal</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">departamento_id</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">municipio_id</Data></Cell> 
+      <Cell><Data ss:Type="String">zona</Data></Cell> 
+      <Cell><Data ss:Type="String">actividad_economica_centro_trabajo</Data></Cell> 
+      <Cell><Data ss:Type="Interger">direccion_centro_trabajo</Data></Cell> 
+      <Cell><Data ss:Type="Interger"> telefono_ct</Data></Cell> 
+      <Cell><Data ss:Type="String"> fax_ct</Data></Cell> 
+      <Cell><Data ss:Type="String">email_ct</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"> departamento1</Data></Cell> 
+      <Cell><Data ss:Type="String ">zona1</Data></Cell> 
+      <Cell><Data ss:Type="Date"> fchAc</Data></Cell> 
+      <Cell><Data ss:Type="String">hora_del_accidente</Data></Cell> 
+      <Cell><Data ss:Type="String"> jornada_en_que_sucede</Data></Cell> 
+      <Cell><Data ss:Type="Boolean">realiza_su_labor</Data></Cell> 
+      <Cell><Data ss:Type="String">ocupacion_no_habitual</Data></Cell> 
+      <Cell><Data ss:Type="String">tiempo_laborado</Data></Cell> 
+      <Cell><Data ss:Type="String">  lugar_donde_ocurrio_el_at</Data></Cell> 
+      <Cell><Data ss:Type="String">mecanismo_o_formato_del_at</Data></Cell> 
+      <Cell><Data ss:Type="String">tipo_de_lesion</Data></Cell> 
+      <Cell><Data ss:Type="String">tipo_de_accidente</Data></Cell> 
+      <Cell><Data ss:Type="String">parte_del_cuerpo_afectado</Data></Cell> 
+      <Cell><Data ss:Type="String">agente_del_accidente</Data></Cell> 
+      <Cell><Data ss:Type="String">departamento2</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">municipio2</Data></Cell> 
+      <Cell><Data ss:Type="String">zona2</Data></Cell> 
+      <Cell><Data ss:Type="Boolean">mortal</Data></Cell> 
+      <Cell><Data ss:Type="Date">fecha_mortal</Data></Cell> 
+      <Cell><Data ss:Type="String">descripcion_del_at</Data></Cell> 
+      <Cell><Data ss:Type="Boolean">hubo_personas_que_presenciaron_el_accidente</Data></Cell> 
+      <Cell><Data ss:Type="String">testigo1</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER">tipodoc1</Data></Cell> 
+      <Cell><Data ss:Type="String">documento1</Data></Cell> 
+      <Cell><Data ss:Type="String">testigo2</Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"> tipodoc2</Data></Cell> 
+      <Cell><Data ss:Type="String">documento2</Data></Cell> 
+      <Cell><Data ss:Type="String">responsable_informe</Data></Cell> 
+      <Cell><Data ss:Type="String">tipodoc3</Data></Cell> 
+      <Cell><Data ss:Type="String">documento3</Data></Cell> 
+       <Cell><Data ss:Type="INTERGER">tipoaccidente_id</Data></Cell> 
+      
+        
+      </Row>
+    <% @accidentes.each do |accidentes| %>
+      <Row>
+        <Cell><Data ss:Type="INTERGER"><%= accidente.id %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .diligenciador %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .eps %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .afp %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .arl %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= accidente .documento %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .tipodoc_id %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .tipo_de_vinculacion %></Data></Cell>    
+      <Cell><Data ss:Type="String"><%= accidente .razon_social %></Data></Cell>    
+      <Cell><Data ss:Type="String"><%= accidente .direccion_sede_principal %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= accidente .direccion_reportada %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= accidente .telefono_reportado %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .actividad_economica_sede_principal %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .codigo %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .telefono_sede_principal %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .fax_sede_principal %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .email_sede_principal %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .departamento_id %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .municipio_id %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .zona %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .actividad_economica_centro_trabajo %></Data></Cell> 
+      <Cell><Data ss:Type="Interger"><%= accidente .direccion_centro_trabajo %></Data></Cell> 
+      <Cell><Data ss:Type="Interger"> <%= accidente .telefono_ct %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= accidente .fax_ct %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .email_ct %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"> <%= accidente .departamento1 %></Data></Cell> 
+      <Cell><Data ss:Type="String "><%= accidente .zona1 %></Data></Cell> 
+      <Cell><Data ss:Type="Date"><%= accidente . fchAc %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .hora_del_accidente %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= accidente .jornada_en_que_sucede %></Data></Cell> 
+      <Cell><Data ss:Type="Boolean"><%= accidente .realiza_su_labor %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .ocupacion_no_habitual %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .tiempo_laborado %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .  lugar_donde_ocurrio_el_at %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .mecanismo_o_formato_del_at %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .tipo_de_lesion %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .tipo_de_accidente %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .parte_del_cuerpo_afectado %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .agente_del_accidente %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .departamento2< %>/Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .municipio2 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .zona2 %></Data></Cell> 
+      <Cell><Data ss:Type="Boolean"><%= accidente .mortal %></Data></Cell> 
+      <Cell><Data ss:Type="Date"><%= accidente .fecha_mortal %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .descripcion_del_at %></Data></Cell> 
+      <Cell><Data ss:Type="Boolean"><%= accidente .hubo_personas_que_presenciaron_el_accidente %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .testigo1 %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .tipodoc1 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .documento1 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .testigo2 %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente . tipodoc2 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .documento2 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .responsable_informe %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .tipodoc3 %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= accidente .documento3 %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= accidente .tipoaccidente_id %></Data></Cell> 
+      </Row>
+    <% end %>
+    </Table>
+  </Worksheet>
+</Workbook>
+
