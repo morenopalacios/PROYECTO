@@ -40,6 +40,8 @@
   <%= link_to "CSV", riesgos_path(format: "csv") %> |
   <%= link_to "Excel", riesgos_path(format: "xls") %>
 </p>
+
+
 <br>
 
 <%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>

@@ -24,7 +24,10 @@ class IncapacidadsController < ApplicationController
  end
 
 
-  def index
+
+
+
+def index
       @incapacidads = Incapacidad.search(params[:search], params[:page]).order(:fechainicio , 'fechainicio ASC')
 
   respond_to do |format|
@@ -33,6 +36,8 @@ class IncapacidadsController < ApplicationController
     format.xls { send_data @incapacidads.to_csv(col_sep: "\t") }
   end
 end
+
+
 
  
   def show 
@@ -66,7 +71,7 @@ end
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def incapacidad_params         
-    params.require(:incapacidad).permit(:funcionario_id, :fechainicio, :fechaterminacion, :tipoincapacidad_id, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
+    params.require(:incapacidad).permit(:funcionario_id, :tipoincapacidad_id, :fechainicio, :fechaterminacion, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
   end 
 
  

@@ -13,7 +13,6 @@
       <Cell><Data ss:Type="INTERGER">funcionario_id</Data></Cell> 
       <Cell><Data ss:Type="Date">fecha</Data></Cell> 
       <Cell><Data ss:Type="String">areadeseccionopuestodetrabajo</Data></Cell> 
-      <Cell><Data ss:Type="String"> clasederiesgo</Data></Cell> 
       <Cell><Data ss:Type="String">factorderiesgo</Data></Cell> 
       <Cell><Data ss:Type="String ">fuentegeneradora</Data></Cell>    
       <Cell><Data ss:Type="String">efectoconocido</Data></Cell>    
@@ -23,7 +22,6 @@
       <Cell><Data ss:Type="String">controlesrecomendados</Data></Cell> 
      <Cell><Data ss:Type="String">consecuencia</Data></Cell> 
      <Cell><Data ss:Type="String">exposicion</Data></Cell> 
-
       <Cell><Data ss:Type="String"> factordeponderacion</Data></Cell> 
       <Cell><Data ss:Type="String">repercuciondelriesgo</Data></Cell> 
      <Cell><Data ss:Type="INTERGER"> tiporiesgo_id</Data></Cell> 
@@ -33,25 +31,24 @@
       </Row>
     <% @riesgos.each do |riesgos| %>
       <Row>
-        <Cell><Data ss:Type="INTERGER"><%= riesgo.id %></Data></Cell> 
-      <Cell><Data ss:Type="String"><%= riesgo . empresa %></Data></Cell> 
-      <Cell><Data ss:Type="INTERGER"><%= riesgo . funcionario_id %></Data></Cell> 
-      <Cell><Data ss:Type="Date"><%= riesgo . fecha %></Data></Cell> 
-      <Cell><Data ss:Type="String"><%= riesgo . areadeseccionopuestodetrabajo %></Data></Cell> 
-      <Cell><Data ss:Type="String"> <%= riesgo . hora_del_reporte %></Data></Cell> 
-      <Cell><Data ss:Type="String"><%= riesgo . clasederiesgo %></Data></Cell> 
-      <Cell><Data ss:Type="String"><%= riesgo . factorderiesgo %></Data></Cell>    
-      <Cell><Data ss:Type="String"><%= riesgo . fuentegeneradora %></Data></Cell>    
-      <Cell><Data ss:Type="String"><%= riesgo . efectoconocido %></Data></Cell> 
-      <Cell><Data ss:Type="String"> <%= riesgo . numerodeexpuestos %></Data></Cell> 
-      <Cell><Data ss:Type="String"> <%= riesgo . tiempo %></Data></Cell> 
-      <Cell><Data ss:Type="String"><%= riesgo . controlesexitentes %></Data></Cell>
-      <Cell><Data ss:Type="String"> <%= riesgo . controlesrecomendados %></Data></Cell> 
-<Cell><Data ss:Type="String"> <%= riesgo . consecuencia%></Data></Cell> 
-      <Cell><Data ss:Type="String"> <%= riesgo . exposicion %></Data></Cell> 
-      <Cell><Data ss:Type="String"><%= riesgo . factordeponderacion %></Data></Cell>
- <Cell><Data ss:Type="String"> <%= riesgo . repercuciondelriesgo %></Data></Cell> 
- <Cell><Data ss:Type="INTERGER"> <%= riesgo . tiporiesgo_id %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= riesgo.id %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= riesgo.empresa %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"><%= riesgo.funcionario_id %></Data></Cell> 
+      <Cell><Data ss:Type="Date"><%= riesgo.fecha %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= riesgo.areadeseccionopuestodetrabajo %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= riesgo.hora_del_reporte %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= riesgo.factorderiesgo %></Data></Cell>    
+      <Cell><Data ss:Type="String"><%= riesgo.fuentegeneradora %></Data></Cell>    
+      <Cell><Data ss:Type="String"><%= riesgo.efectoconocido %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= riesgo.numerodeexpuestos %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= riesgo.tiempo %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= riesgo.controlesexitentes %></Data></Cell>
+      <Cell><Data ss:Type="String"> <%= riesgo.controlesrecomendados %></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= riesgo.consecuencia%></Data></Cell> 
+      <Cell><Data ss:Type="String"> <%= riesgo.exposicion %></Data></Cell> 
+      <Cell><Data ss:Type="String"><%= riesgo.factordeponderacion %></Data></Cell>
+      <Cell><Data ss:Type="String"> <%= riesgo.repercuciondelriesgo %></Data></Cell> 
+      <Cell><Data ss:Type="INTERGER"> <%= riesgo.tiporiesgo_id %></Data></Cell> 
 
  </Row>
     <% end %>

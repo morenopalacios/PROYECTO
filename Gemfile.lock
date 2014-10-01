@@ -39,6 +39,7 @@ GEM
     bootstrap-sass (3.1.1.1)
       sass (~> 3.2)
     builder (3.2.2)
+    cancancan (1.9.2)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.4)
@@ -169,6 +170,7 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-datepicker-rails
   bootstrap-sass
+  cancancan (~> 1.9.2)
   coffee-rails (~> 4.0.0)
   googlecharts
   jbuilder (~> 2.0)

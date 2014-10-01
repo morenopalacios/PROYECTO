@@ -85,6 +85,8 @@ message: 'Formato no valido' }
       csv << accidente.attributes.values_at(*column_names)
     end
   end
+  end
+
 
 def self.estadistica_x_trimestre(fechIni, fechFin)
       @t1 = Accidente.select('count(*) as numero_accidentes').where('fchAc between  ? and  ?',fechIni,fechFin)
@@ -92,5 +94,4 @@ def self.estadistica_x_trimestre(fechIni, fechFin)
   end
 
 
-end
 end

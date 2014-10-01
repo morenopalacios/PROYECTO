@@ -1,4 +1,4 @@
-<center><h1><b>ENFERMEDADES</b></h1></center><br><br>
+<center class="fadeIn"><h1><b>ENFERMEDADES</b></h1></center><br><br>
 	<%= form_tag enfermedads_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Fecha:
@@ -11,6 +11,7 @@
   <thead>
     <tr>
       <th>Funcionario</th>
+      <th>Tipo de enfermedad</th>
        <th>Descripcion</th>
        <th>Fecha</th>
       <th>Codigo de diagnostico</th>
@@ -24,16 +25,15 @@
   </tbody>
 </table>
 
+<p>
+  Download:
+  <%= link_to "CSV", enfermedads_path(format: "csv") %> |
+  <%= link_to "Excel", enfermedads_path(format: "xls") %>
+</p>
 
  
 <%= button_to 'Nueva Enfermedad', new_enfermedad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
 <br>
-
-<p>
-  Descarga:
-  <%= link_to "CSV", enfermedads_path(format: "csv") %> |
-  <%= link_to "Excel", enfermedads_path(format: "xls") %>
-</p>
 
 <%= will_paginate @enfermedads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>

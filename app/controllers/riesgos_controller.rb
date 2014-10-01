@@ -22,6 +22,8 @@ class RiesgosController  < ApplicationController
             :labels => @ano.values }
  end
 
+
+
  
   def index 
     @riesgos = Riesgo.search(params[:search], params[:page]).order(:fecha, 'fecha ASC') 
