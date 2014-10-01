@@ -24,7 +24,7 @@
       <Row>
         <Cell><Data ss:Type="INTEGER"><%= incapacidad.id %></Data></Cell>
         <Cell><Data ss:Type="INTEGER"><%=  incapacidad.funcionario.nombres rescue nil  %></Data></Cell>
-        <Cell><Data ss:Type="String"><%= incapacidad.tipoincapacidad_id %></Data></Cell>
+        <Cell><Data ss:Type="String"><%= incapacidad.tipoincapacidad_id %></Data></Cell> 
         <Cell><Data ss:Type="Date"><%= incapacidad.fechainicio %></Data></Cell>
         <Cell><Data ss:Type="Date"><%= incapacidad.fechaterminacion %></Data></Cell>
         <Cell><Data ss:Type="String"><%= incapacidad.totaldias %></Data></Cell>

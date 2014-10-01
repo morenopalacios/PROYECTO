@@ -6,10 +6,12 @@
   <strong>Funcionario:</strong>
   <%= @incapacidad.funcionario.nombres rescue nil%>
 </p>
+
 <p>
-  <strong>Tipo de incacidad:</strong>
-  <%= @incapacidad.tipoincacidad.nombre %>
+  <strong>Tipo de incapacidad:</strong>
+  <%= @incapacidad.tipoincacidad.nombre rescue nil %>
 </p>
+
 <p>
   <strong>Fecha inicio:</strong>
   <%= @incapacidad.fechainicio %>

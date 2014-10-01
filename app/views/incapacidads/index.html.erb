@@ -11,7 +11,7 @@
   <thead>
     <tr>
       <th>Funcionario</th>
-      <th>Tipo de incapacidad</th>
+       <th>Tipo de incapacidad</th>
       <th>Fecha inicio</th>
       <th>Fecha terminación</th>
       <th>Total dias</th>
@@ -32,15 +32,16 @@
 <%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <br>
-
-<p>
-  Descarga:
-  <%= link_to "CSV", incapacidads_path(format: "csv") %> --
-  <%= link_to "Excel", incapacidads_path(format: "xls") %>
-</p>
  
 <%= will_paginate @incapacidads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
+<p>
+  Download:
+  <%= link_to "CSV", incapacidads_path(format: "csv") %> |
+  <%= link_to "Excel", incapacidads_path(format: "xls") %>
+</p>
+
+
 Incapacidads: <%= @incapacidads.count %>
 
 
