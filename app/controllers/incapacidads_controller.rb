@@ -66,7 +66,7 @@ end
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def incapacidad_params         
-    params.require(:incapacidad).permit(:funcionario_id, :fechainicio, :fechaterminacion, :tipoincapacidad_id, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
+    params.require(:incapacidad).permit(:funcionario_id, :tipoincapacidad_id, :fechainicio, :fechaterminacion, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
   end 
 
  

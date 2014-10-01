@@ -18,6 +18,13 @@
     <%= f.collection_select :funcionario_id, Funcionario.all, :id, :nombres, class: "form-control", prompt:
     "Seleccione Funcionario" %>
   </div>
+
+   <div class="field">
+    <b>tipo de incapacidad</b><br>
+    <%= f.collection_select :tipoincapacidad_id, Tipoincapacidad.all, :id, :nombre, class: "form-control", prompt:
+    "Seleccione tipo de incapacidad" %>
+  </div>
+ 
  
 
    <div class="form­-group"> 
@@ -57,12 +64,6 @@
     </div> 
    </div>
 
-   <div class="field">
-    <b>tipo de incapacidad</b><br>
-    <%= f.collection_select :tipoincapacidad_id, Tipoincapacidad.all, :id, :nombre, class: "form-control", prompt:
-    "Seleccione tipo de incapacidad" %>
-  </div>
- 
 
    <div class="form­-group"> 
     <label for="name" class="col-­sm-­3 control­-label">Total dias</label>  
