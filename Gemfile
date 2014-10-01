@@ -61,3 +61,5 @@ gem 'bootstrap-datepicker-rails', :require => 'bootstrap-datepicker-rails'
 gem 'paperclip'
 gem 'remotipart'
 gem 'googlecharts'
+
+gem 'cancancan', '~> 1.9.2'

@@ -11,9 +11,9 @@ class Riesgo < ActiveRecord::Base
     
     validates :empresa, :presence => true 
     validates :funcionario_id, :presence => true 
+    validates :tiporiesgo_id, :presence => true 
     validates :fecha, :presence => true 
     validates :areadeseccionopuestodetrabajo, :presence => true 
-    validates :clasederiesgo, :presence => true 
     validates :factorderiesgo, :presence => true 
     validates :fuentegeneradora, :presence => true 
     validates :efectoconocido, :presence => true 
@@ -26,14 +26,17 @@ class Riesgo < ActiveRecord::Base
     validates :factordeponderacion,:presence => true
     validates :repercuciondelriesgo, :presence => true 
 
+
     def self.to_csv(options = {})
   CSV.generate(options) do |csv|
     csv << column_names
     all.each do |riesgo|
-      csv << Riesgo.attributes.values_at(*column_names)
+      csv << riesgo.attributes.values_at(*column_names)
     end
   end
 end
+
+
 
    def self.estadistica_x_trimestre(fechIni, fechFin)
       @t1 = Riesgo.select('count(*) as numero_riesgos').where('fecha  between  ? and  ?',fechIni,fechFin)
