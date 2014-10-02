@@ -4,11 +4,12 @@ class RiesgosController  < ApplicationController
  
   def estadistica
     @tipo = params[:grafica] 
+    @fano = params[:fano]
      @ano = Hash.new
-     @t1 = Riesgo.estadistica_x_trimestre("2014-01-01", "2014-03-30")
-     @t2 = Riesgo.estadistica_x_trimestre("2014-04-01", "2014-06-30")
-     @t3 = Riesgo.estadistica_x_trimestre("2014-07-01", "2014-09-30")
-     @t4 = Riesgo.estadistica_x_trimestre("2014-10-01", "2014-12-31")
+     @t1 = Riesgo.estadistica_x_trimestre(@fano + "-01-01", @fano + "-03-30")
+     @t2 = Riesgo.estadistica_x_trimestre(@fano + "-04-01", @fano + "-06-30")
+     @t3 = Riesgo.estadistica_x_trimestre(@fano + "-07-01",@fano + "-09-30")
+     @t4 = Riesgo.estadistica_x_trimestre(@fano + "-10-01",@fano + "-12-31")
      @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
      @datos= { :size => '700x400',
             :theme => :thirty7signals, 
