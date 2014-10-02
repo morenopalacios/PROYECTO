@@ -1,3 +1,4 @@
+<br><br><br>
 <%=simple_form_for(@incapacidad, :html => {:class => 'form­horizontal', remote: true } ) do  |f| %>
 
   <% if @incapacidad.errors.any? %> 
@@ -20,7 +21,7 @@
   </div>
 
    <div class="field">
-    <b>tipo de incapacidad</b><br>
+    <b>Tipo de incapacidad</b><br>
     <%= f.collection_select :tipoincapacidad_id, Tipoincapacidad.all, :id, :nombre, class: "form-control", prompt:
     "Seleccione tipo de incapacidad" %>
   </div>
@@ -105,7 +106,9 @@
 <div class="form­-group"> 
    <div class="col­-sm­-offset­-2 col-­sm­-10"> 
    <%= f.submit "Guardar", class: "btn btn-info btn-xs" %> 
+   <%= link_to 'Atras', incapacidads_path, class: "btn btn-default btn-xs" %>
    </div> 
 </div> 
  
+
 <% end %> 

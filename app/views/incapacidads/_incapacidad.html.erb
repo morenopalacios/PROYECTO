@@ -1,7 +1,7 @@
 <tr id=<%= "incapacidad_#{incapacidad.id}" %>> 
   
       <td><%= incapacidad.funcionario.nombres rescue nil %></td>
-      <td><%= incapacidad.tipoincapacidad.nombre rescue nil %></td>
+      <td><%= mostrartipoincapacidad(incapacidad.tipoincapacidad_id) %></td>
       <td><%= incapacidad.fechainicio %></td>
       <td><%= incapacidad.fechaterminacion %></td>
       <td><%= incapacidad.totaldias %></td>

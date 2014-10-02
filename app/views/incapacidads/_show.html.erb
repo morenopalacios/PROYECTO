@@ -9,7 +9,8 @@
 
 <p>
   <strong>Tipo de incapacidad:</strong>
-  <%= @incapacidad.tipoincacidad.nombre rescue nil %>
+  <%= mostrartipoincapacidad(@incapacidad.tipoincapacidad_id) %>
+
 </p>
 
 <p>

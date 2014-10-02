@@ -1,6 +1,7 @@
 <tr id=<%= "enfermedad_#{enfermedad.id}" %>> 
    
 	<td><%= enfermedad.funcionario.nombres rescue nil %></td>
+	<td><%= enfermedad.tipoenfermedad.nombre rescue nil %></td>
 	<td><%= enfermedad.descripcion %></td>
 	<td><%= enfermedad.fecha %></td>
 	<td><%= enfermedad.codigodediagnostico %></td>

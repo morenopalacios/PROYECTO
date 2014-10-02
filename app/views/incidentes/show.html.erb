@@ -29,6 +29,13 @@
 </p>
 
 <p>
+  <strong>Tipo de incidente:</strong>
+   <%= mostrartipoincidente(@incidente.tipoincidente) %>
+
+</p>
+
+
+<p>
   <strong>Personal_involucrado:</strong>
   <%= @incidente.personalinvolucrado.nombre rescue nil %>
 </p>

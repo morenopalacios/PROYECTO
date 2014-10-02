@@ -1,5 +1,9 @@
 module IncidentesHelper
 
+    def mostrartipoincidente(id)
+        Tipoincidente.where(:id => id).pluck(:nombre).first
+    end     
+
 	def mostrar_lugar_de_ocurrencia(lugar_de_ocurrencia)
 		if lugar_de_ocurrencia
 		"dentro de la entidad"

@@ -13,7 +13,7 @@ end
   belongs_to :funcionario
   belongs_to :personalinvolucrado
 
-
+  validates :tipoincidente_id, :presence => true 
   # validar un atributo booleano 
    validates :lugar_de_ocurrencia, inclusion: [true, false] 
   # Validar que los atributos sean obligatorios 

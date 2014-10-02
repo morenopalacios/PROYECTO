@@ -1,3 +1,5 @@
+<div class="index">
+
 <center class="fadeIn"><h1><b>FUNCIONARIOS</b></h1></center><br><br>
 	<%= form_tag funcionarios_path, :method => 'get' do %>
 	<% content_tag :label do %>
@@ -43,5 +45,8 @@
 <%= will_paginate @funcionarios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
 Funcionarios: <%= @funcionarios.count %>
+
+
+</div>
  
 
