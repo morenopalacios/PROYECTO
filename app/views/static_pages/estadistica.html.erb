@@ -5,12 +5,52 @@
 <title>Estadistica</title>
 </head>
 <body >
-<!--grafica general de estadistica
-<h3>GRAFICA POR TRIMESTRE NOVEDAD</h3>
 <br>
 
-<%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> -->
-<%= form_tag(riesgos_estadistica_path, method: 'get', remote: true) do |f| %>
+<!-- Nav tabs -->
+<div id="tab"><!--div para agragr estilo al tab -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active color"><a href="#home" role="tab" data-toggle="tab">Estadistica Acidente</a></li>
+  <li><a href="#profile" role="tab" data-toggle="tab" class="color">Estadistica Incidente</a></li>
+  <li><a href="#messages" role="tab" data-toggle="tab" class="color">Estadistica riesgo</a></li>
+  <li><a href="#settings" role="tab" data-toggle="tab" class="color">Estadistica Enfermedad</a></li>
+  <li><a href="#messages" role="tab" data-toggle="tab" class="color">Estadistica Incapacidad</a></li>
+ 
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home"> 
+  <%= form_tag(riesgos_estadistica_path, method: 'get', remote: true) do |f| %>
+<p>Seleccione el año agraficar las Estadísticas</p>
+<select id="fano" name="fano">
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+</select>
+<select id="grafica" name="grafica">
+	<option value="pie_3d">Torta 3D</option>
+	<option value="bar">Barras</option>
+	<option value="line">Linea</option>
+</select>
+<!--link de estadistica por riesgoscon las imagenes-->
+<br>
+ <p>Seleccione la forma en como desea ver las grafica</p>
+ <h3>Grafica de Riesgos</h3><br>
+ <button type="submit" class="btn">
+ 	<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(), remote: true %> 
+ </button>
+
+<% end %>
+</div>
+  <div class="tab-pane" id="profile">
+  	
+  </div>
+  <div class="tab-pane" id="messages">
+  <!--tab de riesgos-->
+  	
+ <%= form_tag(riesgos_estadistica_path, method: 'get', remote: true) do |f| %>
+ <br>
 <p>Seleccione el año agraficar las Estadísticas</p>
 <select id="fano" name="fano">
 	<option value="2014">2014</option>
@@ -30,6 +70,17 @@
  </button>
 
 <% end %>
+  </div>
+  <div class="tab-pane" id="settings">...</div>
+   <div class="tab-pane" id="messages">
+</div>
+<div><!--fin del div -->
+<!--grafica general de estadistica
+<h3>GRAFICA POR TRIMESTRE NOVEDAD</h3>
+<br>
+
+<%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> -->
+
 <!--link de estadistica por incidente-->
 
 
