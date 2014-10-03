@@ -17,8 +17,10 @@
 
         <li><%= link_to "Cronograma", cronogramas_path %></li> 
         <li><%= link_to "Estadisticas", static_pages_estadistica_path%></li> 
-        <li><%= link_to "Noticias", albums_path%></li> 
-        <li><%= link_to "Seguridad", users_path %></li> 
+        <li><%= link_to "Noticias", albums_path%></li>
+        <% if can? :read, @user %>
+        <li><%= link_to "Seguridad", users_path %></li>
+        <% end %> 
         <li><%= link_to "Ayuda", static_pages_help_path %></li> 
 
        

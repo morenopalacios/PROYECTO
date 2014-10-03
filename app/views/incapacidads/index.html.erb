@@ -31,7 +31,9 @@
   </tbody>
 </table>
 
+<% if can? :create, @incapacidad%>
 <%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%end%>
 
 <br>
  

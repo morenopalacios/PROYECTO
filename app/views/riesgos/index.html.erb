@@ -29,8 +29,13 @@
   </tbody>
 </table>
 
- 
-<%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %>
+
+
+       <% if can? :create, @riesgo %>
+
+   <%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %>
+
+   <%end%>
 
 <br>
 

@@ -97,7 +97,9 @@
 
 </div>
 
-<%= link_to 'Editar', edit_incidente_path(@incidente),:method=>"get", class: "btn btn-warning btn-xs"  %>
+<% if can? :update, @incidente%>
+  <%= link_to 'Editar', edit_incidente_path(@incidente),:method=>"get", class: "btn btn-warning btn-xs"  %>
+<%end%>
 <%= link_to 'Atras', incidentes_path, class: "btn btn-default btn-xs" %>
 <hr>
 </div>

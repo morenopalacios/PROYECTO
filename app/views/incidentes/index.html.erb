@@ -27,7 +27,9 @@
   </tbody>
 </table>
 
+<% if can? :create, @incidente%>
 <%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> <br>
+<%end%>
 
 <p>
   Descarga:

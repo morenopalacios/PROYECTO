@@ -293,8 +293,11 @@
   <%= @accidente.documento3 %>
 </p>
 
-<p class="text-center"><%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %> |
-                       <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
+<% if can? :update, @accidente %>
+
+<p class="text-center"><%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %>
+<%end%> |
+  <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
 </p>
 
 </div>

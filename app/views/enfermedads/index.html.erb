@@ -34,7 +34,9 @@
 </p>
 
  
+ <% if can? :create, @enfermedad%>
 <%= button_to 'Nueva Enfermedad', new_enfermedad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%end%>
 <br>
 
 <%= will_paginate @enfermedads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>

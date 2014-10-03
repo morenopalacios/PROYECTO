@@ -7,4 +7,8 @@ class User < ActiveRecord::Base
 	validates :password_confirmation, presence: true 
 
 	validates :email, uniqueness: true 
+
+	 validates :nombre, :presence => true
+     validates :documento, :presence => true
+
 end
