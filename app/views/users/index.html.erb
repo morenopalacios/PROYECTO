@@ -14,27 +14,16 @@
   </thead>
 
   <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.nombre %></td>
-         <td><%= user.documento %></td>
-          <td><%= user.email %></td>
-          <td><%= link_to 'Ver', user, class: "btn btn-success btn-xs" %></td>
-          <% if user.email == 'sanowilingry@gmail.com'%>
-          <td><p class="text-danger">-----------</p></td>
-          <td><p class="text-danger">-----------</p></td>
-          <% else %>
-        
-        <td><%= link_to 'Editar', edit_user_path(user), class: "btn btn-warning btn-xs" %></td>
-        <td><%= link_to 'Eliminar', user, method: :delete, data: { confirm: 'Estás seguro?' }, class: "btn btn-danger btn-xs" %></td>
-        <% end %>
-      </tr>
-    <% end %>
+  <div class="login">
+<%= image_tag("Final.gif") %> 
+</div>
+ 
+     <%= render @user %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'Nuevo Usuario', new_user_path, class: "btn btn-primary btn-xs" %>
+<%= link_to 'Nuevo Usuario', new_user_path, remote: true, class: "btn btn-primary btn-xs" %>
 
 <%end%>

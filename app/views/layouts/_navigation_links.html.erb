@@ -23,6 +23,8 @@
         <% end %> 
         <li><%= link_to "Ayuda", static_pages_help_path %></li> 
 
+        <li><%= link_to "", _path %></li> 
+
        
 
         
@@ -30,8 +32,9 @@
             <li><%= link_to "Editar Perfil", edit_user_path(current_user.id) %></li> 
             <li><%= link_to "Salir", :logout, method: :get %></li> 
            <% else %>
-             <li><%= link_to "Registrarse", new_user_path %></li>
-             <li><%= link_to "Ingresar", :login %></li>     
+            <li><%= link_to "pueaba", user_sessions_path %></li> 
+            <li><%= link_to "Registrarse", new_user_path, remote:true %></li>
+            <li><%= link_to "Ingresar", :login %></li>     
     </ul>
 <% end %>
 
