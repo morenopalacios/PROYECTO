@@ -1,6 +1,8 @@
 <div class="index">
 
-<center><h1><b>INCIDENTES</b></h1></center><br><br>
+<center class="fadeIn"><h1><b>INCIDENTES</b></h1></center><br><br>
+
+<div class="buscador">
 	<%= form_tag incidentes_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Fecha del reporte:
@@ -8,9 +10,9 @@
 	<%= submit_tag "Buscar", :name => nil %>
 	<% end %>
 	<% end %>
-
-
-<table class="table table-bordered">
+</div>
+<div class="ctable">
+<table class="table table-striped">
   <thead>
     <tr> 
       <th>Funcionario</th>
@@ -26,20 +28,19 @@
      <%= render @incidentes %>
   </tbody>
 </table>
-
+</div>
+<br>
 <% if can? :create, @incidente%>
-<%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> <br>
-<%end%>
+<%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%end%><br>
 
 <p>
   Descarga:
   <%= link_to "CSV", incidentes_path(format: "csv" ) %> |
   <%= link_to "Excel", incidentes_path(format: "xls") %>
 </p>
-<br>
 
 <%= will_paginate @incidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-<br>
 Incidentes: <%= @incidentes.count %>
  
 

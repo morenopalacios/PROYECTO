@@ -1,6 +1,7 @@
 <div class="index">
-
 <center class="fadeIn"><h1><b>ENFERMEDADES</b></h1></center><br><br>
+
+<div class="buscador">
 	<%= form_tag enfermedads_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Fecha:
@@ -8,8 +9,10 @@
 	<%= submit_tag "Buscar", :name => nil %>
 	<% end %>
 	<% end %>
+</div>
 
-<table class="table table-bordered">
+<div class="ctable">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Funcionario</th>
@@ -26,6 +29,13 @@
      <%= render @enfermedads %>
   </tbody>
 </table>
+</div>
+<br>
+
+ 
+ <% if can? :create, @enfermedad%>
+<%= button_to 'Nueva Enfermedad', new_enfermedad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
+<%end%><br>
 
 <p>
   Descarga:
@@ -33,14 +43,8 @@
   <%= link_to "Excel", enfermedads_path(format: "xls") %>
 </p>
 
- 
- <% if can? :create, @enfermedad%>
-<%= button_to 'Nueva Enfermedad', new_enfermedad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
-<%end%>
-<br>
 
 <%= will_paginate @enfermedads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-<br>
 Enfermedads: <%= @enfermedads.count %>
  
 

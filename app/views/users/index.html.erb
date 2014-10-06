@@ -1,8 +1,8 @@
+<div class="index">
 <% if can? :read, @user%>
-
-<center class="fadeIn"><h1><b>USUARIOS REGISTRADOS </b></h1></center><br><br>
-
-<table class="table table-bordered">
+<center class="fadeIn"><h1><b>USUARIOS</b></h1></center><br>
+<div class="ctable">
+<table class="table table-striped">
   <thead>
     <tr>
      <th>Nombre</th>
@@ -14,16 +14,15 @@
   </thead>
 
   <tbody>
-  <div class="login">
-<%= image_tag("Final.gif") %> 
-</div>
+  
  
-     <%= render @user %>
+     <%= render @users %>
   </tbody>
 </table>
-
+</div>
 <br>
 
 <%= link_to 'Nuevo Usuario', new_user_path, remote: true, class: "btn btn-primary btn-xs" %>
 
 <%end%>
+</div>

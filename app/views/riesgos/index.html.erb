@@ -1,6 +1,8 @@
 <div class="index">
 
-<center><h1><b>RIESGOS</b></h1></center><br><br>
+<center class="fadeIn"><h1><b>RIESGOS</b></h1></center><br><br>
+
+<div class="buscador">
 	<%= form_tag riesgos_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Empresa:
@@ -8,8 +10,10 @@
 	<%= submit_tag "Buscar", :name => nil %>
 	<% end %>
 	<% end %>
+</div>
 
-<table class="table table-bordered">
+<div class="ctable">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Empresa</th>
@@ -28,29 +32,19 @@
      <%= render @riesgos %>
   </tbody>
 </table>
-
-
-
-       <% if can? :create, @riesgo %>
-
+</div>
+<br>
+  <% if can? :create, @riesgo %>
    <%= button_to 'Nuevo Riesgo', new_riesgo_path, :method=>"get", class: "btn btn-primary btn-xs" %>
+   <%end%><br>
 
-   <%end%>
+  <p>
+    Descarga:
+    <%= link_to "CSV", riesgos_path(format: "csv") %> |
+    <%= link_to "Excel", riesgos_path(format: "xls") %>
+  </p>
 
-<br>
-
-<p>
-  Descarga:
-  <%= link_to "CSV", riesgos_path(format: "csv") %> |
-  <%= link_to "Excel", riesgos_path(format: "xls") %>
-</p>
-
-
-<br>
-
-<%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-<br>
-Riesgos: <%= @riesgos.count %>
+  <%= will_paginate @riesgos, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+  Riesgos: <%= @riesgos.count %>
  
-
 </div>

@@ -11,6 +11,8 @@
 </p>
 </div>
 
-<%= link_to 'Editar', edit_album_path(@album),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
+ <% if can? :update, @album%>
+   <%= link_to 'Editar', edit_album_path(@album),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
+ <%end%>
 <%= link_to 'Atras', albums_path, class: "btn btn-default btn-xs" %>
 </div>

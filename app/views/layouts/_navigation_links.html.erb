@@ -10,7 +10,8 @@
                         <li><%= link_to "Accidente", accidentes_path %></li> 
                         <li><%= link_to "Incidente", incidentes_path %></li> 
                         <li><%= link_to "Riesgo", riesgos_path %></li> 
-                        <li><%= link_to "Enfermedad", enfermedads_path %></li><li><%= link_to "Incapacidad", incapacidads_path %></li> 
+                        <li><%= link_to "Enfermedad", enfermedads_path %></li>
+                        <li><%= link_to "Incapacidad", incapacidads_path %></li> 
 
                     </ul>
          </li>
@@ -23,16 +24,11 @@
         <% end %> 
         <li><%= link_to "Ayuda", static_pages_help_path %></li> 
 
-   
-
-       
-
-        
-           
-            <li><%= link_to "Editar Perfil", edit_user_path(current_user.id) %></li> 
+         
+            <li><%= link_to "Editar Perfil", edit_user_path(current_user.id), remote: true %></li> 
             <li><%= link_to "Salir", :logout, method: :get %></li> 
            <% else %>
-            <li><%= link_to "pueaba", user_sessions_path %></li> 
+            <li><%= link_to "Introducción", user_sessions_path %></li> 
             <li><%= link_to "Registrarse", new_user_path, remote:true %></li>
             <li><%= link_to "Ingresar", :login %></li>     
     </ul>
