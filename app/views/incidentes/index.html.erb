@@ -30,15 +30,19 @@
 </table>
 </div>
 <br>
+
 <% if can? :create, @incidente%>
 <%= button_to 'Nuevo Incidente', new_incidente_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
-<%end%><br>
+<%end%>
+<br>
 
+<div class="descarga"><p>
 <p>
   Descarga:
   <%= link_to "CSV", incidentes_path(format: "csv" ) %> |
   <%= link_to "Excel", incidentes_path(format: "xls") %>
 </p>
+</div>
 
 <%= will_paginate @incidentes, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 Incidentes: <%= @incidentes.count %>

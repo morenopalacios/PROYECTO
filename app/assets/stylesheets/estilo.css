@@ -342,12 +342,17 @@ border-radius: 5px;
 }
  
  #login{
-       text-align: center;
-       margin:0 auto;
-       z-index:1;
-       
-       -moz-perspective: 800px;
-       -webkit-perspective: 800px;
-       perspective: 800px;
-       
+    text-align: center;
+    margin:0 auto;
+    z-index:1;
+
+    -moz-perspective: 800px;
+    -webkit-perspective: 800px;
+    perspective: 800px;
+
+}
+
+.descarga{
+
+    margin-left: 550px
 }

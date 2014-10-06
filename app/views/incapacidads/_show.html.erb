@@ -1,6 +1,3 @@
-<div class="incapacidad">
-
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Funcionario:</strong>
@@ -48,10 +45,3 @@
   <%= @incapacidad.origendelaincapacidad %>
 </p>
 
-</div>
-<% if can? :update, @incapacidad%>
-<%= link_to 'Editar', edit_incapacidad_path(@incapacidad),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
-<%end%>
-<%= link_to 'Atras', incapacidads_path, class: "btn btn-default btn-xs" %>
-<hr>
-</div>

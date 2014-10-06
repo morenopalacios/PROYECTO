@@ -37,11 +37,13 @@
 <%= button_to 'Nueva Enfermedad', new_enfermedad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
 <%end%><br>
 
+<div class="descarga">
 <p>
   Descarga:
   <%= link_to "CSV", enfermedads_path(format: "csv") %> |
   <%= link_to "Excel", enfermedads_path(format: "xls") %>
 </p>
+</div>
 
 
 <%= will_paginate @enfermedads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>

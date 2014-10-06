@@ -47,7 +47,7 @@ class IncidentesController < ApplicationController
      
     respond_to do |format|
       if @incidente.save
-        format.html { redirect_to @incidente, notice: 'incidente was successfully created.' }
+        format.html { redirect_to @incidente, notice: 'El registro fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @incidente }
       else
         format.html { render :new }
@@ -60,7 +60,7 @@ class IncidentesController < ApplicationController
   def update
     respond_to do |format|
       if @incidente.update(incidente_params)
-        format.html { redirect_to @incidente, notice: 'incidente was successfully updated.' }
+        format.html { redirect_to @incidente, notice: 'El registro fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @incidente }
       else
         format.html { render :edit }
@@ -75,7 +75,7 @@ class IncidentesController < ApplicationController
   def destroy 
        @incidente.destroy 
        respond_to do |format|
-          format.html { redirect_to incidentes_path, notice: 'incidente was successfully destroy.' }
+          format.html { redirect_to incidentes_path, notice: 'El registro fue eliminado exitosamente.' }
           format.json { render :show, status: :ok, location: @incidente }
           
        end 

@@ -82,7 +82,7 @@ class AccidentesController < ApplicationController
   def destroy
     @accidente.destroy
     respond_to do |format|
-      format.html { redirect_to accidentes_url, notice: 'Registro eliminado.' }
+      format.html { redirect_to accidentes_url, notice: 'El registro fue eliminado exitosamente.' }
       format.json { head :no_content }
     end
   end
