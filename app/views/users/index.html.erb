@@ -1,6 +1,16 @@
 <div class="index">
 <% if can? :read, @user%>
-<center class="fadeIn"><h1><b>USUARIOS</b></h1></center><br>
+<center class="fadeIn"><h1><b>USUARIOS</b></h1></center><br><br>
+<div class="buscador">
+  <%= form_tag users_path, :method => 'get' do %>
+  <% content_tag :label do %>
+  Nombre:
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Buscar", :name => nil %>
+  <% end %>
+  <% end %>
+</div>
+
 <div class="ctable">
 <table class="table table-striped">
   <thead>
@@ -14,15 +24,17 @@
   </thead>
 
   <tbody>
-  
- 
      <%= render @users %>
   </tbody>
 </table>
 </div>
 <br>
 
-<%= link_to 'Nuevo Usuario', new_user_path, remote: true, class: "btn btn-primary btn-xs" %>
+<%= link_to 'Nuevo Usuario', new_user_path, remote: true, class: "btn btn-primary btn-xs" %><br>
+
+<%= will_paginate @users, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente
+&raquo;' %><br>
+Usuarios: <%= @users.count %>
 
 <%end%>
 </div>
