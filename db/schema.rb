@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140908054713) do
+ActiveRecord::Schema.define(version: 20141001203854) do
 
   create_table "accidentes", force: true do |t|
     t.string   "diligenciador"
@@ -99,19 +99,6 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.datetime "updated_at"
   end
 
-  create_table "cronogramas", force: true do |t|
-    t.date     "fecha"
-    t.string   "lugar_salida"
-    t.string   "ficha_grupo"
-    t.integer  "tipo_salida_id"
-    t.string   "programa"
-    t.string   "descripcion"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "cronogramas", ["tipo_salida_id"], name: "index_cronogramas_on_tipo_salida_id"
-
   create_table "departamentos", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -135,6 +122,15 @@ ActiveRecord::Schema.define(version: 20140908054713) do
   add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
   add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
   add_index "enfermedads", ["tipoenfermedad_id"], name: "index_enfermedads_on_tipoenfermedad_id"
+
+  create_table "events", force: true do |t|
+    t.string   "title"
+    t.text     "description"
+    t.date     "start"
+    t.date     "end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "funcionarios", force: true do |t|
     t.string   "nombres"

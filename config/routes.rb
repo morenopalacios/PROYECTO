@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
 
 
+  resources :events
+
   resources :tipoincapacidads
 
   resources :tipoenfermedads
@@ -82,8 +84,6 @@ Rails.application.routes.draw do
   resources :user_sessions
 
   resources :users
-
-  resources :cronogramas
 
   resources :tipo_salidas
 
