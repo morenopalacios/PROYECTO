@@ -25,12 +25,13 @@ class Enfermedad < ActiveRecord::Base
       csv << enfermedad.attributes.values_at(*column_names)
     end
   end
+end
 
     def self.estadistica_x_trimestre(fechIni, fechFin)
-      @t1 = Enfermedad.select('count(*) as numero_riesgos').where('fecha  between  ? and  ?',fechIni,fechFin)
+      @t1 = Enfermedad.select('count(*) as numero_enfermedads').where('fecha  between  ? and  ?',fechIni,fechFin)
       @t1.pluck('count(*)').first
   end
   
    
 end
-end
+
