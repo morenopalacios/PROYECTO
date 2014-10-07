@@ -87,9 +87,10 @@ message: 'Formato no valido' }
   end
 
 def self.estadistica_x_trimestre(fechIni, fechFin)
-      @t1 = Accidente.select('count(*) as numero_accidentes').where('fchAc between  ? and  ?',fechIni,fechFin)
+      @t1 = Accidente.select('count(*) as numero_riesgos').where('fecha  between  ? and  ?',fechIni,fechFin)
       @t1.pluck('count(*)').first
   end
+  
 
 
 end

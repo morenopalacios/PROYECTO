@@ -1,0 +1,161 @@
+<html>
+<head>
+<meta charset= "utf-8">
+    <link href="css/estadistica.css" type="text/css" rel="stylesheet" >
+<title>Estadistica</title>
+</head>
+<body >
+<br>
+
+<!-- Nav tabs -->
+<div id="tab"><!--div para agragr estilo al tab -->
+<ul class="nav nav-tabs" role="tablist">
+  <li class="active color"><a href="#home" role="tab" data-toggle="tab">Estadistica Acidente</a></li>
+  <li><a href="#profile" role="tab" data-toggle="tab" class="color">Estadistica Incidente</a></li>
+  <li><a href="#messages" role="tab" data-toggle="tab" class="color">Estadistica riesgo</a></li>
+  <li><a href="#settings" role="tab" data-toggle="tab" class="color">Estadistica Enfermedad</a></li>
+  <li><a href="#ultima" role="tab" data-toggle="tab" class="color">Estadistica Incapacidad</a></li>
+ 
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="home"> 
+  <%= form_tag(accidentes_estadistica_path, method: 'get', remote: true) do |f| %>
+<p>Seleccione el año agraficar las Estadísticas</p>
+<select id="fano" name="fano">
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+</select>
+<select id="grafica" name="grafica">
+	<option value="pie_3d">Torta 3D</option>
+	<option value="bar">Barras</option>
+	<option value="line">Linea</option>
+</select>
+<!--link de estadistica por riesgoscon las imagenes-->
+<br>
+ <p>Seleccione la forma en como desea ver las grafica</p><br>
+ <h3>Grafica de Accidentes</h3><br>
+ <button type="submit" class="btn">
+  <%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), accidentes_estadistica_path(grafica: "pie_3d"), remote: true %> 
+ </button>
+<% end %>
+</div>
+
+<!-- grafica de incidentes con el tab-->
+
+  <div class="tab-pane" id="profile">
+
+<%= form_tag(incidentes_estadistica_path, method: 'get', remote: true) do |f| %>
+<p>Seleccione el año agraficar las Estadísticas</p>
+<select id="fano" name="fano">
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+</select>
+<select id="grafica" name="grafica">
+  <option value="pie_3d">Torta 3D</option>
+  <option value="bar">Barras</option>
+  <option value="line">Linea</option>
+</select>
+<!--link de estadistica por riesgoscon las imagenes-->
+<br>
+ <p>Seleccione la forma en como desea ver las grafica</p><br>
+ <h3>Grafica de incidentes</h3><br>
+ <button type="submit" class="btn">
+  <%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), incidentes_estadistica_path(grafica: "pie_3d"), remote: true %> 
+ </button>
+<% end %>
+  	
+  </div>
+
+  <div class="tab-pane" id="messages">
+  <!--tab de riesgos-->
+  	
+ <%= form_tag(riesgos_estadistica_path, method: 'get', remote: true) do |f| %>
+ <br>
+<p>Seleccione el año agraficar las Estadísticas</p>
+<select id="fano" name="fano">
+	<option value="2014">2014</option>
+	<option value="2015">2015</option>
+	<option value="2016">2016</option>
+</select>
+<select id="grafica" name="grafica">
+	<option value="pie_3d">Torta 3D</option>
+	<option value="bar">Barras</option>
+	<option value="line">Linea</option>
+</select>
+<!--link de estadistica por riesgoscon las imagenes-->
+ <p>Seleccione la forma en como desea ver las grafica</p>
+ <h3>Grafica de Riesgos</h3><br>
+ <button type="submit" class="btn">
+ 	<%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), riesgos_estadistica_path(), remote: true %> 
+ </button>
+
+<% end %>
+  </div>
+  <div class="tab-pane" id="settings">
+    
+ <%= form_tag(enfermedads_estadistica_path, method: 'get', remote: true) do |f| %>
+<p>Seleccione el año agraficar las Estadísticas</p><br>
+<select id="fano" name="fano">
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+</select>
+<select id="grafica" name="grafica">
+  <option value="pie_3d">Torta 3D</option>
+  <option value="bar">Barras</option>
+  <option value="line">Linea</option>
+</select>
+<!--link de estadistica por riesgoscon las imagenes-->
+<br>
+ <p>Seleccione la forma en como desea ver las grafica</p><br>
+ <h3>Grafica de Enfermedades</h3><br>
+ <button type="submit" class="btn">
+  <%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), enfermedads_estadistica_path(grafica: "pie_3d"), remote: true %> 
+ </button>
+<% end %>
+
+  </div>
+   <div class="tab-pane" id="ultima">
+
+
+
+<%= form_tag(incapacidads_estadistica_path, method: 'get', remote: true) do |f| %>
+<p>Seleccione el año agraficar las Estadísticas</p>
+<select id="fano" name="fano">
+  <option value="2014">2014</option>
+  <option value="2015">2015</option>
+  <option value="2016">2016</option>
+</select>
+<select id="grafica" name="grafica">
+  <option value="pie_3d">Torta 3D</option>
+  <option value="bar">Barras</option>
+  <option value="line">Linea</option>
+</select>
+<!--link de estadistica por riesgoscon las imagenes-->
+<br>
+ <p>Seleccione la forma en como desea ver las grafica</p><br>
+ <h3>Grafica de incapacidades</h3><br>
+ <button type="submit" class="btn">
+  <%= link_to image_tag("pie_3d.jpg", title: 'grafica de barras', class: "imagen"), incapacidads_estadistica_path(grafica: "pie_3d"), remote: true %> 
+ </button>
+<% end %>
+</div>
+<div><!--fin del div -->
+<!--grafica general de estadistica
+<h3>GRAFICA POR TRIMESTRE NOVEDAD</h3>
+<br>
+
+<%= link_to 'Grafica General - Torta 3d',  enfermedads_estadistica_path, remote: true, :method=>"get", class: "btn btn-warning btn-lg" %> -->
+
+<!--link de estadistica por incidente-->
+
+
+</body>
+<div id="estadis">
+<%= image_tag("estadistica1.gif") %>
+</div>
+</html>

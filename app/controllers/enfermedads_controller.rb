@@ -2,13 +2,13 @@ class EnfermedadsController < ApplicationController
   before_action :set_enfermedad, only: [:show, :edit, :update, :destroy]
 
  def estadistica
-    @tipo = params[:grafica] 
-    @fano = params[:fano]
-     @ano = Hash.new
-     @t1 = Enfermedad.estadistica_x_trimestre(@fano + "-01-01", @fano + "-03-30")
-     @t2 = Enfermedad.estadistica_x_trimestre(@fano + "-04-01", @fano + "-06-30")
-     @t3 = Enfermedad.estadistica_x_trimestre(@fano + "-07-01",@fano + "-09-30")
-     @t4 = Enfermedad.estadistica_x_trimestre(@fano + "-10-01",@fano + "-12-31")
+   @tipo = params[:grafica] 
+   
+   @ano = Hash.new
+   @t1 = Enfermedad.estadistica_x_trimestre("2014-01-01", "2014-03-30")
+   @t2 = Enfermedad.estadistica_x_trimestre("2014-04-01", "2014-06-30")
+   @t3 = Enfermedad.estadistica_x_trimestre("2014-07-01", "2014-09-30")
+   @t4 = Enfermedad.estadistica_x_trimestre("2014-10-01", "2014-12-31")
    @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
    @datos= { :size => '700x400',
             :theme => :thirty7signals, 
@@ -17,20 +17,15 @@ class EnfermedadsController < ApplicationController
             :line_colors => 'B22222,0077CC, FFA500',
             :legend => @ano.keys,
             :data => @ano.values,
-            :axis_range => [nil, [0,200,400,600,800,1000]],
+            :axis_range => [nil, [0,10,20,30,40,50,60,70,80,90,100]],
             :axis_with_labels => 'x,y',
             :labels => @ano.values }
  end
 
  
   def index 
-    @enfermedads = Enfermedad.search(params[:search], params[:page]).order(:fecha , 'fecha ASC') 
-    respond_to do |format|
-      format.html
-      format.csv { send_data @enfermedads.to_csv }
-      format.xls { send_data @enfermedads.to_csv(col_sep: "\t") }
+    @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
   end 
-end
  
   def show 
   end 
