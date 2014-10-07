@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy] 
  
   def index 
-  @users = User.search(params[:search], params[:page])
+   @users = User.search(params[:search], params[:page])
   end 
 
  
@@ -19,39 +19,21 @@ class UsersController < ApplicationController
   def edit 
   end 
 
-def create  
-     @user = User.new(user_params) 
-     respond_to do |format| 
-       if @user.save 
-        format.html { redirect_to @user, notice: 'Usuario creado exitosamente.' }  
-        format.json { render :show, status: :created, location: @user } 
-      else 
-        format.html { render :new }  
-        format.json { render json: @user.errors, status: :unprocessable_entity } 
-      end 
-   end 
+
+def create
+ @user = User.new(user_params) 
+ render action: :new unless @user.save   
 end 
 
-def update 
-     respond_to do |format| 
-       if @user.update(user_params) 
-        format.html { redirect_to @user, notice: 'Usuario actualizado exitosamente.' } 
-        format.json { render :show, status: :ok, location: @user }  
-      else  
-        format.html { render :edit }  
-        format.json { render json: @user.errors, status: :unprocessable_entity } 
-     end 
-  end 
+def update
+  render action: :edit unless @user.update_attributes(user_params) 
 end 
  
 def destroy 
-     @user.destroy 
-     respond_to do |format| 
-     format.html { redirect_to users_url, notice: 'Usuario eliminado exitosamente.' } 
-     format.json { head :no_content } 
-   end 
- end 
+     @user.destroy    
+end 
  
+
 private 
 # Use callbacks to share common setup or constraints between actions. 
 def set_user 

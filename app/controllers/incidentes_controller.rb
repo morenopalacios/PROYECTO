@@ -4,7 +4,7 @@ class IncidentesController < ApplicationController
   before_action :set_incidente, only: [:show, :edit, :update, :destroy] 
  
    def estadistica
-   @ @tipo = params[:grafica] 
+    @tipo = params[:grafica] 
     @fano = params[:fano]
      @ano = Hash.new
      @t1 = Incidente.estadistica_x_trimestre(@fano + "-01-01", @fano + "-03-30")

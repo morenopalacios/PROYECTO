@@ -99,6 +99,19 @@ ActiveRecord::Schema.define(version: 20141001203854) do
     t.datetime "updated_at"
   end
 
+  create_table "cronogramas", force: true do |t|
+    t.date     "fecha"
+    t.string   "lugar_salida"
+    t.string   "ficha_grupo"
+    t.integer  "tipo_salida_id"
+    t.string   "programa"
+    t.string   "descripcion"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "cronogramas", ["tipo_salida_id"], name: "index_cronogramas_on_tipo_salida_id"
+
   create_table "departamentos", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -106,9 +119,6 @@ ActiveRecord::Schema.define(version: 20141001203854) do
   end
 
   create_table "enfermedads", force: true do |t|
-    t.integer  "centro_id"
-    t.integer  "tipodoc_id"
-    t.string   "documento"
     t.integer  "funcionario_id"
     t.string   "codigodediagnostico"
     t.datetime "created_at"
@@ -117,11 +127,6 @@ ActiveRecord::Schema.define(version: 20141001203854) do
     t.date     "fecha"
     t.integer  "tipoenfermedad_id"
   end
-
-  add_index "enfermedads", ["centro_id"], name: "index_enfermedads_on_centro_id"
-  add_index "enfermedads", ["funcionario_id"], name: "index_enfermedads_on_funcionario_id"
-  add_index "enfermedads", ["tipodoc_id"], name: "index_enfermedads_on_tipodoc_id"
-  add_index "enfermedads", ["tipoenfermedad_id"], name: "index_enfermedads_on_tipoenfermedad_id"
 
   create_table "events", force: true do |t|
     t.string   "title"
@@ -225,7 +230,6 @@ ActiveRecord::Schema.define(version: 20141001203854) do
     t.integer  "funcionario_id"
     t.date     "fecha"
     t.string   "areadeseccionopuestodetrabajo"
-    t.string   "clasederiesgo"
     t.string   "factorderiesgo"
     t.string   "fuentegeneradora"
     t.string   "efectoconocido"
@@ -241,9 +245,6 @@ ActiveRecord::Schema.define(version: 20141001203854) do
     t.datetime "updated_at"
     t.integer  "tiporiesgo_id"
   end
-
-  add_index "riesgos", ["funcionario_id"], name: "index_riesgos_on_funcionario_id"
-  add_index "riesgos", ["tiporiesgo_id"], name: "index_riesgos_on_tiporiesgo_id"
 
   create_table "tipo_salidas", force: true do |t|
     t.string   "nombre"
@@ -288,13 +289,14 @@ ActiveRecord::Schema.define(version: 20141001203854) do
   end
 
   create_table "users", force: true do |t|
-    t.string   "email",            null: false
-    t.string   "crypted_password", null: false
-    t.string   "salt",             null: false
+    t.string   "email",                        null: false
+    t.string   "crypted_password",             null: false
+    t.string   "salt",                         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "rol"
+    t.string   "nombre",           limit: nil
+    t.string   "documento",        limit: nil
   end
-
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end

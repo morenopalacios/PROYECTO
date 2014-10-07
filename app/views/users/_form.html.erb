@@ -1,5 +1,7 @@
  <div id="login">
 
+ <%=simple_form_for(@user, :html => {:class => 'form­-horizontal', remote: true } ) do  |f| %>
+
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -39,6 +41,8 @@
 <%= f.label :Corfirmar_contraseña %><br />  
 <%= f.password_field :password_confirmation %> 
 </div>
+
+
 <% if can? :read, @user%>
   <div class="field">
     <%= f.label :rol %><br>
@@ -50,6 +54,8 @@
     <%= f.check_box :rol, {:checked=>false}%>
   </div> 
   <% end %>
+  <%end%>
+
 <div class="actions">
   <%= f.submit "Guardar", class: "btn btn-info btn-xs" %>
 </div>

@@ -1,9 +1,10 @@
 <script src='assets/javascripts/es.js'></script>
 	<div class="img1"></div>
 	<div class="img2"></div>
-		<%=
-		button_to 'Nuevo Evento', new_event_path, remote: true, :method => "get", class: "btn btn-info nevento"
-	 %>
+
+     <% if can? :create, @event%>
+	<%=button_to 'Nuevo Evento', new_event_path, remote: true, :method => "get", class: "btn btn-info nevento"%>
+	<%end%>
 	<div class="contc">
 		<div id='calendar'></div>
 			<script>
