@@ -17,24 +17,17 @@ class EnfermedadsController < ApplicationController
             :line_colors => 'B22222,0077CC, FFA500',
             :legend => @ano.keys,
             :data => @ano.values,
-            :axis_range => [nil, [0,200,400,600,800,1000]],
+            :axis_range => [nil, [0,10,20,30,40,50,60,70,80,90,100]],
             :axis_with_labels => 'x,y',
             :labels => @ano.values }
  end
 
  
-
-def index
-  @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
-  respond_to do |format|
-    format.html
-    format.csv { send_data @enfermedads.to_csv }
-    format.xls  { send_data @enfermedads.to_csv(col_sep: "\t") }
-  end
-end
-
-
   
+
+  def index 
+    @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
+  end 
  
   def show 
   end 

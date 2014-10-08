@@ -86,10 +86,12 @@ tipoenfermedads.each do | tipoenfermedad |
 end
 
 
+tipoincidentes = [{nombre: "Ordinarios"}, {nombre: "Especiales"}, {nombre: "Conexos"}, {nombre: "Inconexos"}]
 
+tipoincidentes.each do | tipoincidente |
 
-
-
+	Tipoincidente.where(tipoincidente).first_or_create		
+end
 
 
 

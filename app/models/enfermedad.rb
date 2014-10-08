@@ -19,23 +19,21 @@ class Enfermedad < ActiveRecord::Base
     validates :fecha, :presence => true 
     validates :codigodediagnostico, :presence => true 
 
-     def self.estadistica_x_trimestre(fechIni, fechFin)
-      @t1 = Enfermedad.select('count(*) as numero_enfermedades').where('fecha between  ? and  ?',fechIni,fechFin)
-      @t1.pluck('count(*)').first
-  end
-   
 
 
-
-def self.to_csv(options = {})
-  CSV.generate(options) do |csv|
-    csv << column_names
-    all.each do |enfermedad|
-      csv << enfermedad.attributes.values_at(*column_names)
+    def self.to_csv(options = {})
+         CSV.generate(options) do |csv|
+         csv << column_names
+         all.each do |enfermedad|
+          csv << enfermedad.attributes.values_at(*column_names)
+        end
+       end
     end
-  end
-end
 
 
-
+   def self.estadistica_x_trimestre(fechIni, fechFin)
+      @t1 = Enfermedad.select('count(*) as numero_enfermedads').where('fecha  between  ? and  ?',fechIni,fechFin)
+      @t1.pluck('count(*)').first
+   end
+  
 end

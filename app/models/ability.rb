@@ -9,7 +9,15 @@ class Ability
         can :manage, :all
     elsif user.rol? == false
         
+        can :read, Funcionario
+        can :update, Funcionario   
+        can :read, Accidente
+        can :read, Incidente
         can :read, Riesgo
+        can :read, Enfermedad
+        can :read, Incapacidad
+
+
     end
     #
     # The first argument to `can` is the action you are giving the user

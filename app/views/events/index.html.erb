@@ -1,0 +1,45 @@
+<script src='assets/javascripts/es.js'></script>
+	<div class="img1"></div>
+	<div class="img2"></div>
+
+     <% if can? :create, @event%>
+	<%=button_to 'Nuevo Evento', new_event_path, remote: true, :method => "get", class: "btn btn-info nevento"%>
+	<%end%>
+	<div class="contc">
+		<div id='calendar'></div>
+			<script>
+				$(document).ready(function() {
+
+					var date = new Date();
+					var d = date.getDate();
+					var m = date.getMonth();
+					var y = date.getFullYear();
+
+					$('#calendar').fullCalendar({
+						header: {
+							left: 'prev,next today',
+							center: 'title',
+							right: 'month,agendaWeek,agendaDay'
+						},
+						editable: false,
+						lang: 'es',
+						eventColor: 'white',
+							events: {
+								url: '/events',
+								type: 'GET',
+								error: function() {
+									alert('there was an error while fetching events!');
+								},
+									backgroundColor: 'red',
+									textColor: 'black'
+								}
+							}
+						);
+					}
+				);
+			</script>
+		</div>
+<div id='loading' style='display:none'>loading...</div>
+
+
+

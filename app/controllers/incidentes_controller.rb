@@ -4,6 +4,7 @@ class IncidentesController < ApplicationController
   before_action :set_incidente, only: [:show, :edit, :update, :destroy] 
  
    def estadistica
+
    @tipo = params[:grafica] 
    @ano = Hash.new
    @t1 = Incidente.estadistica_x_trimestre("2014-01-01", "2014-03-30")
@@ -13,22 +14,20 @@ class IncidentesController < ApplicationController
    @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
    @datos= { :size => '700x400',
             :theme => :thirty7signals, 
-            :title => "Accidente por trimestre", 
+            :title => "Incidente por trimestre", 
             :bg => 'efefef', 
             :line_colors => 'B22222,0077CC, FFA500',
             :legend => @ano.keys,
             :data => @ano.values,
-            :axis_range => [nil, [0,200,400,600,800,1000]],
+            :axis_range => [nil, [0,10,20,30,40,50,60,70,80,90,100]],
             :axis_with_labels => 'x,y',
             :labels => @ano.values }
+
+
+
  end
   def index 
-      @incidentes = Incidente.search(params[:search], params[:page]).order(:fecha_del_reporte, 'fecha_del_reporte ASC')
-      respond_to do |format|
-      format.html
-      format.csv { send_data @incidentes.to_csv }
-      format.xls { send_data @incidentes.to_csv(col_sep: "\t") }
-    end
+      @incidentes = Incidente.search(params[:search], params[:page]).order('fecha_del_reporte ASC')
   end 
  
   def show 
@@ -47,7 +46,7 @@ class IncidentesController < ApplicationController
      
     respond_to do |format|
       if @incidente.save
-        format.html { redirect_to @incidente, notice: 'incidente was successfully created.' }
+        format.html { redirect_to @incidente, notice: 'El registro fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @incidente }
       else
         format.html { render :new }
@@ -60,7 +59,7 @@ class IncidentesController < ApplicationController
   def update
     respond_to do |format|
       if @incidente.update(incidente_params)
-        format.html { redirect_to @incidente, notice: 'incidente was successfully updated.' }
+        format.html { redirect_to @incidente, notice: 'El registro fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @incidente }
       else
         format.html { render :edit }
@@ -75,7 +74,7 @@ class IncidentesController < ApplicationController
   def destroy 
        @incidente.destroy 
        respond_to do |format|
-          format.html { redirect_to incidentes_path, notice: 'incidente was successfully destroy.' }
+          format.html { redirect_to incidentes_path, notice: 'El registro fue eliminado exitosamente.' }
           format.json { render :show, status: :ok, location: @incidente }
           
        end 
@@ -90,7 +89,7 @@ class IncidentesController < ApplicationController
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def incidente_params         
-    params.require(:incidente).permit(:centro_id, :area_o_proceso, :lugar_de_ocurrencia, :fecha_del_reporte, :hora_del_reporte, :funcionario_id, :personalinvolucrado_id, :otro, :especifique, :nombre_completo1, :email1, :telefono1, :nombre_completo2, :email2, :telefono2, :descripcion_del_evento, :nombre_del_dilenciador, :nombre_de_lider_de_informe) 
+    params.require(:incidente).permit(:tipoincidente_id, :area_o_proceso, :lugar_de_ocurrencia, :fecha_del_reporte, :hora_del_reporte, :funcionario_id, :personalinvolucrado_id, :otro, :especifique, :nombre_completo1, :email1, :telefono1, :nombre_completo2, :email2, :telefono2, :descripcion_del_evento, :nombre_del_dilenciador, :nombre_de_lider_de_informe) 
   end 
 
  

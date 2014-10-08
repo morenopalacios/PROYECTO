@@ -13,32 +13,20 @@ class IncapacidadsController < ApplicationController
    @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
    @datos= { :size => '700x400',
             :theme => :thirty7signals, 
-            :title => "Accidente por trimestre", 
+            :title => "Incapacidad por trimestre", 
             :bg => 'efefef', 
             :line_colors => 'B22222,0077CC, FFA500',
             :legend => @ano.keys,
             :data => @ano.values,
-            :axis_range => [nil, [0,200,400,600,800,1000]],
+            :axis_range => [nil, [0,10,20,30,40,50,60,70,80,90,100]],
             :axis_with_labels => 'x,y',
             :labels => @ano.values }
  end
 
 
-
-
-
-def index
-      @incapacidads = Incapacidad.search(params[:search], params[:page]).order(:fechainicio , 'fechainicio ASC')
-
-  respond_to do |format|
-    format.html
-    format.csv { send_data @incapacidads.to_csv }
-    format.xls { send_data @incapacidads.to_csv(col_sep: "\t") }
-  end
-end
-
-
-
+  def index
+        @incapacidads = Incapacidad.search(params[:search], params[:page]).order('fechainicio ASC')
+  end 
  
   def show 
   end 
@@ -71,7 +59,11 @@ end
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def incapacidad_params         
+<<<<<<< HEAD
     params.require(:incapacidad).permit(:funcionario_id, :tipoincapacidad_id, :fechainicio, :fechaterminacion, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
+=======
+    params.require(:incapacidad).permit(:funcionario_id, :fechainicio, :fechaterminacion, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
+>>>>>>> 0a1fabbd5f1a7f5df93de7e0851950dc2f650533
   end 
 
  

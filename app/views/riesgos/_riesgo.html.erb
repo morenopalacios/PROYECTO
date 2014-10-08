@@ -3,11 +3,9 @@
     <td><%= riesgo.empresa %></td>
     <td><%= riesgo.funcionario.nombres rescue nil%></td>
     <td><%= riesgo.fecha %></td>
-    <td><%= riesgo.tiporiesgo_id %></td>
+    <td><%= mostrartiporiesgo(riesgo.tiporiesgo_id) %></td>
     <td><%= riesgo.factorderiesgo %></td>
-    <td><%= riesgo.fuentegeneradora %></td>
     <td><%= riesgo.efectoconocido %></td> 
-    <td><%= riesgo.tiempo %></td>
     <td><%= riesgo.consecuencia %></td>
     <td><%= riesgo.exposicion %></td>
     

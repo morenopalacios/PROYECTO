@@ -8,6 +8,12 @@
 </p>
 
 <p>
+  <strong>Tipo de enfermedad:</strong>
+  <%= @enfermedad.tipoenfermedad.nombre rescue nil %>
+</p>
+
+
+<p>
   <strong>Descripcion:</strong>
   <%= @enfermedad.descripcion %>
 </p>
@@ -24,7 +30,4 @@
 
 
 
-<%= link_to 'Editar', edit_enfermedad_path(@enfermedad),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
-<%= link_to 'Atras', enfermedads_path, class: "btn btn-default btn-xs" %>
-<hr>
 </div>

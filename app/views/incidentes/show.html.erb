@@ -29,6 +29,13 @@
 </p>
 
 <p>
+  <strong>Tipo de incidente:</strong>
+   <%= mostrartipoincidente(@incidente.tipoincidente) %>
+
+</p>
+
+
+<p>
   <strong>Personal_involucrado:</strong>
   <%= @incidente.personalinvolucrado.nombre rescue nil %>
 </p>
@@ -90,7 +97,9 @@
 
 </div>
 
-<%= link_to 'Editar', edit_incidente_path(@incidente),:method=>"get", class: "btn btn-warning btn-xs"  %>
+<% if can? :update, @incidente%>
+  <%= link_to 'Editar', edit_incidente_path(@incidente),:method=>"get", class: "btn btn-warning btn-xs"  %>
+<%end%>
 <%= link_to 'Atras', incidentes_path, class: "btn btn-default btn-xs" %>
 <hr>
 </div>

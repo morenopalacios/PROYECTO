@@ -12,12 +12,12 @@ class RiesgosController  < ApplicationController
      @ano = {"trimetre1" => @t1, "trimestre2" =>@t2, "trimestre3" => @t3, "trimestre4" => @t4}
      @datos= { :size => '700x400',
             :theme => :thirty7signals, 
-            :title => "Accidente por trimestre", 
+            :title => "Riesgo por trimestre", 
             :bg => 'efefef', 
             :line_colors => 'B22222,0077CC, FFA500',
             :legend => @ano.keys,
             :data => @ano.values,
-            :axis_range => [nil, [0,200,400,600,800,1000]],
+            :axis_range => [nil, [0,10,20,30,40,50,60,70,80,90,100]],
             :axis_with_labels => 'x,y',
             :labels => @ano.values }
  end
@@ -26,13 +26,8 @@ class RiesgosController  < ApplicationController
 
  
   def index 
-    @riesgos = Riesgo.search(params[:search], params[:page]).order(:fecha, 'fecha ASC') 
-    respond_to do |format|
-      format.html
-      format.csv { send_data @riesgos .to_csv }
-      format.xls { send_data @riesgos .to_csv(col_sep: "\t") }
-    end
-  end  
+    @riesgos = Riesgo.search(params[:search], params[:page]).order('fecha ASC') 
+  end 
  
   def show 
   end 
@@ -50,7 +45,7 @@ class RiesgosController  < ApplicationController
 
     respond_to do |format|
       if @riesgo.save
-        format.html { redirect_to @riesgo, notice: 'riesgo was successfully created.' }
+        format.html { redirect_to @riesgo, notice: 'El registro fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @riesgo }
       else
         format.html { render :new }
@@ -65,7 +60,7 @@ class RiesgosController  < ApplicationController
 def update
     respond_to do |format|
       if @riesgo.update(riesgo_params)
-        format.html { redirect_to @riesgo, notice: 'riesgo was successfully updated.' }
+        format.html { redirect_to @riesgo, notice: 'El registro fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @riesgo }
       else
         format.html { render :edit }
@@ -78,7 +73,7 @@ def update
 def destroy 
       @riesgo.destroy 
        respond_to do |format|
-          format.html { redirect_to incidentes_path, notice: 'riesgo was successfully destroy.' }
+          format.html { redirect_to incidentes_path, notice: 'El registro fue eliminado exitosamente.' }
           format.json { render :show, status: :ok, location: @riesgo }
           
        end 
@@ -94,7 +89,7 @@ def destroy
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def riesgo_params         
-    params.require(:riesgo).permit(:empresa, :funcionario_id, :fecha, :areadeseccionopuestodetrabajo, :tiporiesgo_id, :factorderiesgo, :fuentegeneradora, :efectoconocido, :numerodeexpuestos, :tiempo, :controlesexitentes, :controlesrecomendados, :consecuencia, :exposicion, :factordeponderacion, :repercuciondelriesgo) 
+    params.require(:riesgo).permit(:empresa, :funcionario_id, :fecha, :areadeseccionopuestodetrabajo, :clasederiesgo, :factorderiesgo, :fuentegeneradora, :efectoconocido, :numerodeexpuestos, :tiempo, :controlesexitentes, :controlesrecomendados, :consecuencia, :exposicion, :factordeponderacion, :repercuciondelriesgo) 
   end 
 
  

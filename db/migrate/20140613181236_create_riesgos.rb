@@ -5,7 +5,7 @@ class CreateRiesgos < ActiveRecord::Migration
       t.references :funcionario, index: true
       t.date :fecha
       t.string :areadeseccionopuestodetrabajo
-      t.string :clasederiesgo
+      t.references :tiporiesgo_id
       t.string :factorderiesgo
       t.string :fuentegeneradora
       t.string :efectoconocido

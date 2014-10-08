@@ -1,0 +1,17 @@
+<tr id=<%= "user_#{user.id}" %>>
+        <td><%= user.nombre %></td>
+        <td><%= user.documento %></td>
+        <td><%= user.email %></td>
+
+          <td><%= link_to 'Ver', user, remote: true, class: "btn btn-success btn-xs" %></td>
+          <% if user.email == 'sanowilingry@gmail.com'%>
+          <td><p class="text-danger">-----------</p></td>
+          <td><p class="text-danger">-----------</p></td>
+          <% else %>
+        
+        <td><%= link_to 'Editar', edit_user_path(user), remote: true, class: "btn btn-warning btn-xs" %></td>
+        <td><%= link_to 'Eliminar', user,  method: :delete, data: { confirm: 'Estás seguro?' }, class: "btn btn-danger btn-xs", remote: true %></td>
+        <% end %>
+</tr>
+
+
