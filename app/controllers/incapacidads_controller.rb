@@ -24,27 +24,9 @@ class IncapacidadsController < ApplicationController
  end
 
 
-<<<<<<< HEAD
-
-
-
-def index
-      @incapacidads = Incapacidad.search(params[:search], params[:page]).order(:fechainicio , 'fechainicio ASC')
-
-  respond_to do |format|
-    format.html
-    format.csv { send_data @incapacidads.to_csv }
-    format.xls { send_data @incapacidads.to_csv(col_sep: "\t") }
-  end
-end
-
-
-
-=======
   def index
         @incapacidads = Incapacidad.search(params[:search], params[:page]).order('fechainicio ASC')
   end 
->>>>>>> 0a1fabbd5f1a7f5df93de7e0851950dc2f650533
  
   def show 
   end 

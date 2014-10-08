@@ -23,24 +23,11 @@ class EnfermedadsController < ApplicationController
  end
 
  
-<<<<<<< HEAD
-
-def index
-  @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
-  respond_to do |format|
-    format.html
-    format.csv { send_data @enfermedads.to_csv }
-    format.xls  { send_data @enfermedads.to_csv(col_sep: "\t") }
-  end
-end
-
-
   
-=======
+
   def index 
     @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
   end 
->>>>>>> 0a1fabbd5f1a7f5df93de7e0851950dc2f650533
  
   def show 
   end 
