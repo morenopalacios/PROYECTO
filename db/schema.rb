@@ -77,7 +77,11 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.integer  "tipoaccidente_id"
   end
 
+  add_index "accidentes", ["departamento_id"], name: "index_accidentes_on_departamento_id"
+  add_index "accidentes", ["funcionario_id"], name: "index_accidentes_on_funcionario_id"
+  add_index "accidentes", ["municipio_id"], name: "index_accidentes_on_municipio_id"
   add_index "accidentes", ["tipoaccidente_id"], name: "index_accidentes_on_tipoaccidente_id"
+  add_index "accidentes", ["tipodoc_id"], name: "index_accidentes_on_tipodoc_id"
 
   create_table "albums", force: true do |t|
     t.text     "recomendacion"
@@ -281,12 +285,6 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.datetime "updated_at"
   end
 
-  create_table "tiponovedads", force: true do |t|
-    t.string   "nombre"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "tiporiesgos", force: true do |t|
     t.string   "nombre"
     t.datetime "created_at"
@@ -297,6 +295,7 @@ ActiveRecord::Schema.define(version: 20140908054713) do
     t.string   "email",            null: false
     t.string   "crypted_password", null: false
     t.string   "salt",             null: false
+    t.boolean  "rol"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
