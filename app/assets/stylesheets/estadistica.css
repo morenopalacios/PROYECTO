@@ -1,3 +1,9 @@
+
+#ano{
+	 background-image: -o-linear-gradient(top, 090373, #033c73);
+    background-image: linear-gradient(to bottom, #00FFFF,#2E64FE);
+}
+
 h2{
 color:#317EAC;
 }
@@ -31,12 +37,15 @@ p{
 
 }
 #tab{
-	border-style:dotted;
-	border-color: blue;
-	position:100px;
-	margin-left:250px; 
-	top: 110px;
-	width:800px;
+	 -webkit-box-shadow: 0 0 10px rgb(0,0,0);
+   -moz-box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgb(0,0,0);
+    width: 800px;
+    margin-left:250px; 
+    top:40px;
+    height: 300px;
+    padding: 0px 0px;
+    background: #EFF2FB;
 
 }
 
