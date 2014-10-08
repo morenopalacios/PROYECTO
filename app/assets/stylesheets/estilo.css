@@ -11,9 +11,14 @@
   margin:40px auto;
   width:900px;
   height: 400px;
-  margin-top: 10px;
+  margin-top: -18px;
   -webki-border-radius:6px;
   -moz-border-radius:6px;
+  font-size: 21px;
+  font-family: URW Chancery L;   
+  -webkit-box-shadow: -5px -5px 11px 0px rgba(15, 226, 255, 0.75);
+  -moz-box-shadow: -5px -5px 11px 0px rgba(15, 226, 255, 0.75);
+   box-shadow:-5px -5px 11px 0px rgba(15, 226, 255, 0.75);
   
 }
 
@@ -206,6 +211,9 @@ animation-name: fadeIn;
     -webkit-animation-timing-function: ease-in-out;     
 
     visibility: visible !important;
+
+
+
 }
 
 .cont{
@@ -322,9 +330,6 @@ padding: 10px;
 border-radius: 5px;
 }
 
-
-
-
 .buscador{
     margin-top: -80px;
 }
@@ -340,6 +345,8 @@ border-radius: 5px;
  box-shadow:         -5px 4px 9px 0px rgba(0, 0, 0, 0.87);
  border-radius: 5px;
 }
+
+
  
  #login{
     text-align: center;
