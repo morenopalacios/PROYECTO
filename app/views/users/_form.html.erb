@@ -1,65 +1,61 @@
  <div id="login">
 
- <%=simple_form_for(@user, :html => {:class => 'form­-horizontal', remote: true } ) do  |f| %>
+     <%= simple_form_for(@user, :html => {:class => 'form­-horizontal', remote: true } ) do  |f| %>
 
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+          <% if @user.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+                  <ul>
+                      <% @user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                      <% end %>
+                  </ul>
+                </div>
+          <% end %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <p><h3>Nuevo usuario</h3></p>
 
-<p><h3>Nuevo usuario</h3></p>
+          <div class="field">  
+              <%= f.label :Nonbre %><br />  
+              <%= f.text_field :nombre %> 
+          </div>
 
-<div class="field">  
-<%= f.label :Nonbre %><br />  
-<%= f.text_field :nombre %> 
-</div>
+          <div class="field">  
+              <%= f.label :Numero_documento %><br />  
+              <%= f.text_field :documento %> 
+          </div> 
 
-<div class="field">  
-<%= f.label :Numero_documento %><br />  
-<%= f.text_field :documento %> 
-</div> 
+          <div class="field">  
+              <%= f.label :Correo %><br />  
+              <%= f.text_field :email %> 
+          </div> 
 
-<div class="field">  
-<%= f.label :Correo %><br />  
-<%= f.text_field :email %> 
-</div> 
+          <div class="field"> 
+              <%= f.label :Contraseña %><br />  
+              <%= f.password_field :password %>  
+          </div> 
 
-<div class="field"> 
-<%= f.label :Contraseña %><br />  
-<%= f.password_field :password %>  
-</div> 
+          <div class="field"> 
+              <%= f.label :Corfirmar_contraseña %><br />  
+              <%= f.password_field :password_confirmation %> 
+          </div>
 
-<div class="field"> 
-<%= f.label :Corfirmar_contraseña %><br />  
-<%= f.password_field :password_confirmation %> 
-</div>
+          <% if can? :read, @user %>
+                <div class="field">
+                    <%= f.label :rol %><br>
+                    <%= f.check_box :rol %>
+                </div>
+          <% else %>
+                <div class="field  ocultar">
+                    <%= f.label :rol %><br>
+                    <%= f.check_box :rol, {:checked=>false}%>
+                </div> 
+          <% end %>
 
+          <div class="actions">
+              <%= f.submit "Guardar", class: "btn btn-info btn-xs" %>
+          </div>
 
-<% if can? :read, @user%>
-  <div class="field">
-    <%= f.label :rol %><br>
-    <%= f.check_box :rol %>
-  </div>
-  <% else %>
-  <div class="field  ocultar">
-    <%= f.label :rol %><br>
-    <%= f.check_box :rol, {:checked=>false}%>
-  </div> 
-  <% end %>
-  <%end%>
-
-<div class="actions">
-  <%= f.submit "Guardar", class: "btn btn-info btn-xs" %>
-</div>
-
-<% end %>
+    <% end %>
 
 </div>
