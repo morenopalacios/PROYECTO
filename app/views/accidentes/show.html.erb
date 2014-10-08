@@ -293,17 +293,13 @@
   <%= @accidente.documento3 %>
 </p>
 
-<<<<<<< HEAD
-<p class="text-center"><%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %> |     <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
-=======
 <% if can? :update, @accidente %>
-
 <p class="text-center"><%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %>
 <%end%> |
   <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
->>>>>>> a6cb9a898e55dd5633c0319ac3005310abae6652
+
 </p>
   
-    <%= link_to 'Enviar al correo', email_send_path(:id => @accidente.id), :class=>'btn btn-info' %>
+    <%= link_to 'Enviar al correo', email_send_path(:id => @accidente.id), :class=>'btn btn-info btn-xs' %>
 
 </div>

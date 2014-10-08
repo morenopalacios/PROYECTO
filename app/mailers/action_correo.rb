@@ -7,7 +7,7 @@ class ActionCorreo < ActionMailer::Base
      #@accidente = Accidente.find(1)
     #@user.created_at = '2014-10-06'
     
-    #attachments["inicio.png"] = File.read("#{Rails.root}/public/inicio.png") 
+    attachments["inicio.png"] = File.read("#{Rails.root}/public/inicio.png") 
       
     email_with_name = "#{@accidente.funcionario_id} <#{@accidente.email_sede_principal}>"
 

@@ -1,12 +1,6 @@
 Rails.application.routes.draw do
 
-<<<<<<< HEAD
-=======
-
-
   resources :events
-
->>>>>>> a6cb9a898e55dd5633c0319ac3005310abae6652
   resources :tipoincapacidads
   resources :tipoenfermedads
   resources :tiporiesgos
@@ -65,11 +59,7 @@ Rails.application.routes.draw do
   resources :centros
   resources :user_sessions
   resources :users
-<<<<<<< HEAD
   resources :cronogramas
-=======
-
->>>>>>> a6cb9a898e55dd5633c0319ac3005310abae6652
   resources :tipo_salidas
 
   get 'incidentes_estadistica',to: 'incidentes#estadistica', :as => 'incidentes_estadistica'
