@@ -59,11 +59,9 @@ class IncapacidadsController < ApplicationController
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def incapacidad_params         
-<<<<<<< HEAD
+
     params.require(:incapacidad).permit(:funcionario_id, :tipoincapacidad_id, :fechainicio, :fechaterminacion, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
-=======
-    params.require(:incapacidad).permit(:funcionario_id, :fechainicio, :fechaterminacion, :totaldias, :diasacobrar, :prorroga, :numeroinpacacidad, :esp, :origendelaincapacidad) 
->>>>>>> 0a1fabbd5f1a7f5df93de7e0851950dc2f650533
+    
   end 
 
  

@@ -85,8 +85,6 @@ Rails.application.routes.draw do
 
   resources :users
 
-  resources :tipo_salidas
-
   get 'incidentes_estadistica',to: 'incidentes#estadistica', :as => 'incidentes_estadistica'
   get 'riesgos_estadistica',to: 'riesgos#estadistica', :as => 'riesgos_estadistica'
   get 'enfermedads_estadistica',to: 'enfermedads#estadistica', :as => 'enfermedads_estadistica'

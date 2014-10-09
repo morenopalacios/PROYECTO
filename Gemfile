@@ -63,3 +63,6 @@ gem 'remotipart'
 gem 'googlecharts'
 
 gem 'cancancan', '~> 1.9.2'
+
+gem 'heroku'
+
