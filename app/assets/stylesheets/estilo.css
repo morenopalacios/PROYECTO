@@ -6,20 +6,16 @@
 
 .introduccion{
 
-  box-shadow: 1px 2px 10px #000;
-  border-radius:6px;
-  margin:40px auto;
-  width:900px;
-  height: 400px;
-  margin-top: -18px;
-  -webki-border-radius:6px;
-  -moz-border-radius:6px;
-  font-size: 21px;
-  font-family: URW Chancery L;   
-  -webkit-box-shadow: -5px -5px 11px 0px rgba(15, 226, 255, 0.75);
-  -moz-box-shadow: -5px -5px 11px 0px rgba(15, 226, 255, 0.75);
-   box-shadow:-5px -5px 11px 0px rgba(15, 226, 255, 0.75);
-  
+ max-height: 900px;  
+ font-size: 16px;
+ margin-right: 30px;
+ border: 10px ridge #6666cc; 
+ 
+
+
+ -webkit-box-shadow: 1px 1px 30px 0px rgba(68, 50, 190, 0.74);
+ -moz-box-shadow:    1px 1px 30px 0px rgba(68, 50, 190, 0.74);
+ box-shadow:         1px 1px 30px 0px rgba(68, 50, 190, 0.74);
 }
 
 /*table, th, td {

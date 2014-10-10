@@ -1,5 +1,5 @@
 class AccidentesController < ApplicationController
-  before_action :set_accidente, only: [:show, :edit, :update, :destroy]
+  before_action :set_accidente, only: [:show, :edit, :update, :destroy, :enviar]
 
   # GET /accidentes
   # GET /accidentes.json
@@ -81,6 +81,14 @@ class AccidentesController < ApplicationController
       format.html { redirect_to accidentes_url, notice: 'El registro fue eliminado exitosamente.' }
       format.json { head :no_content }
     end
+  end
+
+  def enviar  
+    @accidente = Accidente.find(params[:id])  
+    ActionCorreo.bienvenido_email(@accidente).deliver
+        #render :show 
+    redirect_to @accidente, notice: "Correo enviado exitosamente" 
+
   end
 
   private

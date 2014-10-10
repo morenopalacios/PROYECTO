@@ -1,8 +1,11 @@
-
-<div class="formulario">
-
-<p id="notice"><%= notice %></p>
-
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>SANO</h1>
+ 
 <p>
   <strong>Diligenciador:</strong>
   <%= @accidente.diligenciador %>
@@ -293,13 +296,5 @@
   <%= @accidente.documento3 %>
 </p>
 
-<% if can? :update, @accidente %>
-<p class="text-center"><%= link_to 'Editar', edit_accidente_path(@accidente), class: "btn btn-warning btn-xs"  %>
-<%end%> |
-  <%= link_to 'Atras', accidentes_path, class: "btn btn-default btn-xs" %>
-
-</p>
-  
-    <%= link_to 'Enviar al correo', email_send_path(:id => @accidente.id), :class=>'btn btn-info btn-xs' %>
-
-</div>
+  </body>
+</html>

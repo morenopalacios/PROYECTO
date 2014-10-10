@@ -1,63 +1,43 @@
 Rails.application.routes.draw do
 
-
-
   resources :events
-
   resources :tipoincapacidads
-
   resources :tipoenfermedads
-
   resources :tiporiesgos
-
   resources :tipoincidentes
-
   resources :tipoaccidentes
-
-
   resources :albums
-
   resources :accidentes
-
   resources :municipios
-
   resources :departamentos
+  
 
   get 'user_sessions/new'
-
   get 'user_sessions/create'
-
   get 'user_sessions/destroy'
-
+  get 'email/send' => 'accidentes#enviar'
+  
   resources :users
 
   match '/home', to: 'static_pages#home',  via: 'get' 
   match '/help',to: 'static_pages#help',  via: 'get' 
   match '/about',   to: 'static_pages#about',  via: 'get' 
   match '/contact', to: 'static_pages#contact',  via: 'get'
-#estadistica
- match '/estadistica', to: 'static_pages#estadistica',  via: 'get' 
-
+  #estadistica
+  match '/estadistica', to: 'static_pages#estadistica',  via: 'get' 
  
   root :to => 'user_sessions#index' 
 
   get 'static_pages/home'
-
   get 'static_pages/help'
-
   get 'static_pages/contact'
-
   get 'static_pages/about'
-
   get 'login' => 'user_sessions#new', :as => :login 
-  
   get 'logout' => 'user_sessions#destroy', :as => :logout 
-
   get 'static_pages/estadistica'
 
 
   resources :incidentes
-
   resources :funcionarios
 
   resources :riesgos do 
@@ -74,16 +54,16 @@ Rails.application.routes.draw do
 
 
   resources :enfermedads
-
   resources :personalinvolucrados
-
   resources :tipodocs
-
   resources :centros
-
   resources :user_sessions
-
   resources :users
+<<<<<<< HEAD
+=======
+  resources :cronogramas
+  resources :tipo_salidas
+>>>>>>> acf0633c56645c197842c7db7cc1177e4f987c38
 
   get 'incidentes_estadistica',to: 'incidentes#estadistica', :as => 'incidentes_estadistica'
   get 'riesgos_estadistica',to: 'riesgos#estadistica', :as => 'riesgos_estadistica'
