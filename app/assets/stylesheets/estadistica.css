@@ -1,6 +1,8 @@
 
 #ano{
-	 background-image: -o-linear-gradient(top, 090373, #033c73);
+    width:70px ;
+   margin-left: 30px;
+	background-image: -o-linear-gradient(top, 090373, #033c73);
     background-image: linear-gradient(to bottom, #00FFFF,#2E64FE);
 }
 
@@ -34,6 +36,9 @@ top:-120;
 
 p{
 	margin-left: 20px;
+    color: #317EAC;
+    font-style:arial;
+
 
 
 }
@@ -41,7 +46,7 @@ p{
 	 -webkit-box-shadow: 0 0 10px rgb(0,0,0);
    -moz-box-shadow: 0 0 10px rgb(0,0,0);
     box-shadow: 0 0 10px rgb(0,0,0);
-    width: 800px;
+    width: 1017px;
     margin-left:80px; 
     margin-top: -10px;
     height: 300px;
@@ -54,3 +59,4 @@ p{
 
     background-color: #0489B1;
     }
+

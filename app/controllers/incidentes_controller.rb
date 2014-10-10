@@ -15,7 +15,7 @@ class IncidentesController < ApplicationController
    @datos= { :size => '700x400',
             :theme => :thirty7signals, 
             :title => "Incidente por trimestre", 
-            :bg => 'efefef', 
+            :bg => 'EFF5FF', 
             :line_colors => 'B22222,0077CC, FFA500',
             :legend => @ano.keys,
             :data => @ano.values,
