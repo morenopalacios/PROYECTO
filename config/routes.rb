@@ -59,11 +59,9 @@ Rails.application.routes.draw do
   resources :centros
   resources :user_sessions
   resources :users
-<<<<<<< HEAD
-=======
   resources :cronogramas
   resources :tipo_salidas
->>>>>>> acf0633c56645c197842c7db7cc1177e4f987c38
+
 
   get 'incidentes_estadistica',to: 'incidentes#estadistica', :as => 'incidentes_estadistica'
   get 'riesgos_estadistica',to: 'riesgos#estadistica', :as => 'riesgos_estadistica'

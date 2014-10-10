@@ -6,33 +6,34 @@
     </ul>
   <div id="myTabContent" class="tab-contente">
     <div class="tab-pane fade active in cont1" id="inicio">
-<dvi id="fom">
-      <p id="notice">
-        <%= notice %>
-      </p>
-          <h2>Editar evento</h2>
-      <p>
-        <strong>Titulo</strong>
-        <%= @event.title %>
-      </p>
+    <div id="fom">
+          <p id="notice">
+            <%= notice %>
+          </p>
+             
+          <p>
+            <strong>Titulo</strong>
+            <%= @event.title %>
+          </p>
 
-      <p>
-        <strong>Descripcion:</strong>
-        <%= @event.description %>
-      </p>
+          <p>
+            <strong>Descripcion:</strong>
+            <%= @event.description %>
+          </p>
 
-      <p>
-        <strong>Empieza en:</strong>
-        <%= @event.start %>
-      </p>
+          <p>
+            <strong>Empieza en:</strong>
+            <%= @event.start %>
+          </p>
 
-      <p>
-        <strong>Termina en:</strong>
-        <%= @event.end %>
-      </p>
+          <p>
+            <strong>Termina en:</strong>
+            <%= @event.end %>
+          </p>
+
 
      <% if can? :update, @event%>
-      <%=link_to 'Editar', edit_event_path(@event), class: "btn btn-warning btn-xs"%>
+       <%=link_to 'Editar', edit_event_path(@event), class: "btn btn-warning btn-xs", remote: true %>
     <%end%>
      
     <% if can? :destroy, @event%>
@@ -41,7 +42,6 @@
      
       <%= link_to 'Atras', events_path, class: "btn btn-default btn-xs"%>
 
+
     </div>
-  </div>
-</div>
 <div>

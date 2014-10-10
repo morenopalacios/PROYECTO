@@ -4,16 +4,7 @@
  * (c) 2013 Adam Shaw
  */
 
- .tab-contente {
-    -webkit-box-shadow: 0 0 10px rgb(0,0,0);
-   -moz-box-shadow: 0 0 10px rgb(0,0,0);
-    box-shadow: 0 0 10px rgb(0,0,0);
-    left: 100px;
-    width: 800px;
-    top:40px;
-    position:relative;
-    padding: 0px 0px;
- }
+ 
 
 .bo{
 	position: absolute;
