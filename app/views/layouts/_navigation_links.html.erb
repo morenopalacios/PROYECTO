@@ -1,6 +1,6 @@
 <% if current_user %>
     <ul class="nav navbar-nav navbar-right">
-        <li><%= link_to 'Inicio', home_path %></li>
+        <li><%= link_to "Inicio", home_path %></li> 
         <li><%= link_to "Funcionarios", funcionarios_path %></li> 
 
          <li class="dropdown" id="accountmenu"> <a class="dropdown-toggle" data-toggle="dropdown" href="#">Novedad<b class="caret"></b></a>
@@ -10,26 +10,27 @@
                         <li><%= link_to "Accidente", accidentes_path %></li> 
                         <li><%= link_to "Incidente", incidentes_path %></li> 
                         <li><%= link_to "Riesgo", riesgos_path %></li> 
-                        <li><%= link_to "Enfermedad", enfermedads_path %></li><li><%= link_to "Incapacidad", incapacidads_path %></li> 
+                        <li><%= link_to "Enfermedad", enfermedads_path %></li>
+                        <li><%= link_to "Incapacidad", incapacidads_path %></li> 
 
                     </ul>
          </li>
 
         <li><%= link_to "Cronograma", events_path %></li> 
         <li><%= link_to "Estadisticas", static_pages_estadistica_path%></li> 
-        <li><%= link_to "Noticias", albums_path%></li> 
-        <li><%= link_to "Seguridad" %></li> 
+        <li><%= link_to "Galeria", albums_path%></li>
+        <% if can? :read, @user %>
+        <li><%= link_to "Seguridad", users_path %></li>
+        <% end %> 
         <li><%= link_to "Ayuda", static_pages_help_path %></li> 
 
-       
-
-        
-           
-            <li><%= link_to "Editar Perfil", edit_user_path(current_user.id) %></li> 
+         
+            <li><%= link_to "Editar Perfil", edit_user_path(current_user.id), remote: true %></li> 
             <li><%= link_to "Salir", :logout, method: :get %></li> 
            <% else %>
-             <li><%= link_to "Registrarse", new_user_path %></li>
-             <li><%= link_to "Ingresar", :login %></li>     
+            <li><%= link_to "Introducción", user_sessions_path %></li> 
+            <li><%= link_to "Registrarse", new_user_path, remote:true %></li>
+            <li><%= link_to "Ingresar", :login %></li>     
     </ul>
 <% end %>
 

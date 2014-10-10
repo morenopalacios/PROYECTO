@@ -23,6 +23,8 @@ class EnfermedadsController < ApplicationController
  end
 
  
+  
+
   def index 
     @enfermedads = Enfermedad.search(params[:search], params[:page]).order('fecha ASC') 
   end 
@@ -58,7 +60,7 @@ class EnfermedadsController < ApplicationController
  
   # Never trust parameters from the scary internet, only allow the white list through. 
   def enfermedad_params         
-    params.require(:enfermedad).permit(:funcionario_id, :descripcion, :fecha, :codigodediagnostico) 
+    params.require(:enfermedad).permit(:funcionario_id, :tipoenfermedad_id, :descripcion, :fecha, :codigodediagnostico) 
   end 
 
  

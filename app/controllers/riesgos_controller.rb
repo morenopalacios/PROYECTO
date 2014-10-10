@@ -22,6 +22,8 @@ class RiesgosController  < ApplicationController
             :labels => @ano.values }
  end
 
+
+
  
   def index 
     @riesgos = Riesgo.search(params[:search], params[:page]).order('fecha ASC') 
@@ -43,7 +45,7 @@ class RiesgosController  < ApplicationController
 
     respond_to do |format|
       if @riesgo.save
-        format.html { redirect_to @riesgo, notice: 'riesgo was successfully created.' }
+        format.html { redirect_to @riesgo, notice: 'El registro fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @riesgo }
       else
         format.html { render :new }
@@ -58,7 +60,7 @@ class RiesgosController  < ApplicationController
 def update
     respond_to do |format|
       if @riesgo.update(riesgo_params)
-        format.html { redirect_to @riesgo, notice: 'riesgo was successfully updated.' }
+        format.html { redirect_to @riesgo, notice: 'El registro fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @riesgo }
       else
         format.html { render :edit }
@@ -71,7 +73,7 @@ def update
 def destroy 
       @riesgo.destroy 
        respond_to do |format|
-          format.html { redirect_to incidentes_path, notice: 'riesgo was successfully destroy.' }
+          format.html { redirect_to incidentes_path, notice: 'El registro fue eliminado exitosamente.' }
           format.json { render :show, status: :ok, location: @riesgo }
           
        end 

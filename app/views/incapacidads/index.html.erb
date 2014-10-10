@@ -1,4 +1,8 @@
-<center><h1><b>INCAPACIDADES</b></h1></center><br><br>
+<div class="index">
+
+<center class="fadeIn"><h1><b>INCAPACIDADES</b></h1></center><br><br>
+
+<div class="buscador">
 	<%= form_tag incapacidads_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Fecha inicio:
@@ -6,19 +10,19 @@
 	<%= submit_tag "Buscar", :name => nil %>
 	<% end %>
 	<% end %>
+</div>
 
-<table class="table table-bordered">
+<div class="ctable">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Funcionario</th>
+       <th>Tipo de incapacidad</th>
       <th>Fecha inicio</th>
       <th>Fecha terminación</th>
-      <th>tipo de incapacidad</th>
       <th>Total dias</th>
       <th>Dias acobrar</th>
       <th>Prorroga</th>
-      <th>Numero inpacacidad</th>  
-      <th>Origen de la incapacidad</th>
       
       <th colspan="3">Acciones</th>
     </tr>
@@ -28,22 +32,26 @@
      <%= render @incapacidads %>
   </tbody>
 </table>
-
-<%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
-
+</div>
 <br>
 
-<p>
-  Descarga:
-  <%= link_to "CSV", incapacidads_path(format: "csv") %> --
-  <%= link_to "Excel", incapacidads_path(format: "xls") %>
-</p>
- 
-<%= will_paginate @incapacidads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
-<br>
-Incapacidads: <%= @incapacidads.count %>
+  <% if can? :create, @incapacidad%>
+  <%= button_to 'Nueva Incapacidad', new_incapacidad_path, remote: true, :method=>"get", class: "btn btn-primary btn-xs" %> 
+  <%end%><br>
+
+<div class="descarga"><p>
+  <p>
+    Descarga:
+    <%= link_to "CSV", incapacidads_path(format: "csv") %> |
+    <%= link_to "Excel", incapacidads_path(format: "xls") %>
+  </p>
+</div>
+
+  <%= will_paginate @incapacidads, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
+  Incapacidads: <%= @incapacidads.count %>
 
 
+</div>
 
 
 

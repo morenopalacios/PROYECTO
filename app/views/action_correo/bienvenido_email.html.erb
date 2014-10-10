@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>SANO</h1>
+ 
+<p>
+  <strong>Diligenciador:</strong>
+  <%= @accidente.diligenciador %>
+</p>
+
+<p>
+  <strong>Eps:</strong>
+  <%= @accidente.eps %>
+</p>
+
+<p>
+  <strong>Afp:</strong>
+  <%= @accidente.afp %>
+</p>
+
+<p>
+  <strong>Arl:</strong>
+  <%= @accidente.arl %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @accidente.documento %>
+</p>
+
+<p>
+  <strong>Tipodoc:</strong>
+  <%= @accidente.tipodoc.nombre rescue nil %>
+</p>
+
+<p>
+  <strong>Tipo de vinculacion:</strong>
+  <%= @accidente.tipo_de_vinculacion %>
+</p>
+
+<p>
+  <strong>Razon social:</strong>
+  <%= @accidente.razon_social %>
+</p>
+
+<p>
+  <strong>Direccion sede principal:</strong>
+  <%= @accidente.direccion_sede_principal %>
+</p>
+
+<p>
+  <strong>Direccion reportada:</strong>
+  <%= @accidente.direccion_reportada %>
+</p>
+
+<p>
+  <strong>Telefono reportado:</strong>
+  <%= @accidente.telefono_reportado %>
+</p>
+
+<p>
+  <strong>Actividad economica sede principal:</strong>
+  <%= @accidente.actividad_economica_sede_principal %>
+</p>
+
+<p>
+  <strong>Codigo:</strong>
+  <%= @accidente.codigo %>
+</p>
+
+<p>
+  <strong>Telefono sede principal:</strong>
+  <%= @accidente.telefono_sede_principal %>
+</p>
+
+<p>
+  <strong>Fax sede principal:</strong>
+  <%= @accidente.fax_sede_principal %>
+</p>
+
+<p>
+  <strong>Email sede principal:</strong>
+  <%= @accidente.email_sede_principal %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= @accidente.departamento.nombre rescue nil %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= @accidente.municipio.nombre rescue nil %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @accidente.zona %>
+</p>
+
+<p>
+  <strong>Actividad economica centro trabajo:</strong>
+  <%= @accidente.actividad_economica_centro_trabajo %>
+</p>
+
+<p>
+  <strong>Direccion centro trabajo:</strong>
+  <%= @accidente.direccion_centro_trabajo %>
+</p>
+
+<p>
+  <strong>Telefono ct:</strong>
+  <%= @accidente.telefono_ct %>
+</p>
+
+<p>
+  <strong>Fax ct:</strong>
+  <%= @accidente.fax_ct %>
+</p>
+
+<p>
+  <strong>Email ct:</strong>
+  <%= @accidente.email_ct %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= mostrardep(@accidente.departamento1) %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= mostrarmun(@accidente.municipio1) %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @accidente.zona1 %>
+</p>
+
+<p>
+  <strong>Funcionario:</strong>
+  <%= @accidente.funcionario.nombres rescue nil %>
+</p>
+
+<p>
+  <strong>Fecha del accidente:</strong>
+  <%= @accidente.fchAc %>
+</p>
+
+<p>
+  <strong>Hora del accidente:</strong>
+  <%= @accidente.hora_del_accidente %>
+</p>
+
+<p>
+  <strong>Dia de la semana:</strong>
+  <%= @accidente.dia_de_la_semana %>
+</p>
+
+<p>
+  <strong>Jornada en que sucede:</strong>
+  <%= @accidente.jornada_en_que_sucede %>
+</p>
+
+<p>
+  <strong>Realiza su labor:</strong>
+  <%= mostrarrealiza_su_labor(@accidente.realiza_su_labor) %>
+</p>
+
+<p>
+  <strong>Ocupacion no habitual:</strong>
+  <%= @accidente.ocupacion_no_habitual %>
+</p>
+
+<p>
+  <strong>Tiempo laborado:</strong>
+  <%= @accidente.tiempo_laborado %>
+</p>
+
+<p>
+  <strong>Lugar donde ocurrio el at:</strong>
+  <%= @accidente.lugar_donde_ocurrio_el_at %>
+</p>
+
+<p>
+  <strong>Mecanismo o formato del at:</strong>
+  <%= @accidente.mecanismo_o_formato_del_at %>
+</p>
+
+<p>
+  <strong>Tipo de lesion:</strong>
+  <%= @accidente.tipo_de_lesion %>
+</p>
+
+<p>
+  <strong>Sitio:</strong>
+  <%= @accidente.sitio %>
+</p>
+
+<p>
+  <strong>Tipo de accidente:</strong>
+  <%= mostrartipoaccidente(@accidente.tipo_de_accidente) %>
+</p>
+
+<p>
+  <strong>Parte del cuerpo afectado:</strong>
+  <%= @accidente.parte_del_cuerpo_afectado %>
+</p>
+
+<p>
+  <strong>Agente del accidente:</strong>
+  <%= @accidente.agente_del_accidente %>
+</p>
+
+<p>
+  <strong>Departamento:</strong>
+  <%= mostrardep(@accidente.departamento2) %>
+</p>
+
+<p>
+  <strong>Municipio:</strong>
+  <%= mostrarmun(@accidente.municipio2) %>
+</p>
+
+<p>
+  <strong>Zona:</strong>
+  <%= @accidente.zona2 %>
+</p>
+
+<p>
+  <strong>Mortal:</strong>
+  <%= mostrarmortal(@accidente.mortal) %>
+</p>
+
+<p>
+  <strong>Fecha mortal:</strong>
+  <%= @accidente.fecha_mortal %>
+</p>
+
+<p>
+  <strong>Descripcion del at:</strong>
+  <%= @accidente.descripcion_del_at %>
+</p>
+
+<p>
+  <strong>Hubo personas que presenciaron el accidente:</strong>
+<%= mostrarhubo_personas_que_presenciaron_el_accidente(@accidente.hubo_personas_que_presenciaron_el_accidente) %>
+</p>
+
+<p>
+  <strong>Testigo1:</strong>
+  <%= @accidente.testigo1 %>
+</p>
+
+<p>
+  <strong>Tipodoc:</strong>
+  <%= mostrardoc(@accidente.tipodoc1) %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @accidente.documento1 %>
+</p>
+
+<p>
+  <strong>Testigo2:</strong>
+  <%= @accidente.testigo2 %>
+</p>
+
+<p>
+  <strong>Tipodoc:</strong>
+  <%= mostrardoc(@accidente.tipodoc2) %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @accidente.documento2 %>
+</p>
+
+<p>
+  <strong>Responsable informe:</strong>
+  <%= @accidente.responsable_informe %>
+</p>
+
+<p>
+  <strong>Tipodoc:</strong>
+  <%= mostrardoc(@accidente.tipodoc3) %>
+</p>
+
+<p>
+  <strong>Documento:</strong>
+  <%= @accidente.documento3 %>
+</p>
+
+  </body>
+</html>

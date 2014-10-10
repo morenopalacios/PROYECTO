@@ -3,15 +3,22 @@
     <td><%= riesgo.empresa %></td>
     <td><%= riesgo.funcionario.nombres rescue nil%></td>
     <td><%= riesgo.fecha %></td>
-    <td><%= riesgo.tiporiesgo_id %></td>
+    <td><%= mostrartiporiesgo(riesgo.tiporiesgo_id) %></td>
     <td><%= riesgo.factorderiesgo %></td>
-    <td><%= riesgo.fuentegeneradora %></td>
     <td><%= riesgo.efectoconocido %></td> 
-    <td><%= riesgo.tiempo %></td>
     <td><%= riesgo.consecuencia %></td>
     <td><%= riesgo.exposicion %></td>
-    <td><%= link_to 'Ver', riesgo, class: "btn btn-success btn-xs" %></td>
-    <td><%= link_to 'Editar', edit_riesgo_path(riesgo), class: "btn btn-warning btn-xs" %></td>
-    <td><%= link_to 'Eliminar', riesgo, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger btn-xs" %></td>
     
+    <% if can? :read, riesgo %>
+        <td><%= link_to 'Ver', riesgo, class: "btn btn-success btn-xs" %></td>
+    <% end %>
+
+    <% if can? :update, riesgo %>
+        <td><%= link_to 'Editar', edit_riesgo_path(riesgo), class: "btn btn-warning btn-xs" %></td>
+    <% end %>
+
+    <% if can? :destroy, riesgo %>
+        <td><%= link_to 'Eliminar', riesgo, method: :delete, data: { confirm: 'Esta Seguro?' }, class: "btn btn-danger btn-xs" %></td>
+    <% end %>
+
 </tr>

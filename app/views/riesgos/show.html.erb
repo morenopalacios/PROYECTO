@@ -19,14 +19,16 @@
 </p>
 
 <p>
+  <strong>Tipo de riego:</strong>
+   <%= mostrartiporiesgo(@riesgo.tiporiesgo_id) %>
+</p>
+
+
+<p>
   <strong>Area de seccion o puesto de trabajo:</strong>
   <%= @riesgo.areadeseccionopuestodetrabajo %>
 </p>
 
-<p>
-  <strong>Clase de riesgo:</strong>
-  <%= @riesgo.clasederiesgo %>
-</p>
 
 <p>
   <strong>Factor de riesgo:</strong>
@@ -84,8 +86,10 @@
 </p>
 
 </div>
+<% if can? :update, @riesgo %>
+    <%= button_to 'Editar', edit_riesgo_path(@riesgo),:method=>"get", class: "btn btn-warning btn-xs" %>
+<% end %>
 
-<%= button_to 'Editar', edit_riesgo_path(@riesgo),:method=>"get", class: "btn btn-warning btn-xs" %>
   <%= link_to 'Atras', riesgos_path, class: "btn btn-default btn-xs" %>
 
 <hr>

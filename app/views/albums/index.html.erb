@@ -15,4 +15,6 @@
 </div>
 <br>
 
-<%= link_to 'Nuevo Album', new_album_path, :remote => true,  class: "btn btn-primary btn-xs" %>
+ <% if can? :create, @album%>
+<%= link_to 'Nuevo Imagen', new_album_path, :remote => true,  class: "btn btn-primary btn-xs" %>
+<%end%>

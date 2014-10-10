@@ -24,7 +24,7 @@ class FuncionariosController < ApplicationController
 
     respond_to do |format|
       if @funcionario.save
-        format.html { redirect_to @funcionario, notice: 'funcionario was successfully created.' }
+        format.html { redirect_to @funcionario, notice: 'El registro fue creado exitosamente.' }
         format.json { render :show, status: :created, location: @funcionario }
       else
         format.html { render :new }
@@ -36,7 +36,7 @@ class FuncionariosController < ApplicationController
    def update
     respond_to do |format|
       if @funcionario.update(funcionario_params)
-        format.html { redirect_to @funcionario, notice: 'funcionario was successfully updated.' }
+        format.html { redirect_to @funcionario, notice: 'El registro fue actualizado exitosamente.' }
         format.json { render :show, status: :ok, location: @funcionario }
       else
         format.html { render :edit }
@@ -48,7 +48,7 @@ class FuncionariosController < ApplicationController
   def destroy 
        @funcionario.destroy
        respond_to do |format|
-          format.html { redirect_to funcionarios_path, notice: 'funcionario was successfully destroy.' }
+          format.html { redirect_to funcionarios_path, notice: 'El registro fue creado exitosamente.' }
           format.json { render :show, status: :ok, location: @funcionario }
           
        end

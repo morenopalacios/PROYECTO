@@ -1,11 +1,15 @@
-<div class="incapacidad">
-
-<p id="notice"><%= notice %></p>
 
 <p>
   <strong>Funcionario:</strong>
   <%= @incapacidad.funcionario.nombres rescue nil%>
 </p>
+
+<p>
+  <strong>Tipo de incapacidad:</strong>
+  <%= mostrartipoincapacidad(@incapacidad.tipoincapacidad_id) %>
+
+</p>
+
 <p>
   <strong>Fecha inicio:</strong>
   <%= @incapacidad.fechainicio %>
@@ -41,9 +45,3 @@
   <%= @incapacidad.origendelaincapacidad %>
 </p>
 
-</div>
-
-<%= link_to 'Editar', edit_incapacidad_path(@incapacidad),:method=>"get", class: "btn btn-warning btn-xs", remote: true  %>
-<%= link_to 'Atras', incapacidads_path, class: "btn btn-default btn-xs" %>
-<hr>
-</div>

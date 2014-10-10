@@ -1,4 +1,7 @@
+<div class="index">
+
 <center class="fadeIn"><h1><b>FUNCIONARIOS</b></h1></center><br><br>
+<div class="buscador">
 	<%= form_tag funcionarios_path, :method => 'get' do %>
 	<% content_tag :label do %>
 	Nombre:
@@ -6,8 +9,9 @@
 	<%= submit_tag "Buscar", :name => nil %>
 	<% end %>
 	<% end %>
-
-<table class="table table-bordered">
+  </div>
+<div class="ctable">
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Nombres</th>
@@ -33,13 +37,18 @@
      <%= render @funcionarios %>
   </tbody>
 </table>
-
+</div>
 <br>
+
+
  
 <%= button_to 'Nuevo Funcionario', new_funcionario_path, :method=>"get", class: "btn btn-primary btn-xs" %> 
 
 <%= will_paginate @funcionarios, :previous_label => '&laquo; Anterior', :next_label => 'Siguiente &raquo;' %>
 <br>
 Funcionarios: <%= @funcionarios.count %>
+
+
+</div>
  
 

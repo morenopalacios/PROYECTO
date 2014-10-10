@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p> 
+<p>
+  <strong>Nombre:</strong>
+  <%= @user.nombre %>
+</p>
+
+<p>
+  <strong>Numero documento:</strong>
+  <%= @user.documento %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Rol:</strong>
+  <%= rol_usuario(@user.rol) %>
+</p>

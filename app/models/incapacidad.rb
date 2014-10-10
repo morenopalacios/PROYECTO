@@ -1,21 +1,5 @@
 class Incapacidad < ActiveRecord::Base
 
-
-
-def self.to_csv(options = {})
-  CSV.generate(options) do |csv|
-    csv << column_names
-    all.each do |incapacidad|
-      csv << incapacidad.attributes.values_at(*column_names)
-    end
-  end
-end
-
-
-
-
-
-
 	def self.search(search, page)
 		where(['upper(fechainicio) like ?',
 		"%#{search}%".upcase]).paginate(page: page, per_page: 5).order("fechainicio")
@@ -38,5 +22,19 @@ end
       @t1 = Incapacidad.select('count(*) as numero_incapacidads').where('fechainicio between  ? and  ?',fechIni,fechFin)
       @t1.pluck('count(*)').first
   end
+
+
+
+
+def self.to_csv(options = {})
+  CSV.generate(options) do |csv|
+    csv << column_names
+    all.each do |incapacidad|
+      csv << incapacidad.attributes.values_at(*column_names)
+    end
+  end
+end
+
+
    
 end
