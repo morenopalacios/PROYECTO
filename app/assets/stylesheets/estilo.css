@@ -6,16 +6,32 @@
 
 .introduccion{
 
- max-height: 900px;  
- font-size: 16px;
+ max-height: 600px;  
+ font-size: 20px;
  margin-right: 30px;
- border: 10px ridge #6666cc; 
+ color: #241D02;
+ background-color:#2E9AFE;
+ opacity: 20;
+ width: 1080px;
+ padding: 100px ;
+ padding-left: 290px;
+ padding-top: 150px;
+ margin-left: 120px;
+ position:relative;
+ border-radius: 30px;
+ border-color: black;
+ -webkit-border-radius:30px 0 10px rgb(0,0,0);
+ -moz-border-radius:10px; 
+   -moz-box-shadow: 0 0 10px rgb(0,0,0);
+    box-shadow: 0 0 10px rgb(0,0,0);
  
+background-image: url("marco_15.png");
+  background-repeat: no-repeat;
+  background-size: 1500px 1070px; 
+  
+   height: 500px; 
+   max-height: 400px;
 
-
- -webkit-box-shadow: 1px 1px 30px 0px rgba(68, 50, 190, 0.74);
- -moz-box-shadow:    1px 1px 30px 0px rgba(68, 50, 190, 0.74);
- box-shadow:         1px 1px 30px 0px rgba(68, 50, 190, 0.74);
 }
 
 /*table, th, td {
